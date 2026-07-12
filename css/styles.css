@@ -1,0 +1,339 @@
+/* ============================================
+   Sistema de diseño — "El cuaderno de Daniel"
+   Paleta: papel envejecido + tintas de época
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=Inter:wght@400;500;600&display=swap');
+
+:root {
+  /* Papel y tinta base */
+  --paper: #EFE6D3;
+  --paper-soft: #F6EFE1;
+  --paper-deep: #E4D8BE;
+  --ink: #2B241C;
+  --ink-soft: #5C5142;
+  --ink-faint: #8A7E6C;
+  --rule: rgba(43, 36, 28, 0.14);
+
+  /* Tintas de acento — una por colección */
+  --tinta-otro-yo: #9C6B2E;      /* bronce */
+  --tinta-haiku: #3F5A54;        /* verde tintero */
+  --tinta-intentos: #8B3F2E;     /* óxido */
+  --tinta-sentidos: #6B3550;     /* ciruela */
+
+  --accent: var(--tinta-otro-yo);
+
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'Source Serif 4', Georgia, serif;
+  --font-ui: 'Inter', -apple-system, sans-serif;
+
+  --measure: 62ch;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 19px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+a { color: var(--accent); text-decoration-thickness: 1.5px; text-underline-offset: 3px; }
+a:focus-visible, button:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* ---------- Barra superior (siempre visible, para no perderse) ---------- */
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.9rem 1.5rem;
+  background: var(--paper-soft);
+  border-bottom: 1px solid var(--rule);
+  font-family: var(--font-ui);
+}
+
+.topbar a.volver {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--ink);
+  font-weight: 600;
+  font-size: 1.05rem;
+  text-decoration: none;
+  padding: 0.4rem 0.9rem;
+  border: 1.5px solid var(--ink);
+  border-radius: 999px;
+  transition: background 0.15s ease;
+}
+.topbar a.volver:hover { background: var(--paper-deep); }
+
+.topbar .coleccion-nombre {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  color: var(--accent);
+  margin-left: 0.25rem;
+}
+
+/* ---------- Portada ---------- */
+
+.portada-hero {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 4.5rem 1.75rem 2.5rem;
+  text-align: center;
+}
+
+.portada-hero .firma-icono { width: 64px; height: 64px; color: var(--tinta-otro-yo); margin-bottom: 1.25rem; }
+
+.portada-hero h1 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(2.6rem, 7vw, 4rem);
+  margin: 0 0 0.5rem;
+  letter-spacing: -0.01em;
+}
+
+.portada-hero .subtitulo {
+  font-family: var(--font-ui);
+  font-size: 1.15rem;
+  color: var(--ink-soft);
+  margin-bottom: 2rem;
+}
+
+.dedicatoria {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  max-width: 46ch;
+  margin: 0 auto;
+}
+
+.dedicatoria .firma { display: block; margin-top: 1rem; font-style: normal; font-family: var(--font-ui); font-size: 1rem; }
+
+/* ---------- Grilla de colecciones ---------- */
+
+.colecciones {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem 5rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+@media (max-width: 640px) {
+  .colecciones { grid-template-columns: 1fr; }
+}
+
+.card-coleccion {
+  display: block;
+  text-decoration: none;
+  color: var(--ink);
+  background: var(--paper-soft);
+  border: 1px solid var(--rule);
+  border-radius: 18px;
+  padding: 2rem 1.75rem;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  min-height: 220px;
+}
+
+.card-coleccion:hover, .card-coleccion:focus-visible {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px -12px rgba(43,36,28,0.25);
+}
+
+.card-coleccion .icono { width: 40px; height: 40px; margin-bottom: 1rem; }
+
+.card-coleccion h2 {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 500;
+  margin: 0 0 0.4rem;
+}
+
+.card-coleccion .meta {
+  font-family: var(--font-ui);
+  font-size: 0.95rem;
+  color: var(--ink-faint);
+  margin-bottom: 0.9rem;
+}
+
+.card-coleccion p.desc {
+  font-size: 1.05rem;
+  color: var(--ink-soft);
+  margin: 0;
+}
+
+/* ---------- Cabecera de colección ---------- */
+
+.coleccion-header {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: 3rem 1.75rem 1.5rem;
+}
+
+.coleccion-header .icono { width: 48px; height: 48px; margin-bottom: 1.25rem; }
+
+.coleccion-header h1 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(2.2rem, 6vw, 3rem);
+  margin: 0 0 0.5rem;
+}
+
+.coleccion-header .meta {
+  font-family: var(--font-ui);
+  color: var(--ink-faint);
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.coleccion-header .epigrafe {
+  font-style: italic;
+  color: var(--ink-soft);
+  font-size: 1.15rem;
+  border-left: 3px solid var(--accent);
+  padding-left: 1rem;
+}
+
+/* ---------- Navegador de años ---------- */
+
+.nav-anios {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: 0 1.75rem 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-family: var(--font-ui);
+}
+
+.nav-anios a {
+  text-decoration: none;
+  color: var(--ink);
+  background: var(--paper-soft);
+  border: 1px solid var(--rule);
+  padding: 0.4rem 0.85rem;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+.nav-anios a:hover { background: var(--accent); color: var(--paper-soft); border-color: var(--accent); }
+
+/* ---------- Piezas ---------- */
+
+.anio-marcador {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: 2.5rem 1.75rem 0.5rem;
+}
+.anio-marcador h2 {
+  font-family: var(--font-ui);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  margin: 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--accent);
+}
+
+.pieza {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: 2rem 1.75rem;
+  border-bottom: 1px solid var(--rule);
+}
+.pieza:last-child { border-bottom: none; }
+
+.pieza .fecha {
+  font-family: var(--font-ui);
+  font-size: 0.9rem;
+  color: var(--ink-faint);
+  margin-bottom: 0.35rem;
+}
+
+.pieza h3 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 1.5rem;
+  margin: 0 0 1rem;
+  color: var(--ink);
+}
+
+.pieza .texto {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  white-space: pre-wrap;
+}
+
+.pieza .texto.haiku {
+  font-size: 1.35rem;
+  line-height: 1.9;
+}
+
+.pieza img {
+  max-width: 220px;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin: 1.25rem 0 0.5rem;
+  display: block;
+}
+.pieza .img-nota {
+  font-family: var(--font-ui);
+  font-size: 0.82rem;
+  color: var(--ink-faint);
+  font-style: italic;
+}
+
+/* ---------- Pie ---------- */
+
+.pie-coleccion {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: 3rem 1.75rem 5rem;
+  text-align: center;
+}
+.pie-coleccion a {
+  font-family: var(--font-ui);
+  font-weight: 600;
+}
+
+/* Volver arriba */
+.volver-arriba {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  background: var(--ink);
+  color: var(--paper-soft);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 1.2rem;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  z-index: 15;
+}
