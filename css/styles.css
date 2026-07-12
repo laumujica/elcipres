@@ -3,36 +3,47 @@
    Paleta: papel envejecido + tintas de época
    ============================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=Inter:wght@400;500;600&display=swap');
+/* @import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=Inter:wght@400;500;600&display=swap"); */
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@700&family=Inter:wght@400;500;600&display=swap');
 
 :root {
   /* Papel y tinta base */
-  --paper: #EFE6D3;
-  --paper-soft: #F6EFE1;
-  --paper-deep: #E4D8BE;
-  --ink: #2B241C;
-  --ink-soft: #5C5142;
-  --ink-faint: #8A7E6C;
+  --paper: #efe6d3;
+  --paper-soft: #f6efe1;
+  --paper-deep: #e4d8be;
+  --ink: #2b241c;
+  --ink-soft: #5c5142;
+  --ink-faint: #8a7e6c;
   --rule: rgba(43, 36, 28, 0.14);
 
-  /* Tintas de acento — una por colección */
-  --tinta-otro-yo: #9C6B2E;      /* bronce */
-  --tinta-haiku: #3F5A54;        /* verde tintero */
-  --tinta-intentos: #8B3F2E;     /* óxido */
-  --tinta-sentidos: #6B3550;     /* ciruela */
+    /* Tintas de acento */
+  --tinta-otro-yo: #9c6b2e;
+  --tinta-haiku: #3f5a54;
+  --tinta-intentos: #8b3f2e;
+  --tinta-sentidos: #6b3550;
+
+  /* Fondos de las colecciones */
+    --fondo-otro-yo: #f2e3cf;
+  --fondo-haiku: #dfe8e5;
+  --fondo-intentos: #eedbd5;
+  --fondo-sentidos: #eadde4;
 
   --accent: var(--tinta-otro-yo);
 
-  --font-display: 'Fraunces', Georgia, serif;
-  --font-body: 'Source Serif 4', Georgia, serif;
-  --font-ui: 'Inter', -apple-system, sans-serif;
+  --font-display: "Crimson Pro", Georgia, serif;
+  --font-body: "Source Serif 4", Georgia, serif;
+  --font-ui: "Inter", -apple-system, sans-serif;
 
   --measure: 62ch;
 }
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   margin: 0;
@@ -45,19 +56,46 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
+  html {
+    scroll-behavior: auto;
+  }
 }
 
-a { color: var(--accent); text-decoration-thickness: 1.5px; text-underline-offset: 3px; }
-a:focus-visible, button:focus-visible {
+a {
+  color: var(--accent);
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 3px;
+}
+a:focus-visible,
+button:focus-visible {
   outline: 3px solid var(--accent);
   outline-offset: 3px;
 }
 
+/* ============================================
+   Logo (ciprés) — esquina superior izquierda
+   Sumar este bloque a styles.css
+   ============================================ */
+ 
+.logo-cipres {
+  position: fixed;
+  top: 1rem;
+  left: 1.25rem;
+  z-index: 40;
+  width: 44px;
+  height: 44px;
+  display: block;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px -4px rgba(43,36,28,0.3);
+  transition: transform 0.15s ease;
+}
+.logo-cipres:hover { transform: scale(1.06); }
+.logo-cipres svg { width: 100%; height: 100%; display: block; }
+
 /* ---------- Barra superior (siempre visible, para no perderse) ---------- */
 
 .topbar {
-  position: sticky;
+  position: relative;
   top: 0;
   z-index: 20;
   display: flex;
@@ -82,7 +120,9 @@ a:focus-visible, button:focus-visible {
   border-radius: 999px;
   transition: background 0.15s ease;
 }
-.topbar a.volver:hover { background: var(--paper-deep); }
+.topbar a.volver:hover {
+  background: var(--paper-deep);
+}
 
 .topbar .coleccion-nombre {
   font-family: var(--font-display);
@@ -93,19 +133,187 @@ a:focus-visible, button:focus-visible {
 
 /* ---------- Portada ---------- */
 
+/* ============================================
+   Buscador (index.html)
+   ============================================ */
+
+.buscador-wrap {
+  max-width: 620px;
+  width: 100%;
+  margin: 0 auto 0;
+  padding: 0 1.75rem;
+  position: absolute;
+  left: 50%;
+  box-sizing: border-box;
+}
+
+.buscador-wrap--portada {
+  position: static;
+  transform: none;
+  margin-top: 2rem;
+}
+
+.buscador-caja {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  background: var(--paper-soft);
+  border: 1.5px solid var(--rule);
+  border-radius: 999px;
+  padding: 0.75rem 1.25rem;
+  box-sizing: border-box;
+}
+
+.buscador-icono {
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  flex-shrink: 0;
+  color: var(--ink-faint);
+}
+
+.buscador-caja input {
+  border: none;
+  background: transparent;
+  outline: none;
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  color: var(--ink);
+  width: 100%;
+  min-width: 0;
+  padding: 0;
+}
+.buscador-caja input::placeholder { color: var(--ink-faint); }
+
+.buscador-resultados {
+  display: none;
+  position: absolute;
+  left: 1.75rem;
+  right: 1.75rem;
+  top: calc(100% + 8px);
+  max-height: 60vh;
+  overflow-y: auto;
+  background: var(--paper-soft);
+  border: 1px solid var(--rule);
+  border-radius: 16px;
+  box-shadow: 0 16px 36px -14px rgba(43,36,28,0.3);
+  z-index: 25;
+}
+.buscador-resultados.activo { display: block; }
+
+.buscador-contador {
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+  color: var(--ink-faint);
+  padding: 0.85rem 1.25rem 0.4rem;
+}
+
+.buscador-vacio {
+  font-family: var(--font-ui);
+  color: var(--ink-faint);
+  padding: 1.25rem;
+  font-size: 0.95rem;
+}
+
+.buscador-resultado {
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+  align-items: baseline;
+  column-gap: 0.6rem;
+  row-gap: 0.15rem;
+  padding: 0.75rem 1.25rem;
+  text-decoration: none;
+  color: var(--ink);
+  border-top: 1px solid var(--rule);
+}
+.buscador-resultado:first-of-type { border-top: none; }
+.buscador-resultado:hover { background: var(--paper-deep); }
+
+.buscador-tag {
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--paper-soft);
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.buscador-titulo {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 1.05rem;
+}
+
+.buscador-fecha {
+  font-family: var(--font-ui);
+  font-size: 0.8rem;
+  color: var(--ink-faint);
+  justify-self: end;
+}
+
+.buscador-snippet {
+  grid-column: 1 / -1;
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
+
+.buscador-snippet mark {
+  background: var(--paper-deep);
+  color: var(--accent);
+  font-weight: 600;
+  padding: 0 0.1em;
+  border-radius: 3px;
+}
+
+@media (max-width: 640px) {
+  .buscador-resultado { grid-template-columns: auto 1fr; }
+  .buscador-fecha { display: none; }
+}
+
+/* ============================================
+   Resaltado de resultado (páginas de blogs/)
+   Sumar este bloque a tu styles.css
+   ============================================ */
+
+.pieza-resaltada {
+  background: var(--paper-deep);
+  border-radius: 12px;
+  box-shadow: 0 0 0 2px var(--accent);
+  transition: background 2s ease, box-shadow 2s ease;
+}
+.pieza-resaltada-fade {
+  background: transparent;
+  box-shadow: none;
+}
+
+.buscador-marca {
+  background: var(--accent);
+  color: var(--paper-soft);
+  padding: 0.05em 0.15em;
+  border-radius: 4px;
+}
+
+/* Hero */
 .portada-hero {
   max-width: 780px;
   margin: 0 auto;
-  padding: 4.5rem 1.75rem 2.5rem;
+  padding: 2rem;
   text-align: center;
 }
 
-.portada-hero .firma-icono { width: 64px; height: 64px; color: var(--tinta-otro-yo); margin-bottom: 1.25rem; }
+.portada-hero .firma-icono {
+  width: 64px;
+  height: 64px;
+  color: var(--tinta-otro-yo);
+  margin-bottom: 1.25rem;
+}
 
 .portada-hero h1 {
   font-family: var(--font-display);
-  font-weight: 500;
-  font-size: clamp(2.6rem, 7vw, 4rem);
+  font-weight: 700;
+  font-size: clamp(3rem, 8vw, 5rem);
   margin: 0 0 0.5rem;
   letter-spacing: -0.01em;
 }
@@ -114,20 +322,39 @@ a:focus-visible, button:focus-visible {
   font-family: var(--font-ui);
   font-size: 1.15rem;
   color: var(--ink-soft);
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
+}
+
+.separador-suave {
+  width: 100%;
+  max-width: 43.75rem;
+  height: 0.0625rem;
+  margin: 1rem auto 1.5rem;
+  background: linear-gradient(
+    to right,
+    rgba(43, 36, 28, 0),
+    rgba(43, 36, 28, 0.3),
+    rgba(43, 36, 28, 0)
+  );
 }
 
 .dedicatoria {
   font-family: var(--font-body);
   font-style: italic;
-  font-size: 1.25rem;
+  font-size: 1rem;
   line-height: 1.6;
   color: var(--ink-soft);
   max-width: 46ch;
   margin: 0 auto;
 }
 
-.dedicatoria .firma { display: block; margin-top: 1rem; font-style: normal; font-family: var(--font-ui); font-size: 1rem; }
+.dedicatoria .firma {
+  display: block;
+  margin-top: 0.7rem;
+  font-style: normal;
+  font-family: var(--font-ui);
+  font-size: 0.9rem;
+}
 
 /* ---------- Grilla de colecciones ---------- */
 
@@ -141,27 +368,72 @@ a:focus-visible, button:focus-visible {
 }
 
 @media (max-width: 640px) {
-  .colecciones { grid-template-columns: 1fr; }
+  .colecciones {
+    grid-template-columns: 1fr;
+  }
 }
 
 .card-coleccion {
   display: block;
-  text-decoration: none;
-  color: var(--ink);
-  background: var(--paper-soft);
-  border: 1px solid var(--rule);
-  border-radius: 18px;
+  min-height: 13.75rem;
   padding: 2rem 1.75rem;
-  transition: transform 0.18s ease, box-shadow 0.18s ease;
-  min-height: 220px;
+  color: var(--ink);
+  text-decoration: none;
+  border: 0.0625rem solid var(--rule);
+  border-radius: 1.125rem;
+
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease;
 }
 
-.card-coleccion:hover, .card-coleccion:focus-visible {
+.card-otro-yo {
+  background: var(--fondo-otro-yo);
+  border-top: 0.25rem solid var(--tinta-otro-yo);
+}
+
+.card-otro-yo .icono {
+  color: var(--tinta-otro-yo);
+}
+
+.card-haiku {
+  background: var(--fondo-haiku);
+  border-top: 0.25rem solid var(--tinta-haiku);
+}
+
+.card-haiku .icono {
+  color: var(--tinta-haiku);
+}
+
+.card-intentos {
+  background: var(--fondo-intentos);
+  border-top: 0.25rem solid var(--tinta-intentos);
+}
+
+.card-intentos .icono {
+  color: var(--tinta-intentos);
+}
+
+.card-sentidos {
+  background: var(--fondo-sentidos);
+  border-top: 0.25rem solid var(--tinta-sentidos);
+}
+
+.card-sentidos .icono {
+  color: var(--tinta-sentidos);
+}
+
+.card-coleccion:hover,
+.card-coleccion:focus-visible {
   transform: translateY(-3px);
-  box-shadow: 0 12px 28px -12px rgba(43,36,28,0.25);
+  box-shadow: 0 12px 28px -12px rgba(43, 36, 28, 0.25);
 }
 
-.card-coleccion .icono { width: 40px; height: 40px; margin-bottom: 1rem; }
+.card-coleccion .icono {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 1rem;
+}
 
 .card-coleccion h2 {
   font-family: var(--font-display);
@@ -191,7 +463,11 @@ a:focus-visible, button:focus-visible {
   padding: 3rem 1.75rem 1.5rem;
 }
 
-.coleccion-header .icono { width: 48px; height: 48px; margin-bottom: 1.25rem; }
+.coleccion-header .icono {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 1.25rem;
+}
 
 .coleccion-header h1 {
   font-family: var(--font-display);
@@ -237,7 +513,11 @@ a:focus-visible, button:focus-visible {
   font-size: 0.95rem;
   font-weight: 500;
 }
-.nav-anios a:hover { background: var(--accent); color: var(--paper-soft); border-color: var(--accent); }
+.nav-anios a:hover {
+  background: var(--accent);
+  color: var(--paper-soft);
+  border-color: var(--accent);
+}
 
 /* ---------- Piezas ---------- */
 
@@ -263,7 +543,9 @@ a:focus-visible, button:focus-visible {
   padding: 2rem 1.75rem;
   border-bottom: 1px solid var(--rule);
 }
-.pieza:last-child { border-bottom: none; }
+.pieza:last-child {
+  border-bottom: none;
+}
 
 .pieza .fecha {
   font-family: var(--font-ui);
@@ -334,6 +616,138 @@ a:focus-visible, button:focus-visible {
   justify-content: center;
   text-decoration: none;
   font-size: 1.2rem;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
   z-index: 15;
+}
+
+.menu-hamburguesa {
+  position: fixed;
+  top: 1rem;
+  right: 1.25rem;
+  z-index: 40; /* por encima del topbar sticky */
+}
+
+.menu-boton {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1.5px solid var(--ink);
+  border-radius: 999px;
+  cursor: pointer;
+  padding: 0;
+}
+
+.menu-icono {
+  width: 20px;
+  height: 14px;
+  position: relative;
+  display: inline-block;
+}
+.menu-icono span {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--ink);
+  border-radius: 2px;
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease,
+    top 0.25s ease;
+}
+.menu-icono span:nth-child(1) {
+  top: 0;
+}
+.menu-icono span:nth-child(2) {
+  top: 6px;
+}
+.menu-icono span:nth-child(3) {
+  top: 12px;
+}
+
+.menu-boton[aria-expanded="true"] .menu-icono span:nth-child(1) {
+  top: 6px;
+  transform: rotate(45deg);
+}
+.menu-boton[aria-expanded="true"] .menu-icono span:nth-child(2) {
+  opacity: 0;
+}
+.menu-boton[aria-expanded="true"] .menu-icono span:nth-child(3) {
+  top: 6px;
+  transform: rotate(-45deg);
+}
+
+.menu-panel {
+  list-style: none;
+  margin: 0;
+  padding: 0.75rem;
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  min-width: 200px;
+  background: var(--paper-soft);
+  border: 1px solid var(--rule);
+  border-radius: 14px;
+  box-shadow: 0 12px 28px -12px rgba(43, 36, 28, 0.28);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease,
+    visibility 0.2s;
+  z-index: 30;
+}
+.menu-panel.activo {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.menu-panel li + li {
+  margin-top: 0.15rem;
+}
+
+.menu-panel a {
+  display: block;
+  padding: 0.6rem 0.9rem;
+  border-radius: 8px;
+  font-family: var(--font-ui);
+  font-weight: 500;
+  font-size: 1.02rem;
+  color: var(--ink);
+  text-decoration: none;
+}
+.menu-panel a:hover,
+.menu-panel a:focus-visible {
+  background: var(--paper-deep);
+  color: var(--accent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .menu-panel,
+  .menu-icono span {
+    transition: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .buscador-wrap:not(.buscador-wrap--portada) {
+    display: none;
+  }
+  .buscador-wrap--portada {
+    margin-top: 6rem;
+  }
+  .portada-hero {
+  padding: 2.5rem 1.75rem 2rem;
+}
+  .portada-hero h1 {
+  font-size: clamp(5rem, 8vw, 7rem);
+  margin: 0 0 0.3rem;
+}
+.dedicatoria {
+  max-width: 35ch;
+}
 }

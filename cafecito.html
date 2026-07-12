@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cafecito — El Ciprés</title>
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/paginas.css">
+</head>
+<body style="--accent:var(--tinta-otro-yo)">
+
+<div class="topbar">
+  <a class="volver" href="index.html">&larr; Inicio</a>
+  <span class="coleccion-nombre">Cafecito</span>
+
+<section class="buscador-wrap">
+  <div class="buscador-caja">
+    <svg class="buscador-icono" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21 L16.5 16.5"/></svg>
+    <input type="text" id="buscadorInput" placeholder="Buscar una palabra, un tema, una idea..." autocomplete="off">
+  </div>
+  <div class="buscador-resultados" id="buscadorResultados"></div>
+</section>
+
+  <nav class="menu-hamburguesa" aria-label="Navegación principal">
+    <button class="menu-boton" id="menuBoton" aria-expanded="false" aria-controls="menuPanel" aria-label="Abrir menú">
+      <span class="menu-icono" aria-hidden="true"><span></span><span></span><span></span></span>
+    </button>
+    <ul class="menu-panel" id="menuPanel">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="biografia.html">Biografía</a></li>
+      <li><a href="comentarios.html">Comentarios</a></li>
+      <li><a href="cafecito.html">Cafecito</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+  </nav>
+</div>
+
+<main class="cafecito-main">
+
+  <h1 class="cafecito-titulo">El Ciprés — el libro</h1>
+
+  <div class="cafecito-texto">
+    <p>Durante más de quince años escribí poesía: primero en foros como Mundo Poesía y, después, en mis propios blogs. Siempre tuve un sueño pendiente: verla convertida en un libro de verdad, algo que pudiera tener en mis manos y regalarles a mis amigos y a las personas que me leyeron durante todos estos años.</p>
+
+    <p>Con la ayuda de mis hijas, que armaron un sitio donde reunimos casi todo lo que escribí, ahora estamos dando el paso siguiente: <b>imprimir una selección de esos poemas y convertirla en un libro real</b>, para poder compartirlo con el mundo y las personas que quiero.</p>
+
+    <p>Cada aporte ayuda a cubrir los costos de impresión. <br>Gracias por acompañarme en este proyecto. <br>Significa mucho para mí. <br>
+      <b>Dani</b></p>
+  </div>
+
+ <!--  <div class="cafecito-boton-wrap">
+    <a href='https://cafecito.app/danielelcipres' rel='noopener' target='_blank'><img srcset='https://cdn.cafecito.app/imgs/buttons/button_5.png 1x, https://cdn.cafecito.app/imgs/buttons/button_5_2x.png 2x, https://cdn.cafecito.app/imgs/buttons/button_5_3.75x.png 3.75x' src='https://cdn.cafecito.app/imgs/buttons/button_5.png' alt='Invitame un café en cafecito.app' /></a>
+  </div> -->
+
+  <div class="cafecito-boton-wrap">
+  <a href="https://cafecito.app/danielelcipres" rel="noopener" target="_blank">
+    <img
+      src="https://cdn.cafecito.app/imgs/buttons/button_5_3.75x.png"
+      alt="Invitame un café en cafecito.app"
+      style="width: 220px; height: auto;"
+    >
+  </a>
+</div>
+
+</main>
+
+<a class="volver-arriba" href="#" aria-label="Volver arriba" title="Volver arriba">&uarr;</a>
+
+<script src="js/menu.js" defer></script>
+<script src="/js/buscador.js" defer></script>
+<script src="../js/resaltar.js" defer></script>
+
+</body>
+</html>

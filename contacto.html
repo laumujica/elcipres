@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contacto — El Ciprés</title>
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/paginas.css">
+</head>
+<body style="--accent:var(--tinta-otro-yo)">
+
+<div class="topbar">
+  <a class="volver" href="index.html">&larr; Inicio</a>
+  <span class="coleccion-nombre">Contacto</span>
+
+   <section class="buscador-wrap">
+  <div class="buscador-caja">
+    <svg class="buscador-icono" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21 L16.5 16.5"/></svg>
+    <input type="text" id="buscadorInput" placeholder="Buscar una palabra, un tema, una idea..." autocomplete="off">
+  </div>
+  <div class="buscador-resultados" id="buscadorResultados"></div>
+</section>
+
+
+  <nav class="menu-hamburguesa" aria-label="Navegación principal">
+    <button class="menu-boton" id="menuBoton" aria-expanded="false" aria-controls="menuPanel" aria-label="Abrir menú">
+      <span class="menu-icono" aria-hidden="true"><span></span><span></span><span></span></span>
+    </button>
+    <ul class="menu-panel" id="menuPanel">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="biografia.html">Biografía</a></li>
+      <li><a href="comentarios.html">Comentarios</a></li>
+      <li><a href="cafecito.html">Cafecito</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+  </nav>
+</div>
+
+<main class="contacto-main">
+
+  <h1 class="contacto-titulo">Dejame un mensaje</h1>
+  <p class="contacto-intro">Si llegaste hasta acá es porque leíste algo mío, en algún momento, en algún blog. Viejos amigos, gente nueva que se cruzó con mis escritos por primera vez: me encantaría saber de vos. Contame qué te encontraste, qué te acordás, o simplemente puedes decirme 'hola'.</p>
+
+  <!-- ⚠️ CAMBIAR: reemplazar la URL de abajo por la que te da Formspree al crear tu formulario -->
+<form
+  class="contacto-form"
+  action="https://formsubmit.co/lauraamujica@gmail.com"
+  method="POST"
+>
+  <input
+    type="hidden"
+    name="_subject"
+    value="Mensaje: El Ciprés"
+  >
+
+  <input
+    type="hidden"
+    name="_next"
+    value="https://elcipres.com.ar"
+  >
+
+  <input
+    type="hidden"
+    name="_captcha"
+    value="false"
+  >
+
+  <div class="campo">
+    <label for="nombre">Tu nombre*</label>
+    <input
+      type="text"
+      id="nombre"
+      name="Nombre"
+      required
+    >
+  </div>
+
+  <div class="campo">
+    <label for="mensaje">Tu mensaje*</label>
+    <textarea
+      id="mensaje"
+      name="Mensaje"
+      rows="6"
+      required
+    ></textarea>
+  </div>
+
+  <div class="campo">
+    <label for="metodo">
+      Si quieres, deja un contacto y con gusto responderé.
+    </label>
+
+    <select id="metodo" name="Método de contacto">
+      <option value="Mail">Mail</option>
+      <option value="WhatsApp">WhatsApp</option>
+      <option value="Instagram">Instagram</option>
+      <option value="Facebook">Facebook</option>
+      <option value="sin_contacto">Prefiero no dejar contacto</option>
+    </select>
+  </div>
+
+  <div class="campo" id="campoContacto">
+    <label for="dato_contacto" id="labelDatoContacto">
+      Tu contacto
+    </label>
+
+    <input
+      type="text"
+      id="dato_contacto"
+      name="Dato de contacto"
+      placeholder="Mail, teléfono o usuario"
+    >
+  </div>
+
+  <button type="submit" class="contacto-enviar">
+    Enviar mensaje
+  </button>
+</form>
+
+</main>
+
+<a class="volver-arriba" href="#" aria-label="Volver arriba" title="Volver arriba">&uarr;</a>
+
+<script src="js/menu.js" defer></script>
+<script src="js/contacto.js" defer></script>
+<script src="/js/buscador.js" defer></script>
+<script src="../js/resaltar.js" defer></script>
+
+</body>
+</html>

@@ -1,0 +1,458 @@
+/* Biografía */
+.bio-main {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: 3rem 1.75rem 5rem;
+}
+
+.bio-foto-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.75rem;
+}
+
+.bio-foto {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: var(--paper-soft);
+  border: 3px solid var(--accent);
+  box-shadow: 0 12px 28px -12px rgba(43, 36, 28, 0.3);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bio-foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.bio-nombre {
+  text-align: center;
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(2rem, 6vw, 2.75rem);
+  margin: 0 0 0.25rem;
+  color: var(--accent);
+}
+
+.bio-sub {
+  text-align: center;
+  font-family: var(--font-ui);
+  color: var(--ink-faint);
+  font-size: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.bio-texto p {
+  font-size: 1.15rem;
+  line-height: 1.85;
+  margin: 0 0 1.4rem;
+}
+
+.bio-texto p:first-of-type::first-letter {
+  font-family: var(--font-display);
+  font-size: 3.2rem;
+  float: left;
+  line-height: 0.85;
+  padding: 0.05em 0.1em 0 0;
+  color: var(--accent);
+}
+
+.bio-cipres {
+  max-width: var(--measure);
+  margin: 2.5rem auto 0;
+  padding: 1.75rem 1.75rem;
+  background: var(--paper-soft);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 14px 14px 0;
+}
+.bio-cipres h2 {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: var(--accent);
+  margin: 0 0 0.6rem;
+}
+.bio-cipres p {
+  font-size: 1.1rem;
+  line-height: 1.75;
+  margin: 0;
+}
+
+.bio-mundopoesia {
+  margin: 2.5rem 0;
+}
+
+.card-actividad-literaria {
+  padding: 2rem 1.75rem;
+  color: var(--ink);
+  background: var(--paper-soft);
+  border: 0.0625rem solid var(--rule);
+  border-top: 0.25rem solid var(--tinta-haiku);
+  border-radius: 1.125rem;
+}
+
+.actividad-intro {
+  max-width: 42rem;
+}
+
+.actividad-kicker {
+  display: block;
+  margin-bottom: 0.4rem;
+  color: var(--tinta-haiku);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.card-actividad-literaria h2 {
+  margin: 0 0 0.75rem;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  font-weight: 700;
+}
+
+.card-actividad-literaria p {
+  margin: 0;
+  line-height: 1.7;
+}
+
+.actividad-numeros {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+  margin: 1.75rem 0;
+}
+
+.actividad-dato {
+  padding: 1.1rem 0.9rem;
+  text-align: center;
+  background: rgba(63, 90, 84, 0.08);
+  border: 0.0625rem solid rgba(63, 90, 84, 0.16);
+  border-radius: 0.85rem;
+}
+
+.actividad-dato strong {
+  display: block;
+  margin-bottom: 0.2rem;
+  color: var(--tinta-otro-yo);
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.actividad-dato span {
+  font-size: 0.82rem;
+  font-weight: 500;
+}
+
+.actividad-enlace {
+  display: inline-flex;
+  align-items: center;
+  color: var(--tinta-otro-yo);
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 0.0625rem solid currentColor;
+}
+
+.actividad-enlace:hover {
+  opacity: 0.75;
+}
+
+@media (max-width: 42rem) {
+  .actividad-numeros {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Comentarios */
+.comentarios-header {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: 3rem 1.75rem 1.5rem;
+}
+
+.comentarios-header h1 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(2.2rem, 6vw, 3rem);
+  margin: 0 0 0.75rem;
+}
+
+.comentarios-intro {
+  font-family: var(--font-ui);
+  color: var(--ink-soft);
+  font-size: 1.05rem;
+  max-width: 55ch;
+  margin: 0 0 0.75rem;
+}
+
+.comentarios-nav-secciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  font-family: var(--font-ui);
+}
+
+.comentarios-nav-secciones a {
+  text-decoration: none;
+  color: var(--ink);
+  background: var(--paper-soft);
+  border: 1px solid var(--rule);
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+.comentarios-nav-secciones a:hover {
+  background: var(--paper-deep);
+}
+.comentarios-nav-secciones .nav-count {
+  color: var(--ink-faint);
+  font-weight: 400;
+  font-size: 0.85rem;
+}
+
+.comentarios-main {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: 0 1.75rem 5rem;
+}
+
+.comentarios-seccion-titulo {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 1.6rem;
+  color: var(--accent);
+  margin: 3rem 0 0.25rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--accent);
+}
+
+.comentarios-seccion-count {
+  font-family: var(--font-ui);
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: var(--ink-faint);
+  border-bottom: none;
+}
+
+.comentarios-seccion .anio-marcador {
+  padding-left: 0;
+  padding-right: 0;
+  max-width: none;
+}
+
+.comentario {
+  display: flex;
+  gap: 1rem;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+.comentario:last-child {
+  border-bottom: none;
+}
+
+.comentario-avatar {
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  color: var(--paper-soft);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.comentario-cuerpo {
+  flex: 1;
+  min-width: 0;
+}
+
+.comentario-cabecera {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.6rem;
+  margin-bottom: 0.15rem;
+}
+
+.comentario-nombre {
+  font-family: var(--font-ui);
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--ink);
+}
+.comentario-nombre a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--rule);
+}
+.comentario-nombre a:hover {
+  color: var(--accent);
+}
+
+.comentario-fecha {
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+  color: var(--ink-faint);
+}
+
+.comentario-contexto {
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+  font-style: italic;
+  color: var(--ink-faint);
+  margin-bottom: 0.4rem;
+}
+
+.comentario-texto {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  white-space: pre-wrap;
+}
+
+/*  Cafecito */
+.cafecito-main {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: 3.5rem 1.75rem 5rem;
+}
+
+.cafecito-titulo {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(2rem, 6vw, 2.75rem);
+  text-align: center;
+  color: var(--accent);
+  margin: 0 0 2.25rem;
+}
+
+.cafecito-texto p {
+  font-size: 1.15rem;
+  line-height: 1.85;
+  margin: 0 0 1.4rem;
+}
+
+.cafecito-texto a {
+  font-weight: 600;
+}
+
+.cafecito-texto p:first-of-type::first-letter {
+  font-family: var(--font-display);
+  font-size: 3.2rem;
+  float: left;
+  line-height: 0.85;
+  padding: 0.05em 0.1em 0 0;
+  color: var(--accent);
+}
+
+.cafecito-boton-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 2.5rem;
+}
+
+.cafecito-boton-wrap img {
+  height: 56px;
+  width: auto;
+}
+
+/* Contacto */
+
+/* ============================================
+   Página Contacto
+   Sumar este bloque a css/paginas.css
+   ============================================ */
+
+.contacto-main {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: 3.5rem 1.75rem 5rem;
+}
+
+.contacto-titulo {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(2rem, 6vw, 2.75rem);
+  margin: 0 0 0.75rem;
+  color: var(--accent);
+}
+
+.contacto-intro {
+  font-family: var(--font-ui);
+  color: var(--ink-soft);
+  font-size: 1.05rem;
+  max-width: 55ch;
+  margin: 0 0 2.5rem;
+}
+
+.contacto-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 480px;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.campo label {
+  font-family: var(--font-ui);
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--ink);
+}
+
+.campo input,
+.campo textarea,
+.campo select {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  color: var(--ink);
+  background: var(--paper-soft);
+  border: 1.5px solid var(--rule);
+  border-radius: 10px;
+  padding: 0.7rem 0.9rem;
+}
+
+.campo input:focus,
+.campo textarea:focus,
+.campo select:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.campo textarea {
+  resize: vertical;
+}
+
+.contacto-enviar {
+  align-self: flex-start;
+  font-family: var(--font-ui);
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--paper-soft);
+  background: var(--accent);
+  border: none;
+  border-radius: 999px;
+  padding: 0.75rem 1.75rem;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+.contacto-enviar:hover {
+  opacity: 0.88;
+}
