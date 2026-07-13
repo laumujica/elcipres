@@ -4,7 +4,7 @@
 // resaltar.js usa para saltar y marcar el lugar exacto en la página destino.
 
 (function () {
-  var INDEX_URL = '/search-index.json';
+  var INDEX_URL = 'search-index.json';
   var indice = null;
   var cargando = null;
 

@@ -4,7 +4,7 @@
    ============================================ */
 
 /* @import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=Inter:wght@400;500;600&display=swap"); */
-@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@700&family=Inter:wght@400;500;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@700&family=Inter:wght@400;500;600&display=swap");
 
 :root {
   /* Papel y tinta base */
@@ -16,14 +16,14 @@
   --ink-faint: #8a7e6c;
   --rule: rgba(43, 36, 28, 0.14);
 
-    /* Tintas de acento */
+  /* Tintas de acento */
   --tinta-otro-yo: #9c6b2e;
   --tinta-haiku: #3f5a54;
   --tinta-intentos: #8b3f2e;
   --tinta-sentidos: #6b3550;
 
   /* Fondos de las colecciones */
-    --fondo-otro-yo: #f2e3cf;
+  --fondo-otro-yo: #f2e3cf;
   --fondo-haiku: #dfe8e5;
   --fondo-intentos: #eedbd5;
   --fondo-sentidos: #eadde4;
@@ -74,9 +74,8 @@ button:focus-visible {
 
 /* ============================================
    Logo (ciprés) — esquina superior izquierda
-   Sumar este bloque a styles.css
    ============================================ */
- 
+
 .logo-cipres {
   position: fixed;
   top: 1rem;
@@ -86,11 +85,17 @@ button:focus-visible {
   height: 44px;
   display: block;
   border-radius: 50%;
-  box-shadow: 0 4px 12px -4px rgba(43,36,28,0.3);
+  box-shadow: 0 4px 12px -4px rgba(43, 36, 28, 0.3);
   transition: transform 0.15s ease;
 }
-.logo-cipres:hover { transform: scale(1.06); }
-.logo-cipres svg { width: 100%; height: 100%; display: block; }
+.logo-cipres:hover {
+  transform: scale(1.06);
+}
+.logo-cipres svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
 
 /* ---------- Barra superior (siempre visible, para no perderse) ---------- */
 
@@ -144,13 +149,8 @@ button:focus-visible {
   padding: 0 1.75rem;
   position: absolute;
   left: 50%;
+  transform: translateX(-50%);
   box-sizing: border-box;
-}
-
-.buscador-wrap--portada {
-  position: static;
-  transform: none;
-  margin-top: 2rem;
 }
 
 .buscador-caja {
@@ -183,7 +183,9 @@ button:focus-visible {
   min-width: 0;
   padding: 0;
 }
-.buscador-caja input::placeholder { color: var(--ink-faint); }
+.buscador-caja input::placeholder {
+  color: var(--ink-faint);
+}
 
 .buscador-resultados {
   display: none;
@@ -196,10 +198,12 @@ button:focus-visible {
   background: var(--paper-soft);
   border: 1px solid var(--rule);
   border-radius: 16px;
-  box-shadow: 0 16px 36px -14px rgba(43,36,28,0.3);
+  box-shadow: 0 16px 36px -14px rgba(43, 36, 28, 0.3);
   z-index: 25;
 }
-.buscador-resultados.activo { display: block; }
+.buscador-resultados.activo {
+  display: block;
+}
 
 .buscador-contador {
   font-family: var(--font-ui);
@@ -226,8 +230,12 @@ button:focus-visible {
   color: var(--ink);
   border-top: 1px solid var(--rule);
 }
-.buscador-resultado:first-of-type { border-top: none; }
-.buscador-resultado:hover { background: var(--paper-deep); }
+.buscador-resultado:first-of-type {
+  border-top: none;
+}
+.buscador-resultado:hover {
+  background: var(--paper-deep);
+}
 
 .buscador-tag {
   font-family: var(--font-ui);
@@ -268,8 +276,12 @@ button:focus-visible {
 }
 
 @media (max-width: 640px) {
-  .buscador-resultado { grid-template-columns: auto 1fr; }
-  .buscador-fecha { display: none; }
+  .buscador-resultado {
+    grid-template-columns: auto 1fr;
+  }
+  .buscador-fecha {
+    display: none;
+  }
 }
 
 /* ============================================
@@ -281,7 +293,9 @@ button:focus-visible {
   background: var(--paper-deep);
   border-radius: 12px;
   box-shadow: 0 0 0 2px var(--accent);
-  transition: background 2s ease, box-shadow 2s ease;
+  transition:
+    background 2s ease,
+    box-shadow 2s ease;
 }
 .pieza-resaltada-fade {
   background: transparent;
@@ -298,7 +312,7 @@ button:focus-visible {
 /* Hero */
 .portada-hero {
   max-width: 780px;
-  margin: 0 auto;
+  margin: 2rem auto;
   padding: 2rem;
   text-align: center;
 }
@@ -314,7 +328,7 @@ button:focus-visible {
   font-family: var(--font-display);
   font-weight: 700;
   font-size: clamp(3rem, 8vw, 5rem);
-  margin: 0 0 0.5rem;
+  margin: 2rem 0 0.5rem;
   letter-spacing: -0.01em;
 }
 
@@ -741,13 +755,13 @@ button:focus-visible {
     margin-top: 6rem;
   }
   .portada-hero {
-  padding: 2.5rem 1.75rem 2rem;
-}
+    padding: 2.5rem 1.75rem 2rem;
+  }
   .portada-hero h1 {
-  font-size: clamp(5rem, 8vw, 7rem);
-  margin: 0 0 0.3rem;
-}
-.dedicatoria {
-  max-width: 35ch;
-}
+    font-size: clamp(5rem, 8vw, 7rem);
+    margin: 0 0 0.3rem;
+  }
+  .dedicatoria {
+    max-width: 35ch;
+  }
 }
