@@ -1,69 +1,71 @@
-# El Ciprés — Reporte del proyecto
+# El Ciprés — Project Report
 
-**Un sitio web para preservar y compartir la obra literaria de un escritor, construido de punta a punta con herramientas digitales y asistencia de IA.**
-
----
-
-## De qué se trata el proyecto
-
-El Ciprés (**elcipres.com.ar**) es un sitio web que reúne toda la obra escrita de Daniel Mujica — más de 650 poemas, haikus y microrrelatos publicados originalmente en 4 blogs distintos entre 2008 y 2015 — en un solo lugar, con diseño propio, buscador, y espacios para que la comunidad de lectores originales se reconecte con su obra.
-
-El proyecto nació como un regalo personal y se convirtió en un sitio completo, publicado, con dominio propio y en constante mejora.
+**A website to preserve and share a writer's literary work, built end-to-end using digital tools and AI assistance.**
 
 ---
 
-## Qué se hizo, y con qué herramientas
+## About the project
 
-### 1. Migración y organización de contenido
-Se exportó y rescató el contenido completo de 4 blogs de **Google Blogger** (posts, comentarios e imágenes de más de 15 años) usando **Google Takeout**, la herramienta oficial de exportación de datos de Google. Esto permitió recuperar no solo lo publicado, sino también borradores, comentarios de lectores y material que ya no era visible públicamente.
+El Ciprés (**elcipres.com.ar**) is a website that brings together the complete written work of Daniel Mujica — over 650 poems, haikus, and short stories originally published across 4 different blogs between 2008 and 2015 — into a single place, with custom design, a search engine, and spaces for the original reader community to reconnect with his work.
 
-### 2. Diseño y construcción del sitio
-Se definió una identidad visual propia ("cuaderno de escritor": tipografía, paleta de colores, un ícono distinto por cada colección de textos) y se construyó el sitio en HTML/CSS/JavaScript, organizado en una estructura de carpetas prolija y escalable (páginas, estilos y scripts separados).
+The project started as a personal gift and grew into a fully published website, with its own custom domain and ongoing improvements.
 
-### 3. Publicación y dominio propio
-El sitio se subió a **Firebase Hosting** (la plataforma de hosting de Google), y se configuró un **dominio personalizado** (elcipres.com.ar) a través de **Cloudflare**, incluyendo gestión de DNS, caché y ajustes de rendimiento y seguridad.
-
-### 4. Funcionalidades agregadas
-- Menú de navegación
-- **Buscador propio** que permite encontrar palabras o ideas dentro de las más de 650 piezas, sin depender de servicios externos
-- Formulario de contacto conectado a un servicio externo (**Formsubmit**) para recibir mensajes de lectores
-- Integración con **Cafecito.app**, una plataforma de micro-donaciones, para financiar la impresión de un libro físico con una selección de la obra
-- Página de biografía y una sección con los comentarios históricos que dejaron lectores en los blogs originales
-
-### 5. Testing y control de calidad
-Se probó el sitio en múltiples navegadores (Chrome, Firefox, Edge, Brave) y dispositivos (escritorio y mobile), identificando y resolviendo diferencias de comportamiento entre ellos — incluyendo configuraciones específicas de Cloudflare que afectaban el funcionamiento del sitio.
+*Note: the site's content is in Spanish (it preserves the original author's writing), but the project itself — architecture, tooling, and process — is documented here in English for an international audience.*
 
 ---
 
-## Herramientas y plataformas utilizadas
+## What was done, and with what tools
 
-| Herramienta | Para qué se usó |
+### 1. Content migration and organization
+The complete content of 4 **Google Blogger** blogs (posts, comments, and images spanning more than 15 years) was exported and recovered using **Google Takeout**, Google's official data export tool. This made it possible to retrieve not just what was publicly published, but also drafts, reader comments, and material that was no longer publicly visible.
+
+### 2. Design and site construction
+A custom visual identity was defined (a "writer's notebook" concept: typography, color palette, a distinct icon for each collection of texts), and the site was built in HTML/CSS/JavaScript, organized into a clean, scalable folder structure (pages, styles, and scripts kept separate).
+
+### 3. Deployment and custom domain
+The site was deployed on **Firebase Hosting** (Google's hosting platform), with a **custom domain** (elcipres.com.ar) configured through **Cloudflare**, including DNS management, caching, and performance/security settings.
+
+### 4. Features added
+- Navigation menu
+- **Custom-built search engine** that lets users find words or ideas across the 650+ pieces, with no dependency on third-party search services
+- Contact form connected to an external service (**Formsubmit**) to receive messages from readers
+- Integration with **Cafecito.app**, a micro-donation platform, to fund the printing of a physical book featuring a selection of the work
+- A biography page and a section featuring the historical comments readers left on the original blogs
+
+### 5. Testing and quality control
+The site was tested across multiple browsers (Chrome, Firefox, Edge, Brave) and devices (desktop and mobile), identifying and resolving behavioral differences between them — including Cloudflare-specific configuration issues that were affecting the site's functionality.
+
+---
+
+## Tools and platforms used
+
+| Tool | What it was used for |
 |---|---|
-| Google Blogger / Google Takeout | Origen y exportación del contenido |
-| Firebase Hosting | Publicación del sitio web |
-| Cloudflare | Dominio propio, DNS, caché y rendimiento |
-| VS Code (Live Server) | Edición y prueba del sitio en desarrollo |
-| Cafecito.app | Plataforma de financiamiento colectivo |
-| Formsubmit | Recepción de mensajes del formulario de contacto |
-| Herramientas de compresión (ZIP/RAR) | Organización y transferencia de archivos del proyecto |
-| Herramientas de desarrollador del navegador | Diagnóstico y resolución de errores técnicos |
-| Claude (IA de Anthropic) | Asistencia técnica: generación de código, diagramación, debugging y redacción de contenido |
+| Google Blogger / Google Takeout | Source and export of the original content |
+| Firebase Hosting | Website deployment |
+| Cloudflare | Custom domain, DNS, caching, and performance |
+| VS Code (Live Server) | Local development and testing |
+| Cafecito.app | Crowdfunding / micro-donation platform |
+| Formsubmit | Contact form message handling |
+| Compression tools (ZIP/RAR) | Organizing and transferring project files |
+| Browser developer tools | Diagnosing and resolving technical issues |
+| Claude (Anthropic AI) | Technical assistance: code generation, layout, debugging, and content drafting |
 
 ---
 
-## Habilidades demostradas
+## Skills demonstrated
 
-- Arquitectura y organización de la información
-- Diseño de identidad visual y experiencia de usuario (con foco en accesibilidad para un usuario mayor)
-- Publicación y administración de sitios web (hosting, dominios, DNS)
-- Resolución metódica de problemas técnicos (debugging paso a paso, testing cruzado entre navegadores)
-- Integración de herramientas y servicios de terceros
-- Uso estratégico de inteligencia artificial como herramienta de producción, dirigiendo el trabajo técnico de principio a fin
+- Information architecture and content organization
+- Visual identity and UX design (with a focus on accessibility for an older user)
+- Website deployment and administration (hosting, domains, DNS)
+- Methodical technical troubleshooting (step-by-step debugging, cross-browser testing)
+- Third-party tool and service integration
+- Strategic use of AI as a production tool, directing technical work from start to finish
 
 ---
 
-## Duración del proyecto
+## Project timeline
 
-El desarrollo se llevó a cabo en varias sesiones de trabajo el día **12 de julio de 2026**, cubriendo desde la extracción inicial del contenido hasta la publicación, ajustes de diseño, incorporación de funcionalidades nuevas (menú, buscador, formulario, donaciones) y resolución de errores post-lanzamiento.
+Development took place over several work sessions on **July 12, 2026**, covering everything from the initial content extraction to publishing, design adjustments, new feature rollout (menu, search, contact form, donations), and post-launch bug fixing.
 
 ---
