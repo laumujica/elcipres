@@ -331,45 +331,16 @@ function applyStyleToStory(story, paragraphStyle) {
 }
 
 function detectBodyStyle(block) {
-  const lines = block
-    .split("\n")
-    .map((line) => line.trim())
-    .filter((line) => line !== "");
-
-  if (lines.length <= 1) {
-    return bodyStyle;
-  }
-
-  const sampleLines =
-    lines.slice(0, 3);
-
-  const averageLength =
-    sampleLines.reduce(
-      (sum, line) =>
-        sum + line.length,
-      0
-    ) / sampleLines.length;
-
-  if (averageLength < 45) {
-    return bodyVerseStyle;
-  }
-
-  return bodyStyle;
+  return block.includes("\n")
+    ? bodyVerseStyle
+    : bodyStyle;
 }
 
 function prepareBodyBlocks(bodyBlocks) {
   return bodyBlocks.map((block) => {
-    const style =
-      detectBodyStyle(block);
-
-    const contents =
-      style === bodyStyle
-        ? block.replace(/\n+/g, " ")
-        : block;
-
     return {
-      contents,
-      style,
+      contents: block,
+      style: detectBodyStyle(block),
     };
   });
 }
