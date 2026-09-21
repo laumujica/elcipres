@@ -357,13 +357,32 @@ function detectBodyStyle(block) {
   return bodyStyle;
 }
 
-function applyBodyStylesToStory(story, bodyBlocks) {
-  for (let i = 0; i < story.paragraphs.length; i++) {
-    const block =
-      bodyBlocks[i] || "";
-
+function prepareBodyBlocks(bodyBlocks) {
+  return bodyBlocks.map((block) => {
     const style =
       detectBodyStyle(block);
+
+    const contents =
+      style === bodyStyle
+        ? block.replace(/\n+/g, " ")
+        : block;
+
+    return {
+      contents,
+      style,
+    };
+  });
+}
+
+function applyPreparedBodyStylesToStory(story, preparedBlocks) {
+  for (let i = 0; i < story.paragraphs.length; i++) {
+    const preparedBlock =
+      preparedBlocks[i];
+
+    const style =
+      preparedBlock
+        ? preparedBlock.style
+        : bodyStyle;
 
     story.paragraphs.item(i)
       .applyParagraphStyle(
@@ -671,9 +690,18 @@ function createText(text, page) {
     mm(area.right),
   ];
 
-  bodyFrame.contents = text.body.join("\r");
+  const preparedBodyBlocks =
+    prepareBodyBlocks(text.body);
 
-  applyBodyStylesToStory(bodyFrame.parentStory, text.body);
+  bodyFrame.contents =
+    preparedBodyBlocks
+      .map((block) => block.contents)
+      .join("\r");
+
+  applyPreparedBodyStylesToStory(
+    bodyFrame.parentStory,
+    preparedBodyBlocks
+  );
 
   bodyFrame.parentStory.recompose();
 
