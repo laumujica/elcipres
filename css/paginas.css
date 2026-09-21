@@ -320,8 +320,11 @@
   font-size: 1.05rem;
   line-height: 1.6;
   white-space: pre-wrap;
+<<<<<<< HEAD
   overflow-wrap: break-word;
   word-break: break-word;
+=======
+>>>>>>> 0acd3bcdc8af40aa5794f480746e03388f027e69
 }
 
 /*  Cafecito */
