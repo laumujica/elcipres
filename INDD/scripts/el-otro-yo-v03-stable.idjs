@@ -1,4 +1,3 @@
-// GitHub sync test
 const {
   app,
   LocationOptions,
@@ -292,6 +291,16 @@ const bodyStyle = document.paragraphStyles.add({
   maximumGlyphScaling: 102,
 });
 
+const bodyVerseStyle = document.paragraphStyles.add({
+  name: "Body Verse",
+  appliedFont: atkinsonRegular,
+  pointSize: 12,
+  leading: BODY_LEADING,
+  spaceAfter: 2,
+  justification: Justification.LEFT_ALIGN,
+  hyphenation: false,
+});
+
 const folioStyle = document.paragraphStyles.add({
   name: "Folio",
   appliedFont: interRegular,
@@ -318,6 +327,15 @@ textTitleStyle.fillColor = document.colors.item("El Otro Yo");
 function applyStyleToStory(story, paragraphStyle) {
   for (let i = 0; i < story.paragraphs.length; i++) {
     story.paragraphs.item(i).applyParagraphStyle(paragraphStyle, true);
+  }
+}
+
+function applyBodyStylesToStory(story, bodyBlocks) {
+  for (let i = 0; i < story.paragraphs.length; i++) {
+    const block = bodyBlocks[i] || "";
+    const style = block.includes("\n") ? bodyVerseStyle : bodyStyle;
+
+    story.paragraphs.item(i).applyParagraphStyle(style, true);
   }
 }
 
@@ -621,7 +639,7 @@ function createText(text, page) {
 
   bodyFrame.contents = text.body.join("\r");
 
-  applyStyleToStory(bodyFrame.parentStory, bodyStyle);
+  applyBodyStylesToStory(bodyFrame.parentStory, text.body);
 
   bodyFrame.parentStory.recompose();
 
