@@ -1,0 +1,1379 @@
+{
+  "volume": {
+    "id": "el-otro-yo",
+    "title": "El Otro Yo",
+    "curation": "tercera-curaduria-estructura",
+    "sourceDocument": "INDD/docs/El_otro_yo_tercera_curaduria_estructura.md",
+    "selectionCount": 90,
+    "movementCount": 5
+  },
+  "movements": [
+    {
+      "id": "movement-01",
+      "title": "I · Inventario de una vida",
+      "dateRange": "31 de agosto de 2008 — 3 de febrero de 2009"
+    },
+    {
+      "id": "movement-02",
+      "title": "II · La noche aprende a hablar",
+      "dateRange": "24 de marzo — 30 de diciembre de 2009"
+    },
+    {
+      "id": "movement-03",
+      "title": "III · Daniel, un hombre extraño",
+      "dateRange": "1 de enero — 31 de julio de 2010"
+    },
+    {
+      "id": "movement-04",
+      "title": "IV · Formas breves de seguir",
+      "dateRange": "1 de agosto — 6 de diciembre de 2010"
+    },
+    {
+      "id": "movement-05",
+      "title": "V · Persistir en el círculo",
+      "dateRange": "24 de marzo de 2011 — 17 de abril de 2015"
+    }
+  ],
+  "sequence": [
+    {
+      "type": "section_cover",
+      "id": "movement-01",
+      "title": "I · Inventario de una vida",
+      "dateRange": "31 de agosto de 2008 — 3 de febrero de 2009",
+      "startOn": "recto",
+      "showFolio": false,
+      "countInSequence": true
+    },
+    {
+      "type": "blank_page",
+      "movement": "movement-01",
+      "side": "verso",
+      "showFolio": false,
+      "countInSequence": true
+    },
+    {
+      "type": "text",
+      "id": "eoy-curated-0001",
+      "movement": "movement-01",
+      "title": "Vivir como en un embudo, llenando una botella sin fondo. ¿Alguien entenderá?",
+      "originalDate": "31 de agosto de 2008",
+      "body": [
+        "DÍA 1: Lunes, 5:50 AM, el despertador me silba distante al oído, estiro mi mano en la oscuridad intentando acallar su voz de pito, me levanto, me visto, doy de comer a las gatas, coloco el jarro enlozado con leche hasta la mitad (la medida justa de mi taza, para no tirar nada), trato de encender la hornalla con el encendedor a gas que no funciona y que cada vez que tomo me digo a mí mismo “tengo que cambiarlo”, enciendo la primer hornalla izquierda inferior de la cocina, la pongo en mínimo (que me dé tiempo de ir al baño y volver sin que se derrame), voy al baño, me lavo las manos, vuelvo a la cocina, la leche aún no está lista, agrego media cucharadita de café instantáneo y un chorrito de edulcorante (¿?) en la taza de cerámica con dibujitos y mientras termina de calentarse la leche, abro la heladera y retiro la mermelada de turno y las galletas que generalmente quedan en la mesada del día anterior, vuelco la leche en la taza, coloco el jarro enlozado debajo del chorro de agua para que lo vaya limpiando y no se pegue la nata, preparo galletas con mermelada y consumo en poco tiempo el breve desayuno. Lavo primero la taza, luego la cucharita tramontina y por último el jarro enlozado (si lo lavo primero se ensucia el detergente con nata), coloco los elementos en el secador sobre la bacha izquierda, boca abajo para que escurra mejor, guardo la mermelada en la heladera y las galletas siguen quedando en la mesada (hasta que se terminen, o no). Tomo los elementos necesarios para comenzar mi día extra-domicilio, documentos, celular (no sé para qué, nadie llama), llaves varias, apago luces a medida que cambio de ambientes, bajo las escaleras, retiro las trabas de la puerta de abajo, abro la cerradura, cierro de afuera ídem, abro el portón de reja, cierro ídem, abro la puerta del auto, subo al auto, destrabo el volante del auto, enciendo el auto, arranco el auto, recorro las mismas calles evitando la mayor cantidad de semáforos posibles, llego a mi trabajo, estaciono el auto, coloco la traba del volante, salgo y cierro el auto, ingreso a mi trabajo, marco la tarjeta 10 minutos antes, me preparo para trabajar. Transcurro 8 hs 48 minutos de lunes a viernes, al terminar mi horario, marco tarjeta, salgo, abro la puerta del auto, cierro la puerta, destrabo el volante, arranco, recorrido, casa, estaciono, trabo el volante, abro y cierro la puerta del auto, abro y cierro portón de reja, puertas de escaleras, saludo a mis hijas (por supuesto cuando están), devuelvo a sus respectivos lugares las cosas que retiré a la mañana temprano para ir al trabajo, estoy un rato con mis hijas, demasiado poco, necesito dormir una hora para ir descansado a mi trabajo nocturno, me despierto o me despiertan, aplico la rutina mañanera exactamente igual pero en horarios vespertinos, (por supuesto que hay una ducha de por medio) permanezco 6 horas vegetando en mi otro trabajo, consumiendo tiempo en nada (excepto por la luz que me distrae media hora casi todos los días), hasta mi regreso a casa cerca de la una de la mañana del otro día, y por supuesto, llegar y acostarme para llegar algo descansadito a mi trabajo de la mañana…",
+        "DÍA 2: Martes, 5:50 AM, el despertador me silba distante al oído, estiro mi mano en la oscuridad intentando acallar su voz de pito, me levanto, me visto, doy de comer a las gatas, coloco el jarro enlozado con leche hasta la mitad (la medida justa de mi taza, para no tirar nada), trato de encender la hornalla con el encendedor a gas que no funciona y que cada vez que tomo me digo a mí mismo “tengo que cambiarlo”, enciendo la primer hornalla izquierda inferior de la cocina…",
+        "DÍA 3: Miércoles, 5:50 AM, el despertador me silba distante al oído, estiro mi mano en la oscuridad…",
+        "DÍA 4: Jueves, 5:50 AM,…",
+        "DÍA 5:…"
+      ]
+    },
+    {
+      "type": "text",
+      "id": "eoy-curated-0002",
+      "movement": "movement-01",
+      "title": "Inocencia y culpa.",
+      "originalDate": "31 de agosto de 2008",
+      "body": [
+        "El sol calcinaba la siesta santiagueña, nadie sabe exactamente por qué un santiagueño duerme siempre siesta, la ignorancia mueve las lenguas de los que hablan por hablar. Tomé mi gomera (así se llama en Santa Fe a la honda ciudadana), salí por enésima vez del inmenso patio de tierra de la casa de mis abuelos, rumbo al montecito cercano (en realidad en ese pueblito santiagueño casi todo era monte) dispuesto a seguir aumentando mi autoestima de niño con mucha puntería para matar pajaritos. De pronto se presentó la primera posible víctima, un chingolo, pajarito parecido a un gorrión con un canto muy armonioso y dulce, que saltaba (se mueve dando saltitos) de rama en rama sobre un espinillo, árbol muy común en la geografía santiagueña.",
+        "Preparé mi gomera, la “cargué” con mis bolitas de barro, (estas se hacían con tierra colorada y agua, se amasaba, se formaban tiritas, se las cortaba del tamaño deseado y poniendo un trozo entre ambas palmas de las manos, se les daba forma de esferas en movimientos circulares y se las deja secando al sol) de las cuales contaba con una gran provisión en mis reventados bolsillos. Sigilosamente esperé que el pajarito se colocara en una posición óptima para un certero disparo, y cuando eso sucedió procedí a ejecución, con el resultado que esperaba. El certero impacto derribó al pajarito en cuestión, que cayendo por entre las ramas del árbol, terminó en aleteos sobre el seco pasto del monte.",
+        "Acá cambió la historia, acá ocurrió un clic interior que modificó mi conducta de “niño asesino de pájaros”.",
+        "Al ver el esfuerzo que hacía el ave por levantarse, una gran pena interior se apoderó de mí, un terrible sentimiento de culpas (tenía apenas 11 años, de aquella época, año `68, diferentes a los 11 años de los niños de ahora), tomé el pajarito entre mis manos, intenté de todas maneras que no se muriera, pidiéndole que no lo haga, dándole la ternura en caricias sobre sus plumas, aplicando la inocente creencia que si le soplábamos “el culito” a un pajarito, este no se moría.",
+        "Nada funcionó, el chingolo se murió.",
+        "Lo tomé suavemente, caminé casi con lágrimas hasta un espacio abierto cerca de otros árboles, cavé un pequeño pozo en la tierra y lo sepulté.",
+        "A partir de ese día, nunca más maté pajaritos y la gomera solo sirvió para competencias con mi hermano mayor, de tumbar latas con bolillas de paraíso en el patio de tierra de casa."
+      ]
+    },
+    {
+      "type": "text",
+      "id": "eoy-curated-0003",
+      "movement": "movement-01",
+      "title": "Nada de nada",
+      "originalDate": "14 de septiembre de 2008",
+      "body": [
+        "Alguna vez fui, a veces soy, muchas veces a pesar de parecer no soy ni un poquito y conste que quiero ser pero no puedo, no me dejo, me lo impido, me pregunto y me repregunto…¿Para qué?...y vuelvo a ser nada, a parecer nadie, a esconderme en el silencio del desconocido viajero ermitaño espacial vagabundo de la nada, pregonando nada y enseñando nada. Y a pesar de todo sigo esperando que alguien me diga que entiende esta nada llena de nada, inexplicable y que se confunde con abandono de personas, con abandono de amigas y cariños, con abandono de esa necesidad de forjar nuevos recuerdos, futuros antecedentes de nuevos diálogos que alguien quizás quiera oír, alguien se interese compartir conmigo. Hoy no hay nada que contar más que lejanos recuerdos que parecen ser lo único para rescatar de mi existencia y eso me preocupa aunque parezca que no, aunque es mi estado de nada el que se demuestra, el que parece la pantalla de mi vida profunda ¿Es tan difícil entender esto?...¿es tan difícil comprender que cuando no hay nada, nada se puede demostrar?... ¿es tan difícil entender que el silencio no siempre dice nada?...que puede haber algo que no se puede decir porque no hay manera de hacerlo, como querer ejemplificar el rostro del aire que sabemos que está pero de manera incorpórea, pero a pesar que no se ve, es necesario. Soy como ese aire, incorpóreo, intangible, solo demostrable en la llama de una vela, pero yo no puedo demostrarme como quieren que lo haga. Y eso me confunde, me vuelve más huraño, más silencioso, más invisible. Y eso les asusta, no comprenden ¿Es tan difícil?"
+      ]
+    },
+    {
+      "type": "text",
+      "id": "eoy-curated-0004",
+      "movement": "movement-01",
+      "title": "El baño con música",
+      "originalDate": "26 de noviembre de 2008",
+      "body": [
+        "Esta es la historia de Casimiro:\npaisano extraño por respetuoso,\nque un día en travesía por la capital\nsintió la terrible urgencia de evacuar;\ny en un baño público fue a parar.",
+        "Entrando luego de la amansada\ny larga espera para evacuar,\nun cartel en la puerta lo sorprendió;\nalegando este que en ese recinto\ncon música era la cosa, ¡que lo parió!",
+        "Acomodado en el aposento\npapel en mano se relajó,\nsintió un creciente murmullo\ncomo estampida en sus intestinos;\npero algo insólito sucedió.",
+        "Una bella música llenó el water closet\ny como hombre de respeto se levantó;\ny la estampida sobre sus piernas\nen caliente catarata se vertió.\nLa música que allí escuchaba\nera el himno nacional, ¡que lo parió!",
+        "¡Vaya con estas modernidades!\nCasimiro se complicó;\ntodo por ser respetuoso\n¡La pucha madre que lo parió!"
+      ]
+    },
+    {
+      "type": "text",
+      "id": "eoy-curated-0005",
+      "movement": "movement-01",
+      "title": "El tiempo no mata los sueños",
+      "originalDate": "4 de diciembre de 2008",
+      "body": [
+        "Como la niebla ante los rayos del sol;\na orillas del camino se diluyen los sueños,\naquellos que forjamos tantas noches\ncuando pensamos, que de la vida éramos dueños.",
+        "Somos la piel del tiempo, su vida;\nconteniendo su transcurrir etéreo,\ny en la actitud de vida que elijamos\npermanecerá unido a nuestro cuerpo.",
+        "Determinamos su existir tangible,\nen cada vida y sus intentos,\nen largas noches de vigilias,\no en distancias eternas de sueños.",
+        "Que nada transcurre sin nuestro deseo,\nni siquiera el tiempo es dueño de su tiempo;\nconsumimos la esperanza en carne viva\no la llevamos con nosotros todo el tiempo.",
+        "El tiempo no tiraniza mis sueños.\nEl tiempo es testigo resignado,\nde lo que no supe hacer en su momento;\nen su etérea existencia, y a su debido tiempo."
+      ]
+    },
+    {
+      "type": "text",
+      "id": "eoy-curated-0006",
+      "movement": "movement-01",
+      "title": "Sobre mis pasos",
+      "originalDate": "8 de diciembre de 2008",
+      "body": [
+        "Voy transcurriendo por atajos del camino\ncon la urgencia de vida de andar tranquilo.\nLlevo en mi mochila la nostalgia definida\ny un pañuelo de adiós, que besó en mi partida.",
+        "Busco las huellas de otrora, dejadas por mi vida,\nenterradas en tiempos de claridad oscurecida,\npor no saber reconocerme, por no poder descubrir,\nen mi libro de genes la razón de mi existir.",
+        "¿Podrán mis pasos calzar en la misma horma?\nDifícil disyuntiva que afronta mi estrategia,\nplanificada en sombras, a espaldas de mi conciencia.",
+        "Prerrogativa exclusiva como urgente premisa;\nsucumbir los portales que transportan mi historia;\nobstruir con realismo los poros de la memoria."
+      ]
+    },
+    {
+      "type": "text",
+      "id": "eoy-curated-0007",
+      "movement": "movement-01",
+      "title": "Pero esta noche no habrá nadie",
+      "originalDate": "23 de diciembre de 2008",
+      "body": [
+        "El vino mueve\nla lengua de mi nostalgia;\nde los días felices y no tantos\ny emborracho el alma\npara no beber solo,\nel vino agrio del recuerdo.",
+        "Hoy es noche de brindis\ncomo tantas otras;\npero no hay copas,\nsólo mi vino solo\nen un vaso medio vacío\nteñido de tantos vinos.",
+        "Ese vino, vicio de los pobres,\nel que entierra las noches de fatigas;\nel que golpea la inocencia\ncuando se mezcla con la sangre.\nY humilla a la cordura.\nY mutila al amor.",
+        "Yo no vengo del vino;\npero hubo tantos vinos,\nque en mi sangre hay\nun rencor hiriendo las vides;\nque sangran de vergüenza\npor sus injustas heridas.",
+        "Pero hubo tantos vinos;\nque el temor de mi brindis\nno termine en el último trago;\ny el alcohol emborrachado\nque espera obnubilado,\nse apodere de mi sangre.",
+        "Por eso hoy brindo;\ncon sólo mi vaso solo\nteñido de tantos vinos,\nque marearon mi inocencia,\ny el ahogado llanto de mi madre.\nPero esta noche no habrá nadie."
+      ]
+    },
+    {
+      "type": "text",
+      "id": "eoy-curated-0008",
+      "movement": "movement-01",
+      "title": "Fui todo; soy nada",
+      "originalDate": "27 de diciembre de 2008",
+      "body": [
+        "Fui alfarero de casas ajenas en paja y cieno;\nde las cunas de otros niños fui carpintero;\nde amores que colapsaban un paciente consejero.\nPero mi mundo vacío no recibió nada de ellos.",
+        "Fui de las golondrinas el verano eterno,\nde la madera mojada el mejor de los fuegos,\ndel amigo extraviado y enfermo su remedio.\nPero en mi soledad me está matando el miedo.",
+        "Fui padre en plenitud con mis errores y aciertos,\ncon mis ejemplos de vida pero verdades no tengo.\nSostuve mi cielo con tres pilares, uno se fue cayendo\nasfixiado, contaminado, porque cedió mi suelo.",
+        "Fui amigo, esposo, amante y ermitaño por derecho;\nrescato un par de virtudes que aprendí de mis viejos,\na dar amor y abrazos como ellos no me dieron.\nPero detrás de las puertas solo me esperan silencios.",
+        "Fui coescritor de libros de vidas que míos no fueron,\nabnegado y ejemplar artífice de manuales y libretos,\nde epílogos y prefacios de conductas en compendios\ny por quedarme vacío mi libro escribir no puedo."
+      ]
+    },
+    {
+      "type": "text",
+      "id": "eoy-curated-0009",
+      "movement": "movement-01",
+      "title": "La saga de mi vida",
+      "originalDate": "31 de diciembre de 2008",
+      "body": [
+        "Descansar, cerrar los ojos y mirar;\ndesde la oscuridad interior\nmi vida resumida, que transcurre\nrápidamente como una película.",
+        "Permanecer en la primera butaca\nde la primera fila de mi conciencia;\nmirar mi interior desde adentro.\nÚnico espectador, ¡qué privilegio!",
+        "Ser espectador, crítico y juez\ndel desarrollo de mi argumento;\nde film del cincuentenario\nconmemoración de mi nacimiento.",
+        "En resumen: muchos errores, pocos aciertos,\nescasas ideas, demasiados silencios;\nimágenes lentas, estáticas, sin tiempos,\ny un director mediocre, a nivel del argumento.",
+        "Poco rescatable, quizás solo el comienzo\nque fue diluyéndose en el transcurso del tiempo;\nen la monotonía de textos remanidos, sin brillos,\ny en la uniformidad de colores, negro desteñido.",
+        "La saga es larga y ya va por el enésimo;\na cada una le llegó su preestreno,\nnada ha cambiado desde entonces,\nmismo director, mismo argumento."
+      ]
+    },
+    {
+      "type": "text",
+      "id": "eoy-curated-0010",
+      "movement": "movement-01",
+      "title": "El expulsado",
+      "originalDate": "4 de enero de 2009",
+      "body": [
+        "Cuando estudiante trasgresor por instinto;\npor tener el pelo largo o pintar en las paredes;\n¡Viva Perón! ¡Viva el Che! ¡Fuera los milicos!\nfui expulsado por defender mis principios.",
+        "Por ser pueblo fui expulsado; por defenderlo\nde las tiranías de gobiernos un subversivo;\ndejé tendales de amores en mi tierra, mi raíz,\npor salvar mi vida (mi árbol) del martirio.",
+        "Con años acumulados de nostálgicas heridas,\ndel país que me cobijó por el tiempo de mi huida;\npor ser “cabecita negra”, justificaban la medida,\nfui también expulsado, ninguna razón había.",
+        "Fui expulsado de las calles en donde canté un día,\nlas canciones que mi pueblo cantaba con alegría;\ncuando la vida arreciaba esperanzas de salidas,\nde tantas crisis morales de gobernantes gorilas.",
+        "Por conservar el salario defendía mis conquistas,\nque logré con sacrificios y luego de muchas caídas;\ncon inconsistentes y arteros rótulos de golpista\nexpulsaron mis derechos de defender la justicia.",
+        "Me expulsaron de tu vida, de la otra y de la mía;\nsiguen viniendo por mí cualquier razón tiene valía;\nun pensamiento distinto, diferente, no tiene cabida\nen este mundo de necios donde el ciego es el que guía."
+      ]
+    },
+    {
+      "type": "text",
+      "id": "eoy-curated-0011",
+      "movement": "movement-01",
+      "title": "Las manos de mi padre",
+      "originalDate": "7 de enero de 2009",
+      "body": [
+        "Las manos de mi padre\nviejas callosas de tiempos;\nlas manos que me enseñaron\nmi oficio de carpintero.",
+        "Serruchando madrugadas\ndesde su altivez de hornero;\nconstructor de atardeceres\ncon roja madera de cedro,",
+        "manos que rociaban el aire\ncon perfumes de maderos;\nde quebrachos y algarrobos\nde los montes santiagueños.",
+        "Montes que siempre lo vieron\nhachando vinos jornaleros;\ny en el calor de la siesta\ncurtiendo su piel de sueños.",
+        "Las manos de mi padre,\nartesa de amasarme cielos;\ncuando la noche llegaba\nconfundiéndome en el miedo.",
+        "Ellas fueron artífices\nde este oficio que ahora llevo;\nenredado entre los callos\nde tanto hachar a los tiempos.",
+        "Como ellas también mis manos\nserán maderas de sueños;\nquizás en alguna guitarra\no en algún bombo legüero.",
+        "En la cuna de algún niño\nmeciéndose irán mis miedos\ny las manos de mi padre\nacompañando mis sueños."
+      ]
+    },
+    {
+      "type": "text",
+      "id": "eoy-curated-0012",
+      "movement": "movement-01",
+      "title": "Contraseñas",
+      "originalDate": "14 de enero de 2009",
+      "body": [
+        "Asomado a este mundo\nme recibieron con cantos\ny un golpe en las nalgas\ncontraseña de mi llanto.",
+        "Colgaron de mi muñeca\nuna cintita de raso,\nde suave color celeste;\ncontraseña de mi sexo.",
+        "Colocaron en mi legajo,\ndía, hora, talla y peso;\nfueron mis primeros números;\ncontraseñas de mi nacimiento.",
+        "Un número le imprimieron\ncuando niño a mi inocencia:\nuna libreta con foto, una huella;\ncontraseñas de mi existencia.",
+        "Al tiempo de mi colegio;\nnúmeros, letras fui aprendiendo,\ny en un boletín crearon\ncontraseñas para mi egreso.",
+        "Cuando mi primer trabajo\nurgía para mis tiempos,\nun legajo significaba\ncontraseña de mi esfuerzo.",
+        "El tiempo de la familia:\nun sueño, un casamiento,\nun sí, un par de anillos;\ncontraseñas de compromisos.",
+        "Después llegaron las hijas;\nun divorcio, un desencuentro;\nlos hijos y sus tristezas;\ncontraseñas de mis fracasos.",
+        "Hoy; soy un negro teclado\nen esta mierda: mi vida;\nimprimiendo contraseña,\nla última; la de mi partida."
+      ]
+    },
+    {
+      "type": "text",
+      "id": "eoy-curated-0013",
+      "movement": "movement-01",
+      "title": "Antes que pare la lluvia",
+      "originalDate": "18 de enero de 2009",
+      "body": [
+        "Antes que pare la lluvia\ndebo deshojar mi libro;\nhoja por hoja,\nvacío por vacío.",
+        "Construiré con ellas\nflotas de barquillas,\nen procesión desfilando\nhacia la alcantarilla.",
+        "No deben quedar rastros,\nninguna huella precisa;\nque identifique mi paso\ny debo hacerlo de prisa.",
+        "Marcas de amores muertos\nguardados sin sentido;\nno sea que la memoria\nrecupere del olvido.",
+        "También se irán mis sueños\nlos que nunca he concluido\nahora que ya vencidos\nen el freezer del descuido.",
+        "Poesías inconclusas,\nsentir sin ningún destino,\nmoralejas desmoralizadas\npor este absurdo: mi sino.",
+        "Antes que parta la lluvia;\n¡Que caiga el cielo plomizo!\nque sumerja mi letargo\ny la vida que él deshizo.",
+        "En alcantarillas de lluvias\nbarquillas de hojas del libro,\nse llevarán estos versos\na las cloacas del olvido."
+      ]
+    },
+    {
+      "type": "text",
+      "id": "eoy-curated-0014",
+      "movement": "movement-01",
+      "title": "Argentinos hasta la muerte (tonta muerte)",
+      "originalDate": "19 de enero de 2009",
+      "body": [
+        "Argentina por naturaleza y por historia se caracteriza por ser un pueblo incomprensible; genocida de su historia, de su presente y de su posible futuro. Quizás estas mis palabras sean incomprensibles para aquellos que no conozcan su historia (Argentina) y hasta para algunos de nosotros.",
+        "Mi cuna fue un vagón\ny rieles mis recorridos;\nmi primer juguete un tren\nmadera de paraíso.",
+        "Por los rieles de mi patio\ntallados en piso de tierra;\nun guardacambios de vías\nseñalaba mi inocencia.",
+        "Hijo de ferroviario\nnieto, primo y sobrino,\nferroviario eran mis sueños\ny los rieles mi camino.",
+        "Hasta que un día…",
+        "Década del noventa;\nmesías de barro autodefinido,\nvisionario como nadie\ncon sillón de lata incluido.",
+        "Autoproclamado renovador\ncon ideas de primer mundo,\ncercenó nuestra historia\nprepotente furibundo.",
+        "Cortó las venas al pueblo,\ndesangró arterias en ríos,\nextirpó en cruda barbarie\nlas vías con sus delirios.",
+        "Murieron en el olvido\nlos pueblos y sus vecinos,\nnadie supo más de ellos\npasajeros sin destinos.",
+        "Hoy apenas quedan trenes,\nprivilegios capitalinos;\ndonde gestaron su muerte\nlos villanos libertinos.",
+        "La historia vuelve a repetirse,\nartífices de nuestros destinos,\nsin memoria, sin una nación,\nseguimos siendo argentinos."
+      ]
+    },
+    {
+      "type": "text",
+      "id": "eoy-curated-0015",
+      "movement": "movement-01",
+      "title": "Los dueños de la pelota",
+      "originalDate": "25 de enero de 2009",
+      "body": [
+        "De niño, aún lo recuerdo: mi sueño, al igual de otros niños de ese pueblo que apenas tenía cuatro calles de tierra, el resto era silencio; era tener una pelota de fútbol de cuero. Papá Noel en ese entonces tenía otras prioridades, diferentes a mis deseos. Alguno de esos niños con un poquito más de suerte pudieron tenerla. Entonces fue que descubrían mis ojos de niño una nueva realidad; yo era gordito y para colmo jugaba muy mal al fútbol y prohibía mis derechos a ser igual que el resto.",
+        "Cuatro calles locas, mil delirios de pueblo,\nsiestas de gorriones, el calor sofoca al aire;\nmi padre y un sermón ¡no te escapes a la siesta!\nel sol quemará tus razones ¡te abrirá la cabeza!",
+        "Yo y mi hambrienta libertad de infancias\nhacía caso sordo al corte de mis alas;\nescapaba sigiloso por la cómplice ventana,\nella era mi luz, a mis sueños me llevaba.",
+        "Tras las viejas vías, una cancha improvisada;\narcos de torcidos palos, ramas de paraísos,\nlíneas marcadas con zapatillas de plásticos\nembarradas de sudor y de sueños de ídolos.",
+        "Él llegaba orondo, rodeado de sus amigos,\npelota bajo el brazo marcando el mundo es mío;\nluego, las precisas pisaditas para armar los equipos,\nsiete por cada bando, siempre sobraba el gordito.",
+        "Mi voz entonces era más suave que un trino,\nmurmuraba en mi tristeza quiero jugar el partido\ny encontraba sus respuestas en delirantes alaridos:\n¡somos siete contra siete, si me canso entrás gordito!",
+        "El tiempo siguió creciendo, mis alas nunca cayeron,\na pesar de tantos cielos, de tanto mundo confundido\ny en mi mochila de años sigo cargando mis sueños,\naunque en la cancha de adultos la pelota tenga dueño."
+      ]
+    },
+    {
+      "type": "text",
+      "id": "eoy-curated-0016",
+      "movement": "movement-01",
+      "title": "Ramón; el poeta",
+      "originalDate": "31 de enero de 2009",
+      "body": [
+        "Ramón se llamaba, le decían poeta,\nél era la viva esperanza a cuestas,\nllevaba en sus bolsillos un mar de sueños\ny pintaba con ellos colores a la tierra.",
+        "Solía vestirse con un delantal sucio\nmanchado de crayones, carbonillas y témperas;\nen sus alforjas una botella llena de aire puro\ny en su corazón la vida plena.",
+        "Decía que este mundo eran partículas,\nque necesitaban ser unido con poesía\ny que las manos invisibles que las pintaran\nserían con el tiempo los lazos de la vida.",
+        "En su destino de poeta errante y vagabundo\nle pintó árboles frondosos al solitario camino,\na los caballos de corrales les dibujó alas\ny al viento una cola de cometa para que no caiga.",
+        "Siguió atravesando paisajes y a las piedras\nles pintaba un corazón y una flecha de Cupido\ncon dos letras de color de la esperanza\nla A de amor y la H de un hombre renacido.",
+        "Sobre las fronteras puentes sin banderas\npintados de colores infinitos\npara que nadie se sintiera clandestino\ny volase por el mundo sin permisos.",
+        "A los hombres les colgaba un cartelito\nque hablaba de la paz, de guerras sin sentidos\ny les dibujaba a los necios en la ojos\nuna paloma con un laurel en el pico.",
+        "A los ciegos de espíritu les pintó ojos;\na los mudos por cadenas los llenó de gritos;\na los sordos de corazón les cantó al oído;\ny a la vida un cielo de esperanzas y un sentido."
+      ]
+    },
+    {
+      "type": "text",
+      "id": "eoy-curated-0017",
+      "movement": "movement-01",
+      "title": "La muerte vive en El Chaco (el monte)",
+      "originalDate": "2 de febrero de 2009",
+      "body": [
+        "Chaco, Argentina, un millón de habitantes; centro habitacional permanente de la miseria; 50 % pobreza, 40% indigencia, 20 % mortalidad infantil (niños fallecidos antes de cumplir un año de vida). Un pueblo olvidado dentro de un gran olvido nacional. Un pueblo donde el hambre se muere de hambre; en un país banquete donde pocos son los que comen (rapiñan).",
+        "Los miserables",
+        "Brindis en oscuras oficinas,\nla máscara ostentosa del ladino,\nel hambre se muere de hambre\ny ellos duermen sobre el vino.",
+        "Majestuosa reina de despilfarro\nen delirantes atuendos de oropel\nconfunde al pobre con sus lujos\ny envilecen su propia razón de ser.",
+        "Ellos, los eternos olvidados.",
+        "Descarnados por el hambre que corroe\nla esperanza como atuendo de crecer,\nson moscas escarbando en la basura,\nla vergüenza que se pierde por comer.",
+        "Cargados de hambruna silenciosa,\npasivos, desnutridos mueren mil,\ncientos esperan en su impotencia,\nmuchos a punto de morir.",
+        "Los delincuentes de siempre.",
+        "El silencio no justiciero (de la justicia),\neterno cretino pendenciero (traidor)\nen ceguera permanente y con desidia,\nocultado a los reclamos del dolor.",
+        "La necedad invade su necesidad\nde perpetuar su mezquina intención,\nde conseguir del pueblo sus favores\ncompran sus silencios con bolsones.",
+        "Muestran arteras la vergüenza y el descaro,\nen discursos florecidos de mentiras,\ncon eternas promesas no cumplidas\nque se olvidan cuando ganan la partida.",
+        "Cincuenta por ciento dueños del hambre,\nla otra media como puede sobrevive;\nlas mentiras duermen en sus puestos\nreposando las resacas de sus brindis."
+      ]
+    },
+    {
+      "type": "text",
+      "id": "eoy-curated-0018",
+      "movement": "movement-01",
+      "title": "Crepúsculos perdidos",
+      "originalDate": "3 de febrero de 2009",
+      "body": [
+        "Fueron tantos soles escondidos\nentre follajes enredados de estíos;\nmadreselvas abrazando muros,\namantes sin retornos, fenecidos.",
+        "Crepúsculos perdidos, ayeres\ninconclusos sin la savia de los besos,\nen la espera, en el frágil silencio\ny en la tarde mustia que me hiere.",
+        "Hay un duelo infinito que sostiene;\nla languidez reprimida del ocaso,\nel zarpazo de la noche que sofrena,\nla urgencia de morir en los abrazos.",
+        "Otro crepúsculo más, otro día\nsumados a la cuenta de fracasos,\nse han perdido tantos en la nada\nque a la vida están faltándole pedazos."
+      ]
+    },
+    {
+      "type": "section_cover",
+      "id": "movement-02",
+      "title": "II · La noche aprende a hablar",
+      "dateRange": "24 de marzo — 30 de diciembre de 2009",
+      "startOn": "recto",
+      "showFolio": false,
+      "countInSequence": true
+    },
+    {
+      "type": "blank_page",
+      "movement": "movement-02",
+      "side": "verso",
+      "showFolio": false,
+      "countInSequence": true
+    },
+    {
+      "type": "text",
+      "id": "eoy-curated-0019",
+      "movement": "movement-02",
+      "title": "Un casi ex hombre",
+      "originalDate": "24 de marzo de 2009",
+      "body": [
+        "Hay un epitafio escrito en mi mente:\naquí yace quien fue, un casi ex hombre;\nutópico, altruista por conciencia,\nrespetuoso de los respetos del otro,\nmajadero de mazazos limpios,\ndestructor de sus propios sueños.",
+        "Creador de sus casi ex triunfos,\nexacerbado creyente del hombre,\nútil trapo de piso, lavador de miserias,\nartífice de su casi ex destino,\nun casi ex hombre sin prejuicios\nequivalentes a ser nadie en sí mismo.",
+        "Cierro mi propio epitafio en mente escrito,\naugurando más casi ex conquistas,\ndestierro algunas miserables actitudes,\nenvilezco, me atosigo de embarazados odios,\ntejo el muérdago que rodea mi tumba,\ninflo mis pulmones con hiel y escupo."
+      ]
+    },
+    {
+      "type": "text",
+      "id": "eoy-curated-0020",
+      "movement": "movement-02",
+      "title": "Cuando cayó la pared",
+      "originalDate": "28 de marzo de 2009",
+      "body": [
+        "En mi pared hubo una vez un cuadro colgado.\nColgado de mi pared estaba recién pintado;\nsobre la pintura manchada otra mancha más clara,\notra mancha más clara sobre la mancha en la pared.",
+        "Pintaron la pared mil veces manos de colores.\nLa mancha seguía inmune más clara que la pared;\ntu rostro en el cuadro se volvió tiza\ny el polvo sacudido contaminó tu sonrisa.",
+        "Un clavo oxidado soportaba su peso.\nUn cordel sostenía el peso de ese cuadro en la pared;\nrecuerdo ese rostro bello enarbolando sonrisa,\nsonrisa que fue arrancada con el cuadro de la pared.",
+        "Ella fue arrojada sin separar del cordel.\nEntre escombros enterrados estaba el cuadro aquel;\nel cuadro con su sonrisa oxidada en la pared\ndemarcaba un espacio, un sitio que ya no es.",
+        "Ya no hay más cuadros en la pared.\nEn realidad tampoco nada queda en pie;\nlo derrumbaron los temblores reflejos\ncuando cayó la pared, la sonrisa y el amor aquel."
+      ]
+    },
+    {
+      "type": "text",
+      "id": "eoy-curated-0021",
+      "movement": "movement-02",
+      "title": "Yo te acuso",
+      "originalDate": "16 de mayo de 2009",
+      "body": [
+        "Yo te acuso dios\npor tu negligencia de no existir,\npor hacer humanos a tu semejanza,\npor mentirte que eres perfecto.",
+        "Mira a estos niños, ¿Qué culpas tienen?\nde tu soberbia, de tu impracticable doctrina,\nde tu blasfemo libre albedrío\nque libra de culpas a tus peores descuidos.",
+        "Yo te acuso hombre; me acuso aunque no lo hago mío,\nde mirar la soberbia de un dios\ny dejar en sus manos los destinos;\nmira ¿Qué culpas tienen estos niños?",
+        "De tus miseria, de tu vil moneda, de tu hambre,\nde tu semejanza a un hipócrita divino\nque excomulga tus faltas en pan y vino\ny a estos niños ¿Quién los trae del olvido?",
+        "Yo te acuso dios-hombre\n-creador de hombres fallidos-\nque expían sus errores, sus escasos aciertos\ny se lavan las manos con un Dios así lo quiso.",
+        "Miren a estos niños, no tienen la culpa\nde las bajezas humanas, divinas\no cualquier estereotipo;\nrealidad mísera, escrita por hombres\nque procuran ocultar el verdadero motivo."
+      ]
+    },
+    {
+      "type": "text",
+      "id": "eoy-curated-0022",
+      "movement": "movement-02",
+      "title": "La estocada final",
+      "originalDate": "21 de mayo de 2009",
+      "body": [
+        "Traje de luces, arena, lid de bestias;\nen el ruedo alguien espera,\nson muchos; voces, alaridos, lujuria latente,\nel final se aproxima en la agonía\nde los dos que hoy morirán en la nada.",
+        "Tirita la espera entre bambalinas,\nla bestia dorada, adormecida,\nsedada por la afeitada\nque cercena su potencia\nhoy no sabe de su suerte marcada.",
+        "Sale la bestia, desnuda, obnubilada;\ngolpea su incredulidad\nla pared de las voces que reclaman\nsu sangre, su agónica derrota.\nEl espectáculo comienza.",
+        "La vergüenza, el dolor ajeno\nalimenta los espurios deseos;\nla bestia es sacudida en topetazos\nentre capas y estoque;\nbanderillas y puya.",
+        "Juega la muerte sobre sus espaldas\ncerteras estocadas cercenan su piel,\ndesgarran músculos,\nderraman ríos de sangre.\nLa arena clama su muerte, el premio final.",
+        "Derrotado en cuerpo y espíritu\ndobla sus piernas, se entrega a la estocada;\nel matador, apunta y salta\nsobre su cuerpo casi yerto;\nclava los cuernos en su garganta.",
+        "La multitud explota en las gradas,\nla bestia es mutilada\ncortan sus restos aún en vida,\nya sus reflejos murieron antes que el cuerpo\nfue la última estocada.",
+        "Murió la bestia,\notra bestia su asesina tomándose revancha,\nmatador matado,\nsilencio en las gradas;\nlos toros ya se han marchado."
+      ]
+    },
+    {
+      "type": "text",
+      "id": "eoy-curated-0023",
+      "movement": "movement-02",
+      "title": "Te agradezco padre",
+      "originalDate": "28 de junio de 2009",
+      "body": [
+        "No te culpo padre;\nyo también he visto morir lunas ensangrentadas,\nabiertas en heridas\nde madre e hijas dolidos por la huida\ncuando las angustias eran continuas caricias.",
+        "Y nunca supe si te amé o apenas eras mi padre,\nsólo sé que tu dolor en el alma\nera más débil que la furia\nde tu sangre contaminada\nque vencía todas las batallas.",
+        "Y fuiste ausencia tantas veces\nque ni recuerdo haber estado en tus abrazos;\npero no te culpo padre\ntu cuerpo el castigo más terrible abrazaba\neras carne débil y mente ultrajada.",
+        "Tampoco te odio, no cabe en mi alma,\nsolamente que en tu ausencia\nsiento que no he aprendido nada,\nque los golpes de mi vida\nno sirvieron para encontrarla.",
+        "Y vuelvo la mirada\nhasta apenas tres veces nueve lunas\ny veo un reguero de estrellas alejándose,\nun camino incierto y lúgubre\ny esta mísera vida que se acaba.",
+        "Pero no te culpo padre,\na pesar de todo te agradezco que me amaras,\na tu manera, en tu triste soledad y sin palabras,\ncon tu mirada de bondad encarcelada\ny tus silencios que no decían nada."
+      ]
+    },
+    {
+      "type": "text",
+      "id": "eoy-curated-0024",
+      "movement": "movement-02",
+      "title": "Interiores",
+      "originalDate": "20 de julio de 2009",
+      "body": [
+        "Somos tantos\nque no distingo cuál de ellos soy:\nel de la sonrisa roja\no el de los ojos blancos.\nTal vez un poquito de todos y ellos de mí.\n¿Pensarán lo mismo cuando me ven llorando?",
+        "Serán confundidos con mi máscara de espanto,\nellos saben quién soy y no me harán caso.\nJuzgarán con su criterio de payaso:",
+        "- Es uno más de los tantos con su interior de llanto.",
+        "Y soy ese interior de llanto,\nque pinta sonrisas a su propio espanto.",
+        "Nadie me cree pero seguiré pintando,\nmientras sus rostros dibujen labios\ncon blancos dientes asomando\ny se tomen los estómagos\nde carcajadas resonando.",
+        "Y reiré con ellos… y de ellos.",
+        "Porque también me muestran sus espantos,\ncuando esperan que un triste payaso\nles devuelva las sonrisas\na su interior de llanto."
+      ]
+    },
+    {
+      "type": "text",
+      "id": "eoy-curated-0025",
+      "movement": "movement-02",
+      "title": "Fijando posición",
+      "originalDate": "9 de agosto de 2009",
+      "body": [
+        "Este cuerpo es lo único que tengo;\nvacío de futuro,\nabsolutamente lleno de recuerdos,\nembanderado de fracasos;\ntiré la piedra al río tantas veces\ncolgada de una soga al cuello,\nhe flotado como excremento\nsaliendo airoso sin merecerlo.",
+        "Renací de atardeceres negros\ny morí al alba de suspiros,\nlo planeado lo escribí en la arena\nse lo llevaron los pasos vencidos;\npero no pude rendirme,\natormentado va el viento\nno logró derribarme;\nni vencido ni muerto.",
+        "Al saberme débil se debilita\nla línea recta de mi destino,\nresiste en la soberbia\nde no modificar mi camino;\ntodavía no se ha declarado tregua\nél insiste con lo mismo,\nyo fijé mi posición:\ntiraré otra vez la piedra al río."
+      ]
+    },
+    {
+      "type": "text",
+      "id": "eoy-curated-0026",
+      "movement": "movement-02",
+      "title": "La noche y su memoria",
+      "originalDate": "29 de agosto de 2009",
+      "body": [
+        "Plantear la noche desde la nada\ncuando la pena se hace ancha;\nse calma el aire,\nlos latidos se exaltan\nen vértigos que atenazan.",
+        "Toman formas inverosímiles\nlos cuerpos de la memoria;\nconfabulan para salir,\nse mixturan, se agazapan\nesperando sus revanchas.",
+        "Puede que se debilite el alma\ncuando oprima la angustia\ny en un rincón de la noche\npueda ser acorralada,\nquitarle el aire, asfixiarla.",
+        "Y es entonces en ese silencio\nque regresan los fantasmas,\ntiran de los pies, sacuden la cama\ny la conciencia se ensaña\npor debajo de la almohada.",
+        "Planificar la noche para esperarla,\nprotegerse con corazas\nno sirve de nada,\nde cualquier manera llega\ny se apodera del alma."
+      ]
+    },
+    {
+      "type": "text",
+      "id": "eoy-curated-0027",
+      "movement": "movement-02",
+      "title": "Aún no acaba la noche (Mundo poesías)",
+      "originalDate": "30 de agosto de 2009",
+      "body": [
+        "30-may-2009 09:13\nSoy noche veinticuatro horas, a veces me descuido y un destello llamado amor invade mi oscuridad y pronto se vuelve sombra para oscurecerme un segundo más.",
+        "24-jun-2009 09:18\nAl final de cada noche hay otra noche, sólo que la luz del sol no la deja ver.",
+        "26-jun-2009 12:38\nHoy fue una noche diferente; hoy te besé y lo más bello: no eras un sueño.",
+        "27-jun-2009 11:03\nConozco dos noches: la de afuera y la de adentro; la de afuera al menos acaba al amanecer.",
+        "03-jul-2009 10:09\nDe una noche distingo dos colores: su negrura y la mía. No veo los límites.",
+        "03-ago-2009 09:03\nEs en la oscuridad de la noche donde encuentro el camino más claro.",
+        "05-ago-2009 10:35\nNo soy yo; es la oscuridad de esta noche que llora en mis ojos, por tu silencio de amor.",
+        "07-ago-2009 01:49\nAmor, no te vuelvas noche por favor; no hoy, que la oscuridad me ahuyenta de esta vida.",
+        "07-ago-2009 09:30\nCuriosa noche; afuera llueve y adentro también y el limpiaparabrisas de mis ojos dejó de funcionar, curiosamente esta noche.",
+        "09-ago-2009 07:46\nAmor; cuando al irte cierres la puerta, me tragará la noche del encierro y seré noche por siempre.",
+        "12-ago-2009 09:20\nDuele esta noche amor, duele mucho."
+      ]
+    },
+    {
+      "type": "text",
+      "id": "eoy-curated-0028",
+      "movement": "movement-02",
+      "title": "Impúdica ironía",
+      "originalDate": "17 de septiembre de 2009",
+      "body": [
+        "Son los instantes\nentre el dedo que jala el gatillo\ny el disparo que falla;\nasí es la crueldad del día\nque agoniza cada madrugada\ny la pólvora mojada\nconfabula con ella,\nasí es la vida\ncuando todo se acaba;\nhasta el gallo de la veleta\nse ríe a carcajadas:",
+        "- Morir por amor\n¡Qué antigualla!\nMejor síguela amando,\nno te apresures,\nquizás en otra vida\nte salga la bala."
+      ]
+    },
+    {
+      "type": "text",
+      "id": "eoy-curated-0029",
+      "movement": "movement-02",
+      "title": "Entre muertos",
+      "originalDate": "26 de septiembre de 2009",
+      "body": [
+        "Dicen que merezco un amor vivo;\nla vida entonces no valora mis méritos,\nporque estoy lleno de amores muertos.",
+        "Cuando muera alguien dirá:\ntenía fundamentos para vivir\npero vivió de lo incierto.",
+        "Y sembrarán flores de plástico en mi entierro,\ntan muertas como ellos."
+      ]
+    },
+    {
+      "type": "text",
+      "id": "eoy-curated-0030",
+      "movement": "movement-02",
+      "title": "A mi ventana",
+      "originalDate": "17 de octubre de 2009",
+      "body": [
+        "No ha sido fácil salir este día\ndemasiado duelos me han costado\npara entrar a esta morada,\npor eso no ha sido fácil salir esta mañana.",
+        "No he ido lejos,\napenas dos pasos hasta la ventana,\npara colmo tuve que esforzarme\nestaba cerrada,\nme asomé a través de ella\nno vi nada\ny regresé a reposar,\nantes cerré la ventana;\nesta vez le puse clavos a los postigos,\nque nunca más se abra,\nafuera, afuera no hay nada."
+      ]
+    },
+    {
+      "type": "text",
+      "id": "eoy-curated-0031",
+      "movement": "movement-02",
+      "title": "Cortito",
+      "originalDate": "22 de octubre de 2009",
+      "body": [
+        "El almanaque de la vida tiene los días contados."
+      ]
+    },
+    {
+      "type": "text",
+      "id": "eoy-curated-0032",
+      "movement": "movement-02",
+      "title": "Salinas",
+      "originalDate": "24 de octubre de 2009",
+      "body": [
+        "Ultrajada la cerviz sobre el regazo\nreposa el hombre y su costal,\ngangrenadas manos por la sal\nalimentan miserables angustias,\nsosas, insalubres, incomibles\napetito voraz de vida, de carne;\nsal y sal y más salinas\nen las entrañas de su tierra\nreseca, desesperada\npor otra angustia menos, otro día",
+        "Apenas conoce el blanco,\nsus ojos quemados sólo ven blanco;\nsus dientes amarillos, sin brillos,\nsólo comen blanco;\nsus manos rojas, quemadas\nsólo conocen de las caricias blancas,\nsal, saladas y más salinas",
+        "La tarde aprisiona su silencio;\nsobre la cerviz encorvada\nuna lluvia de luz blanca\nempalidece su esperanza,\nsobre su regazo\nhasta la nada es salada."
+      ]
+    },
+    {
+      "type": "text",
+      "id": "eoy-curated-0033",
+      "movement": "movement-02",
+      "title": "Inexorablemente",
+      "originalDate": "27 de octubre de 2009",
+      "body": [
+        "Derrotados los últimos vahídos,\nlas últimas letras mancilladas\ncomo filtradas por el cedazo de una hoja,\nremanentes de un juego\ndonde no forman nada.\nSe diluye el tablero, el artista,\nlos clonados poemas;\nel vértigo que ya no provoca,\nla musa que no emociona las palabras.\nSe endurecen los dedos\nantes del final lento y agónico.\nNo sé quién escribirá el epílogo,\nquién sostendrá la pluma.\nMi voz aplaudirá el aire antes de irse\nnadie la oirá para imprimirla,\ndebo irme, inexorablemente.\nFracasa el último bastión de mi esperanza\nel derrotero acabará derrotado,\nquizás hoy, quizás mañana.\nDefinitivamente no habrá tregua\nsobre la herida palabra."
+      ]
+    },
+    {
+      "type": "text",
+      "id": "eoy-curated-0034",
+      "movement": "movement-02",
+      "title": "Vejez sitiada",
+      "originalDate": "28 de octubre de 2009",
+      "body": [
+        "El hombre con ojos vidriosos y tez de lija,\nla mujer con manos de encaje y tiza,\ncuerpos hacinados en la matriz del tiempo\nrechazados por el orbe,\nsegregados por la mezquina urgencia;\ngangrena que corroe impunemente\nla razón sin razón del verdugo,\njusticieros con cincel de jauría\ndesgarrando la edad envejecida,\nparias que engendran padres de abandonos\na la suerte de sobrevivir en cautiverio;\nclones genéticos\nadulterados y egoístas\npagando con cuchillos\nlas espaldas que los sostuvieron\nantes que fueran vidas."
+      ]
+    },
+    {
+      "type": "text",
+      "id": "eoy-curated-0035",
+      "movement": "movement-02",
+      "title": "El día final",
+      "originalDate": "29 de octubre de 2009",
+      "body": [
+        "Amantes revolucionarios, subversivos\nde una eternidad rebuscada y perecedera\nfuimos cuerpos putrefactos al ocaso\nsin regreso, sin gloria y sin banderas.",
+        "No era el momento de destruir la esencia\nel tiempo que no es tiempo sin la vida\nque late inerte o viva en sangre que corre.",
+        "La sangre es el tiempo, limita vida-muerte.",
+        "¿No es acaso menester detenerse a pensar\nque fuimos borbotones de vida-muerte?\nEntonces no era momento para destruir la esencia.\nIgual estábamos muertos.\n…………………………….",
+        "El camino mirado a la distancia\nse angosta\nhacia el extremo.\nSe embuda,\ncomo un cono de luz cerrándose.\nAsí es la vida.",
+        "Miro esa distancia que se traga\ntodo al borde del camino:\nlos campos florecidos de violetas\nlas relojes y sus misterios\nlas aves con sus esperanzas.\nLos muertos.",
+        "Todo traga el tiempo final (la muerte).\nEl embudo que absorbe\nel final del principio."
+      ]
+    },
+    {
+      "type": "text",
+      "id": "eoy-curated-0036",
+      "movement": "movement-02",
+      "title": "Mil veces la misma historia",
+      "originalDate": "1 de noviembre de 2009",
+      "body": [
+        "Olor a rancia tosquedad,\ncajones cerrados\nclavados por dentro,\nhilos de telarañas escapan\npor el ojo avizor de la cerradura,\narañas dormidas salen\nbostezando su encierro.",
+        "/ la memoria en formol\nahogada en su lata /",
+        "Sabes que soy terco,\nque no acepto ver morir la rosa\naunque el deseo de otros\nterminará de igual manera con su vida,\nsegada y sumergida en un vidrio con agua.",
+        "Pero ella insiste en suicidarse cada madrugada\ny mi terquedad la sostiene\nlejos de los filos de hielo que cercenan su savia;\nde plásticos ruidosos que envuelven su alma,\nmuerta por la tijera cuando es cegada.",
+        "Y ya es madrugada,\nsubo presuroso hasta su balcón,\nella parada sobre la baranda\ntrepada apenas, clavando sus espinas\ndesgarra su carne\ny mi mano detiene su savia.",
+        "Se cierran las ventanas sobre las miradas.",
+        "/ antes que suba el sol,\nregreso al cajón\nsobre la misma telaraña /"
+      ]
+    },
+    {
+      "type": "text",
+      "id": "eoy-curated-0037",
+      "movement": "movement-02",
+      "title": "Centuria de siglos",
+      "originalDate": "1 de noviembre de 2009",
+      "body": [
+        "Lloverán ojos sobre la ceguera del mundo\nel cíclope rey de los tuertos temblará,\nalguien abrirá a la luz y se dará cuenta.\nSacará los muertos debajo de las alfombras,\nlos que fueron sepultados, obstruidos\nen la necedad absoluta de ser impune.",
+        "Lloverá luz sobre la lluvia seca\nde la selectiva aridez de la memoria,\ndel que recuerda olvidar cada día\nque fueron tantos los que cayeron\nla noche que apagaron la vida sobre la tierra,\nacallando los libros y los cantos verbos.",
+        "Se limpiará el cielo de arpías conciencias,\nenlodarán sus miserias en el lodo que excretaron\ntantas vidas, tanto siglos cazando brujas\nsumergiendo a entierros vivos los derechos\nde suprema libertad, en adoquines de concreto,\nsometiendo por la ignorancia de ser supremos.",
+        "Hablarán entonces las verdades de los poetas,\nde los hombres y mujeres renacidos,\nya el tuerto no dominará el mundo\nla lluvia de ojos será su castigo;\nlos de las conciencias esclarecidas, sin alfombras\nserán el futuro de este mundo.",
+        "/ Antes de todo esto,\nsucederán otros siglos de muertos vivos /"
+      ]
+    },
+    {
+      "type": "text",
+      "id": "eoy-curated-0038",
+      "movement": "movement-02",
+      "title": "La dignidad",
+      "originalDate": "28 de noviembre de 2009",
+      "body": [
+        "Está erguida en la fragilidad de una palabra;\nrecostada al poniente de un susurro\nentre alacranes y fieras hambrientas:\nvienen por ella."
+      ]
+    },
+    {
+      "type": "text",
+      "id": "eoy-curated-0039",
+      "movement": "movement-02",
+      "title": "De parto",
+      "originalDate": "28 de noviembre de 2009",
+      "body": [
+        "Estatuilla de chocolate sobre la cama\nfecunda horas marrones y arrugadas;\ncalor sin brillo sobre la flama\nderrite sabores entre piernas asombradas:\npare la vida preñada entre arrumacos,\nde un lado el cielo,\ndel otro el ingreso al hueco de la duda;\ndesde la luz uterina húmeda y cálida\na la oscura nursery del mundo.",
+        "¿Dónde debo bajar de este tren de aguas?",
+        "Pregunta el eco desprendido de ternura.\nSus ojos sellados, inmaduros\nno distinguen nada;\nangustia ciega y el golpe que llega\nartero, sacudiendo el sueño\nen forma de nalgadas.",
+        "/ ¡Llora mi niño!\nNecesitas contraseña\npara respirarte vivo /",
+        "(Aunque la palmada te duela.)"
+      ]
+    },
+    {
+      "type": "text",
+      "id": "eoy-curated-0040",
+      "movement": "movement-02",
+      "title": "Ayer, el día, no sé...",
+      "originalDate": "23 de diciembre de 2009",
+      "body": [
+        "Los muebles/ los libros/ un candelabro sin velas\ncertifican los estadios del tiempo;\nla quietud de las plantas de plástico\nen una maceta también de plástico\nvegetan la no vida, la inexistencia de un flujo de sangre;\nsólo mis gatas con sus suciedades\njustifican el movimiento de mis pies:\nla estúpida rutina de retirar sus excrementos.\nEl resto es harina de otro costal."
+      ]
+    },
+    {
+      "type": "text",
+      "id": "eoy-curated-0041",
+      "movement": "movement-02",
+      "title": "Noches y días circulares",
+      "originalDate": "30 de diciembre de 2009",
+      "body": [
+        "Es la hora insostenible, la metafísica del tiempo,\ncuando el trino calla sobre la montaña\ny los dragones dragan la desesperanza.\nCuando deviene el río que va trepando\nmenguan los diques callados de castores\ny los chillidos de colmillos sobre la madera\nanuncian las muertes de los pinos.",
+        "Son mis pies entonces que tiemblan\ny mis dedos que rechazan crepúsculos sostenidos\ndel fino cristal de una gota congelada,\nen la rama de otra aburrida encina.\nLos vivos mueren y los muertos recuperan el habla\njustamente cuando la insobornable noche abre\npisando la alfombra negra sin dar revanchas.",
+        "La cruz del sur se atraviesa en la garganta\ny los puntos cardinales se confunden, se mixturan\ny todo perece en las formas de un teorema,\nde la hipótesis inconclusa del pánico,\ndel resistir sobre la roca trasnochada\nalcohólica y vehemente, sin redes\nque detengan la inconsistencia del ser.",
+        "No hay regreso entonces; las vías se cierran\nen círculos y todo recomienza a la hora exacta\nen el preciso instante de los relojes agotados,\nde la esencia mutante, de las ranas en los pozos\nque croan al cielo en los aljibes de piedras.\nY soy un batracio más, sumergido en la bruma,\nnáufrago anónimo en la misma inundación."
+      ]
+    },
+    {
+      "type": "section_cover",
+      "id": "movement-03",
+      "title": "III · Daniel, un hombre extraño",
+      "dateRange": "1 de enero — 31 de julio de 2010",
+      "startOn": "recto",
+      "showFolio": false,
+      "countInSequence": true
+    },
+    {
+      "type": "blank_page",
+      "movement": "movement-03",
+      "side": "verso",
+      "showFolio": false,
+      "countInSequence": true
+    },
+    {
+      "type": "text",
+      "id": "eoy-curated-0042",
+      "movement": "movement-03",
+      "title": "Curvatura natural",
+      "originalDate": "1 de enero de 2010",
+      "body": [
+        "Sigo las huellas; es el agua cantarina que me llama.\nSon los pasos abandonados en la huida,\nlos muertos inesperados,\nlas sierpes enajenadas de los recuerdos secos;\nel vetusto árbol anunciando el otoño de la vida.",
+        "Veo la luz desarmarse desde los ojos;\nlos amarillos turgentes desde los limoneros,\nlos rojos furiosos desde las cerezas de los labios,\nel azul antártico de los verdes cipreses\nque ya no cortan vientos ajenos.",
+        "Se desgasta la vara guía que sostiene,\nque retiene la inclinación natural hacia la caída.\nSe encorva el árbol que cae…que cae."
+      ]
+    },
+    {
+      "type": "text",
+      "id": "eoy-curated-0043",
+      "movement": "movement-03",
+      "title": "Sin identidad",
+      "originalDate": "10 de enero de 2010",
+      "body": [
+        "Es el hueco del árbol\nque esconde sus agostos;\nel nonato de identidad\ntan hueco como su tronco.",
+        "Morir parado\nen el suicidio de árbol viejo,\nreabsorbiendo sus raíces\nsecas como sus nidos.",
+        "La última hoja cayó\nhace más de tres lustros\ny son ruidos sordos los respiros.",
+        "Se secó su centro\ny sus círculos desparramados\nen manos del verdugo tiempo\nse volvieron trofeos de la tierra.",
+        "Hueco su tronco, su nombre,\nsus nidos abandonados.",
+        "La estirpe de sus raíces amputadas;\nsin identidad."
+      ]
+    },
+    {
+      "type": "text",
+      "id": "eoy-curated-0044",
+      "movement": "movement-03",
+      "title": "Daniel; un hombre extraño",
+      "originalDate": "12 de enero de 2010",
+      "body": [
+        "Soy el carruaje calabaza\nque a la medianoche sigue siendo calabaza.\nLos ratones se murieron de viejos\nintentando romper el hechizo.\nEl zapato de cristal sólo fue un zueco holandés,\nabsurda y abstracta semiología.",
+        "Mi medi-tación terminó al me-dio de mi neurosis,\npreciso instante en que los ratones resucitaron en caballos\ny asustados por mis alaridos se lanzaron al vacío\ndesde un décimo subsuelo.\nPerdona, no tengo tiempo para el cansancio.\nEl cansancio no me permite tenerlo.",
+        "No estoy loco, apenas comienzo mi crucigrama,\nno es fácil deletrear jeroglíficos debajo de las dunas.\nDos vertical; palabra simple, razonada, cruel, seis letras:\nLaVida",
+        "Se va mi calabaza, se lleva dos princesas con ella,\nla tercera duerme bajo mis axilas.\nEl zueco encontró su horma,\nuna aprendiz de reina: Blanca Nieve, mujer pura.\nSe montó el calzado, se convirtió en duna.",
+        "Ya soy arena, pies descalzos me caminan,\nratones disecados escapan de mi cabeza,\nse suben a la carroza guiada por las princesas.\nLa noche duerme en mis ojos despiertos;\nafuera llueve finito; adentro llueve a cántaros,\nmi paraguas se ha roto; vencido por las arenas.",
+        "Ya no sé quién soy desde que mi calabaza se durmió\nexactamente a la medianoche; hora de brujas;\nhora de volver a ser quién nunca fui:\nun hombre extraño."
+      ]
+    },
+    {
+      "type": "text",
+      "id": "eoy-curated-0045",
+      "movement": "movement-03",
+      "title": "Ojos de lluvias marrones",
+      "originalDate": "13 de enero de 2010",
+      "body": [
+        "Lo he buscado,\nen el retoño amanecido\nde un desayuno de cascarilla y leche,\nen la planicie de un silencio.\n¿Qué habrá sido de él?\n¿Lo absorbió el olvido?\n¿Se desprendió en retinas?\nNi la farsa ni el mimo\nlo devolvieron\na su origen;\nal añejado origen.\n¿Será que duerme verde perenne\nrecostado a un giro de trompo?\nNi vestigios de bruma\nde su bruma amarillenta\nen los puertos de sus ojos.\nNo en las grúas de los trenes\nde su infancia de andenes\nde su solitaria inmadurez púber.\nLo he buscado en las huellas\nde una honda al cuello\natravesando siestas,\nsoledades calientes.\nDetrás de los espejos\nde ríos de cunetas,\ntras las marrones lluvias\ntras las redes de mariposas\nsalpicando barro de charcos,\nahogado quizás\nen su maravilla de juegos\nsobre una antigua esperanza\nde manos abiertas a las manos\nde potreros y rebaños.\nLo he buscado,\ny encontré a un niño\ncon ojos de lluvias marrones\ncon el rostro apagado entre sus manos.\nEntonces lloré."
+      ]
+    },
+    {
+      "type": "text",
+      "id": "eoy-curated-0046",
+      "movement": "movement-03",
+      "title": "Con estrellas en los ojos",
+      "originalDate": "20 de enero de 2010",
+      "body": [
+        "El perro de la plaza\nse parece a mis ojos,\ndesiertos como un arenero\nen días de lluvias;\nsin niños,\nsin nanas cuidándolos\nni árboles ni sortijas;\ntodo se filtra en sus horizontes,\nhasta la pendiente del caracol lento\nque deriva sobre su vientre,\nsobre su paciencia\nsin la ansiedad del viento.",
+        "Él me encuentra cada noche,\ncada paso transcurrido,\ncada gorrión ausente,\ncada orgía de insectos entre la grama.\nYo lo acuno en mis ojos,\nen mis manos de abandono\ny me vuelvo sus miedos,\nsus espantos de tranvías,\nde frío bajo la noche indiferente\nde las pedradas de la vida\nde su vida de perro no elegida.",
+        "Y soy también perro buscando su amparo;\ndos caminamos la noche desierta,\ndos desiertos\ncon estrellas en los ojos."
+      ]
+    },
+    {
+      "type": "text",
+      "id": "eoy-curated-0047",
+      "movement": "movement-03",
+      "title": "Por lo absurdo de mi risa",
+      "originalDate": "25 de enero de 2010",
+      "body": [
+        "He reído por el simple hecho de reír,\nabsorto de mí,\nabsurdo de mí,\nnecio de mí.\nAfuera, en la calle; una niña vende su risa.\nYa no río,\nmañana tampoco ella reirá.\nNecio de mí,\npor lo absurdo de mi risa."
+      ]
+    },
+    {
+      "type": "text",
+      "id": "eoy-curated-0048",
+      "movement": "movement-03",
+      "title": "Tantas cosas que no entiendo",
+      "originalDate": "19 de febrero de 2010",
+      "body": [
+        "Límites, calles cortadas y anegadas\nen la vorágine del tranvía, del tiempo efímero.\nLos ojos desorbitados buscan la calma\nel norte que lo guíe hasta su centro.\nHan pasado tantas huellas debajo de sus zapatos,\ntantos chicles pegados en la vereda\nque teme mirar al cielo, por si acaso\nquedar varado.",
+        "Fueron las paredes quebradas las que hablaron\ncon sus grietas de escarnio.\nLe dijeron con grafitis\n¡Basta, no te sigas lamentando!",
+        "Camina, camina, anda de pies descalzos,\ncontágiate de la tierra, sus relieves, sus piedras en los caminos,\nmagúllate los dedos tropezando,\npero camina, camina, sigue andando.",
+        "Yo y mi silencio blanco.",
+        "Hay tantas cosas que no entiendo;\ntantos negros presagios,\ntantas oxidadas esperanzas,\ncontradictorias afonías\nque hablan de un fracaso, de un sino oscuro, trasnochado.",
+        "Los límites redondos, siempre volviendo, rotando\nsobre un eje descentrado,\nmi silla de tres patas y un libro en blanco\nbitácora de vuelo de un ave momificado.",
+        "Yo, mi oído sordo, mi silencio blanco\ny tantas cosas que no entiendo…\ntantas cosas que no entiendo…"
+      ]
+    },
+    {
+      "type": "text",
+      "id": "eoy-curated-0049",
+      "movement": "movement-03",
+      "title": "El silencio de los escombros",
+      "originalDate": "5 de marzo de 2010",
+      "body": [
+        "Extraño tiempo;\nnoche clara, día oscuro, mañana quién sabe.\nQuizás un sismo sin magnitud borre la esperanza\ny la vida sea un lance de dados\nsobre una montaña de cráneos mutilados.\nTiembla la tierra\ny los pies del árbol no pueden correr.",
+        "Se aplasta la copa y el labio roto\nsangra mutilado;\nya no habrá besos de chocolate\nen el desayuno\nni muñecas columpiando en las hamacas.\nPerece el instante al instante;\nsilencio debajo de los escombros.",
+        "Se acomoda el núcleo,\nse desacomoda la vida\namalgamados\nen la muerte.",
+        "¡Corran, viene por más!",
+        "Insaciable tierra."
+      ]
+    },
+    {
+      "type": "text",
+      "id": "eoy-curated-0050",
+      "movement": "movement-03",
+      "title": "Azul",
+      "originalDate": "25 de marzo de 2010",
+      "body": [
+        "Lo viste caer,\nno viste morir sus ojos.",
+        "Una lágrima seca bebió al sol\ny un batir de plumas agitó el aire;\nbuscaba el eterno azul,\nla luz final donde descansan\nlos pájaros que mueren."
+      ]
+    },
+    {
+      "type": "text",
+      "id": "eoy-curated-0051",
+      "movement": "movement-03",
+      "title": "Re-generación",
+      "originalDate": "26 de marzo de 2010",
+      "body": [
+        "Pintaron mis calles,\nllenaron sus banquinas de señales.\nLa médula gestora\ntrazó mis destinos;\nsopló un nombre a mi oído,\nhabló de un dios abstracto,\ncalzó dos zapatos derechos\npara no desviarme del camino.",
+        "Hoy transito descalzo\nborrando lo escrito.\nMis ojos siguen\nimprovisándome."
+      ]
+    },
+    {
+      "type": "text",
+      "id": "eoy-curated-0052",
+      "movement": "movement-03",
+      "title": "Los finos hilos de la vida",
+      "originalDate": "31 de marzo de 2010",
+      "body": [
+        "Si se agotara el aire;\nsi un hueco negro\nhoradara mis pulmones\ny escaparan las moléculas,\nlos estertores amnésicos,\nlos finos hilos de la vida.",
+        "Si me quedase ciego\ny el sol quemase mis entrañas,\ny el amanecer dormido\nya no elevara el diafragma\ny no subiera el aliento\nhasta la luz de los ojos.",
+        "Si caminar fuese dolor\ny el dolor encalleciera los huesos;\nsi la brisa en mis oídos\ninclinara el equilibrio\nhasta tocar el suelo con la espalda\ny el cielo con la lengua.",
+        "Si los versos recurrentes\nse resistiesen a escupir sombras\ny hubiera un vacío obsecuente\nque derramara la lámpara;\nsi se acabasen los recuerdos\nentonces, comenzaría a vivir."
+      ]
+    },
+    {
+      "type": "text",
+      "id": "eoy-curated-0053",
+      "movement": "movement-03",
+      "title": "Todo sigue como entonces",
+      "originalDate": "9 de mayo de 2010",
+      "body": [
+        "Volver y subir al viejo altillo\nal mismo encierro de vetustas paredes\nrevoques de siglos, grises, austeros,\nahogando el frenesí de alguna vez estar vivo,\naislando en costras de piedra\nlos caminos recorridos.",
+        "Retomo las páginas con versos remanidos\nagravo la historia, solvento el regreso\ncon poemas sin sentidos.",
+        "Todo sigue como entonces:\nlas manos huecas por donde escapa el aire\nla esencia lastimosa del poeta herido,\nhasta tu breve viento sigue siendo el mismo;\nroza mis sienes, escapa raudo al menor suspiro.",
+        "La misma noche, la misma espera,\nla brevedad de abrazos dibujados a tecla limpia\nrosas de papel amarillando al desconcierto;\nno fuimos complementos, apenas roce de palabras\nhilvanadas en el tedio de estar solos.",
+        "Fui el tiempo breve del beso del viento\nen la paleta austera de tus grises,\nluego fuiste ausente, llevándote mis versos.",
+        "He vuelto, todo está como entonces\nhasta el gato colgado del perchero\nel de las cien vidas que mira mi regreso\ny me dice con sus ojos muertos:\nNo huyas más, tu infierno está adentro."
+      ]
+    },
+    {
+      "type": "text",
+      "id": "eoy-curated-0054",
+      "movement": "movement-03",
+      "title": "Cuando el tiempo gima en las bisagras",
+      "originalDate": "26 de mayo de 2010",
+      "body": [
+        "Puede que no me veas\ntejer memorias por millones de auroras\ny cortes leña de mi árbol sin darte cuenta,\ny caigan los gajos de madreselva\nenredados en los brazos de la espera.",
+        "Preguntaré entonces al gato cojo\nsi te vio subir en la azotea,\nquizás sin darte cuenta\ntomaste el tren equivocado,\nel de la vieja travesía de paisajes,\nde los mismos sitios,\nnuestros antiguos niños extraviados\nen la fuente de los sueños.",
+        "¿Te acuerdas la palidez del sol?\n¿La escarcha de la hamaca?\n¿La ruta del tranvía hacia el cielo?\nHabía entonces medialunas de queso\ny la sonrisa de un payaso\ndibujaba gorriones\nsobre su sombrero.",
+        "Sólo cuando el tiempo gima en las bisagras\nmiraré el reloj y te sabré volviendo.\nEncenderé la luna\nsacudiré el polvo de las rosas\nsumiré en zumo de uvas las cerezas\ny pondré el mantel sobre la espera.",
+        "Te veré llegar desnuda\ncon la sonrisa como vestimenta\nsimple y bella como esfinge,\nreluciente lunar de estrella.",
+        "Cuando bajes a la tierra\ndesde tu efímera gloria,\npisarás mis huellas,\nte sentarás conmigo y te leeré un poema,\nhasta quizás una lágrima de esperma\nfecunde el anhelo abandonado\ncuando murieron los gorriones\ny la ajada rosa de mi sombrero\nse deshojaba por dentro."
+      ]
+    },
+    {
+      "type": "text",
+      "id": "eoy-curated-0055",
+      "movement": "movement-03",
+      "title": "La finitud del círculo",
+      "originalDate": "20 de junio de 2010",
+      "body": [
+        "De su nudo -la boca-, lloró el árbol;\nlo vi entre dos quiebres caer madera\nhorqueta herida teñida de rojo,\ncascada hecha resina.\nCayó sin caer, muriendo de pie.",
+        "Y no olvido su llanto ni sus anillos de recuerdos,\nsiglos cubriendo soles\nescarchas desveladas en genética circular:\nhacia arriba, ensanchando copa\nhacia abajo, reabsorbiendo raíces,\npariendo brotes de futuras maderas;\nlas hijas de sus hijos,\nla misma savia dolorida, la misma angustia.",
+        "He visto a mi padre,\nen el tajo de la vida por donde entra la muerte;\nla muerte de la sangre, el último apellido de su estirpe,\nes decir, los hijos de sus hijos, que no serán."
+      ]
+    },
+    {
+      "type": "text",
+      "id": "eoy-curated-0056",
+      "movement": "movement-03",
+      "title": "Alguien gritó en la noche",
+      "originalDate": "7 de julio de 2010",
+      "body": [
+        "Presta oídos, escucha,\nalguien gritó en la noche,\nquizás el viento o algún fantasma\ncon hambre de un cuerpo.",
+        "¡Gime! ¿Oyes? ¡Es un lamento!\nviene calando hondo el terco silencio\ny galopes de briosos caballos\naterciopelan el aire de relinchos.",
+        "¿Será la conciencia del hombre\nbuscando albedrío,\nla finitud de la pena\nla boca del laberinto,\nel agua bendita que calme la sed\ny lave el barro de entre sus dientes?",
+        "Imagino que lo toma la muerte,\nque en sus manos mugrientas\nsostiene en equilibrio\nla fe inconclusa del guerrero herido,\ny estocadas certeras laceran su miedo\ny un río infinito de lava ardiente,\nproyecta injurias sobre su cuerpo.",
+        "Yo no sé, pero el aire sabe a brusquedad,\na maltrechos horizontes\nsangrando en velas de fuego,\nen olas de azufre, mal oliendo,\nmientras un beso de muerte\namargo como la vida,\nsacude el istmo de su pecho;\nentonces también grito,\ngrita conmigo,\ngime al silencio la magnitud de las palabras,\ndel dolor;\nla esperanza del hombre partido."
+      ]
+    },
+    {
+      "type": "text",
+      "id": "eoy-curated-0057",
+      "movement": "movement-03",
+      "title": "Nadie vendrá a regar las flores",
+      "originalDate": "10 de julio de 2010",
+      "body": [
+        "Doscientos siglos abren los ojos\n¿Cuál de ellos pisará esta noche\nla lánguida esperanza sin sol,\nque subyace, que besa la presta tierra?",
+        "Derramarán los ojos en las tumbas\nlas coronas y sus espinas recias que enmarcan el adiós,\nel definitivo artilugio de escapar de la vida;\nesa mentira tan absurda como absurdo el beso muerto.",
+        "Nadie estará allí, abundarán los ausentes,\nla tierra ocultará el último rostro\nahuyentando los fantasmas con sus trampas.",
+        "Alguien dirá: que fue desdicha de un amor,\notros, que apresuró a buscar la excusa;\nnadie verá en mis vertientes de arrugas\nderramar la sal amoratada,\nporque hace tiempo he podido prescindir\nlo inalcanzable, lo superfluo de amar\npor la simple y efímera carne.",
+        "Nadie vendrá a regar las flores que no crezcan\nporque partiré sin avisar, sin mendigar abrazos,\na muchos molestará esa indiferencia,\nnecesitan ser testigos del dolor\ny decir en murmullos ¡Te lo dije!\nLlégate a casa y me cuentas;\nquizás alguna de estas noches\nsi mi vida loca me permite,\ntomaremos cerveza y hablaremos como amigos,\ncomo entonces, cuando éramos apenas gérmenes de sueños,\naquellos que no sabían de miserias.",
+        "Doscientos siglos, a quién importa;\nsi para que me escuches tengo que dejar mi testamento\nmi derroche de nada sobre esta mi última morada;\nafuera han quedado fantasmas,\nellos buscan otro cuerpo,\npuede que el tuyo, en otro espacio, en otro negro siglo."
+      ]
+    },
+    {
+      "type": "text",
+      "id": "eoy-curated-0058",
+      "movement": "movement-03",
+      "title": "Todo está bien",
+      "originalDate": "31 de julio de 2010",
+      "body": [
+        "Soy la utopía y me desangro\npor las necias mentes-muros;\nme acobardan, me obnubilan,\nme retroceden dos casillas por cada una que avanzo;\nme aíslan las reglas, la in-cordura,\nla invalidez humana.",
+        "¡Y soy humano!",
+        "Llegan los mazazos desde las masas,\nsu ceguera choca contra la luz,\nla revisten de cinismos\n¡Está todo hecho, no hay caminos a descubrir!\nY soy la oveja negra, descarriada, alejada del rebaño;\nme pintan los dedos de traidor a lo escrito,\nsoy foráneo en la sangre\nprovocador de rebeliones\nsubversivo entre cobardes.\nAlguien dirá: un imbécil idealista,\nun incómodo en lo cómodo\nun adelantado tres pasos más atrás de lo posible,\nde los autolímites que masifican\nque acomodan a su comodidad los “todo está bien”.",
+        "Hacer, deshacer para ser.\nDeshacer\ndeshacer...",
+        "¡Todo está hecho,\nguárdate tus utopías,\nnada está tan lejos como ellas!",
+        "Y las masas siguen como ovejas,\ndeshaciendo\ndeshaciendo...",
+        "Yo, tres casillas detrás de lo posible,\nremando\nremando\nremando."
+      ]
+    },
+    {
+      "type": "section_cover",
+      "id": "movement-04",
+      "title": "IV · Formas breves de seguir",
+      "dateRange": "1 de agosto — 6 de diciembre de 2010",
+      "startOn": "recto",
+      "showFolio": false,
+      "countInSequence": true
+    },
+    {
+      "type": "blank_page",
+      "movement": "movement-04",
+      "side": "verso",
+      "showFolio": false,
+      "countInSequence": true
+    },
+    {
+      "type": "text",
+      "id": "eoy-curated-0059",
+      "movement": "movement-04",
+      "title": "Vuelos",
+      "originalDate": "1 de agosto de 2010",
+      "body": [
+        "El pájaro enjaulado, antes del suicidio dijo:\n¡Moriré cantando!\n¿Alguien se opone?",
+        "Nadie respondió,\nhasta el silencio prefirió morir;\nno hay libertad sin el canto de los pájaros."
+      ]
+    },
+    {
+      "type": "text",
+      "id": "eoy-curated-0060",
+      "movement": "movement-04",
+      "title": "Esta noche",
+      "originalDate": "4 de agosto de 2010",
+      "body": [
+        "Abrí grande mi boca en un bostezo,\nsalió la noche a recordarme que sigue adentro.\nApagué la luna y se durmió en mis ojos."
+      ]
+    },
+    {
+      "type": "text",
+      "id": "eoy-curated-0061",
+      "movement": "movement-04",
+      "title": "Belleza perfecta",
+      "originalDate": "15 de agosto de 2010",
+      "body": [
+        "Lo bueno de vivir en la oscuridad\nes poder dibujar un rostro en ella\ncon sólo tantear la memoria\ny recoger retazos de recuerdos\nde la última visita a la vida;\nde otras oscuridades sin rostros\ndonde la belleza es perfecta."
+      ]
+    },
+    {
+      "type": "text",
+      "id": "eoy-curated-0062",
+      "movement": "movement-04",
+      "title": "El árbol que llora pájaros",
+      "originalDate": "4 de septiembre de 2010",
+      "body": [
+        "Del árbol que llora\nllovieron pájaros\nel peso de sus nidos\ndolió en sus ramas\nhasta curvarlas\nen\nc\na\ns\nc\na\nd\na\ns",
+        "Corrieron ríos / de pájaros /",
+        "/ y de nidos /",
+        "Luego\n/ el río /\nsacudió su humedad\nrecogió sus alas",
+        "/ y sus nidos /",
+        "y voló",
+        "v o l ó\nhasta mis ojos\nque dejaron de llover pájaros."
+      ]
+    },
+    {
+      "type": "text",
+      "id": "eoy-curated-0063",
+      "movement": "movement-04",
+      "title": "Bastones blancos",
+      "originalDate": "24 de septiembre de 2010",
+      "body": [
+        "Ver en horas de un ocaso\njustamente dos partidas\nde un viejo sol\nde un día viejo\ny sumar otro envejecido romance\ncon la desgastada vida\nque regresa constante\ncomo la furia de febo en verano\nquemando las entrañas absurdas\ndel hombre también gastado.",
+        "El balance de las horas\ninvolucra\ncomprender que la suma resta\ny que la resta multiplica\nla congestión del tiempo\nque se arruga sobre los huesos.",
+        "Y ya no va la sombra erecta\nproyectada en la pared\nahora es una curva en pendiente\nsostenida por un bastón descalcificado\nque la atrae a la tierra\nle acorta el esqueleto\ny su viaje sin regreso\npara eternizarla en larva\no en polvo de donde viene.",
+        "A esta hora del ocaso\ndonde sólo llueven bastones blancos\ndonde la ceguera obnubila\nla piel del aire que aplasta el rostro\ny llama a la asfixia\ncomo cansada de vaciar pulmones\ngastando obleas de oxígeno\nsobre una calesita muerta.",
+        "¿A dónde va el calcio de las\nestructuras del tiempo?\nEsta melancolía ahueca las brumas\ny el futuro se rellena de malos presagios\ndonde no cabría una mínima molécula\nque regenere la vida."
+      ]
+    },
+    {
+      "type": "text",
+      "id": "eoy-curated-0064",
+      "movement": "movement-04",
+      "title": "Residuos patológicos",
+      "originalDate": "10 de octubre de 2010",
+      "body": [
+        "Calles;\nvaciaderos del mundo\nresumidero que resumen las inmundicias\nreceptáculos viciosos donde todo se envicia\ny la estulticia del humano\nque escupe sus propias miserias.",
+        "Caminan juntos; las putas\nlos estudiantes eruditos en nada\nlos mendigos que venden su lástima\nreciclando Mc Donalds\nde los desperdicios dejados\npor otros desperdicios humanos;\nmonjas en cautiverio de un dios de yeso\nque mira sin ver nada\nque multiplica el pan de los poderosos\ny los convierte en votos de indiferencia.\nLas calles sin voces\nque hablan hasta por los re-codos\nque hay un inframundo emergente\nsobre sus montañas de escombros;\nJeringas descartables\nentre humanos descartables\nque beben el alcohol y la sangre\nde los ingenuos dadivosos\nzombies que han dejado sobre la tv\nel control remoto de sus respiradores\nBasural de pasos acabados\nerrantes, buscadores de nada…\ny el hambre.",
+        "El hambre que eyacula ignorancia\nen forma de hueso y de magra carne\ncon sus futuros muertos antes de tiempo.",
+        "Los desechables\narrojados de balcones ruines\nperros, gatos, fetos en bolsas de plástico\n-quizás tuvieron suerte-\nancianos seniles sin pañales\nniños sin padres o con padres también desechables\nque no supieron reutilizarse\nluego de procrear miserias.\nMadres cargando ristras de niños sin edades\nfalsos profetas de fe variada y diezmos ladrones\nque roban la esperanza y venden la mentira sin vergüenza\npuerta a puerta.",
+        "Entre estas miserias: los poetas;\nfalsos veedores,\ndibujantes de irrealidades utópicas\nfantasías en palabras rimadas\nque se olvidan\ncuando apoyan el codo sobre la hoja\nborrando lo escrito con impunidad heroica.",
+        "Levanto mi lata de limosnas\nde la calle absorbida por la noche\ndonde los pechos golpeados en las iglesias\ntransitan ya sin mirarme;\ndescorro mis gafas oscuras\ny me escapo hacia otra esquina\ndonde la ingenuidad más generosa\npagará monedas por mi falsa ceguera.",
+        "Miro el cielo; nubes negras anuncian\notro temporal de miserias.\nTamborileo mi bastón sobre las baldosas…\ny espero."
+      ]
+    },
+    {
+      "type": "text",
+      "id": "eoy-curated-0065",
+      "movement": "movement-04",
+      "title": "Falso ilusionista",
+      "originalDate": "17 de octubre de 2010",
+      "body": [
+        "Desazón pariendo tempestades,\nfragilidad de memorias\nen los sueños frustrados;\nreposa abúlica\nla fe de la gente.",
+        "-¿Puedes venderme una esperanza?\n-Suplican al poeta-",
+        "-Soy apenas un hombre,\nno hago milagros;\nsólo escribo versos tristes\nque nadie lee."
+      ]
+    },
+    {
+      "type": "text",
+      "id": "eoy-curated-0066",
+      "movement": "movement-04",
+      "title": "Sinceramente",
+      "originalDate": "23 de octubre de 2010",
+      "body": [
+        "Falsifiqué mi firma\npara poder ser poeta",
+        "los requisitos imponían\nla correcta disposición\nde acentos\ncomas\nmusicalidad\nhiatos\nsinalefas\ny hasta un ábaco\npara contar sílabas",
+        "el anexo decía\npoesía libre\ncon reglas",
+        "fracasé como poeta\n-no sé mentirme-\npero sigo\nescribiendo\npoesía."
+      ]
+    },
+    {
+      "type": "text",
+      "id": "eoy-curated-0067",
+      "movement": "movement-04",
+      "title": "Infortunio",
+      "originalDate": "13 de noviembre de 2010",
+      "body": [
+        "Se ha formado\nun agujero negro\nen el espacio\nde mi cama",
+        "no quepo en él",
+        "continuaré\npurgando\nmi vida\na plena\nluz del día."
+      ]
+    },
+    {
+      "type": "text",
+      "id": "eoy-curated-0068",
+      "movement": "movement-04",
+      "title": "Lo siento señor",
+      "originalDate": "14 de noviembre de 2010",
+      "body": [
+        "El niño\ngolpeó\nla ventanilla\nde mi coche\ncon gestos\nde manos rudas",
+        "-le limpio los vidrios",
+        "su mirada\nleyó mis ojos",
+        "-lo siento señor\nno sé limpiar\nconciencias",
+        "-eso dijo-",
+        "¿O fue mi vergüenza?"
+      ]
+    },
+    {
+      "type": "text",
+      "id": "eoy-curated-0069",
+      "movement": "movement-04",
+      "title": "Es hora de volver a casa",
+      "originalDate": "23 de noviembre de 2010",
+      "body": [
+        "Cuántas madreselvas han tejido paredes\nantes de volverse trepadoras;\ncuántas muertes han renacido antes de caminar\nsobre este inculto terreno cubierto de alimañas,\nde cadáveres que han vivido absurdamente\nsu propia vida de irresoluta humanidad.",
+        "Es momento de voltear las sábanas,\nde blanquear con el recuerdo\nesta situación absurda de empañar los días;\nde alterar el orden de las cosas\nen un orden necesario y diferente;\nrecuperar el acento natural\nque nos asombró luego del principio,\nluego de las miradas concluyentes\nque absorbieron nuestros ojos.",
+        "Solos, inmersos en obscenidades\ndescubiertas en la red de placares\ndonde habitamos indiferentes sin distinguir los ocasos.\nEs tiempo de subyugar a la distancia\ny abrazarla del mismo lado de la luz\ny ser sombra y pared al mismo tiempo.",
+        "Es hora de volver a casa,\napagar la caja boba\ny olvidar la vida que desalienta,\nque alimenta este existir de superficies,\nque rebalsa el vaso de abulia,\nmientras afuera, todo continúa como si nada,\ncomo si un viento venusino atropellara una nave de olvido\nque intentó posarse desnuda.\n¡Sí señor!\nEs hora de volver a casa."
+      ]
+    },
+    {
+      "type": "text",
+      "id": "eoy-curated-0070",
+      "movement": "movement-04",
+      "title": "Camuflaje",
+      "originalDate": "6 de diciembre de 2010",
+      "body": [
+        "Hombres vestidos de camuflaje\ncaminan por la selva de cemento;\ncon una herida silenciosa\nentre ruidos de vidas mecánicas.\nHan despertado a la diana de cuarzo,\ndesayunado polvos químicos en leche adulterada;\ncirculan al son de un semáforo verde\nsiempre verde, siempre verde.",
+        "No se miran, pero saben que en algún lugar coincidirán:\nen un carro subterráneo,\nen un charter urbano camino al consumismo;\ndesfilan en trajes de apurados,\nllevan paraguas para lluvias ácidas.",
+        "No se saludan,\nno se miran,\nchocan,\ncaen,\npasan pisando cuerpos,\nalguno sobrevive y se levanta,\notros son tragados por túneles que dan a otros túneles\nhasta una alcantarilla con forma de orbe.",
+        "Son rutinas domesticadas entre café y medialunas,\nse alimentan con basuras de paso.\nEn media hora de urgencias evacuan intestinos, bolsillos y abulia,\nluego se automatizan y regresan a lubricar sus sillones mullidos\ndonde mueren de a poco entre números fríos,\ntan fríos como sus días.",
+        "Alguno sobrevive y se levanta\ny se sienta con una dosis en las venas,\na mascullar su fruta podrida,\nsu aliento a desconcierto alcoholizado\ny se sienta a escribir poemas;\notra forma de morir de a poco,\nurbanizando miserias\ndetrás de sus ojos adulterados de sueño,\nlamiendo el reloj del infortunio\nhasta que den las doce en pleno.",
+        "Luego sale a robar la vida\nde las calles suburbanas,\npara no ser menos\nque una herida."
+      ]
+    },
+    {
+      "type": "section_cover",
+      "id": "movement-05",
+      "title": "V · Persistir en el círculo",
+      "dateRange": "24 de marzo de 2011 — 17 de abril de 2015",
+      "startOn": "recto",
+      "showFolio": false,
+      "countInSequence": true
+    },
+    {
+      "type": "blank_page",
+      "movement": "movement-05",
+      "side": "verso",
+      "showFolio": false,
+      "countInSequence": true
+    },
+    {
+      "type": "text",
+      "id": "eoy-curated-0071",
+      "movement": "movement-05",
+      "title": "La intacta perversión del tiempo",
+      "originalDate": "24 de marzo de 2011",
+      "body": [
+        "Yo; que regreso como tantas veces\na pintarte de abstracta forma y melancolía,\nabusando sin escrúpulos de un fantasmagórico\ncuerpo ígneo. Vasija de lava apagada,\nterracota que moldea humedades\ncon formas y costumbres cóncavas,\ndeletreando rostros conversos en angustias.",
+        "Yo; que te aferré con clavos de olor\na la pérgola de mis ojos; donde aromas\ny desmoronas las tejas azules de un cielo,\nque no duda en blasfemar su impotencia,\nsu vertiginoso albur de guerrero de lluvias.",
+        "Te he vuelto parte de un vaivén,\nde una ajetreada agenda de remembranzas\ndonde minuto a vida aliteras los pasos,\ninterrogas a las preguntas sin respuestas\ny esclavizas la memoria en un frasco con hormigas.",
+        "Yo; la intacta perversión del tiempo,\nsatírico desayuno de un teorema,\nde una flagrante y aborrecida hipótesis,\ndonde el resultado cronológico\nrevela, que no han quedado más que esquirlas\nbajo la sábana donde tejió la noche,\nun patético entramado de huesos."
+      ]
+    },
+    {
+      "type": "text",
+      "id": "eoy-curated-0072",
+      "movement": "movement-05",
+      "title": "¿Y entonces?",
+      "originalDate": "22 de abril de 2011",
+      "body": [
+        "Si escribo atrocidades\nes porque he vivido atrocidades\nsi planto espinas en los ojos\nes porque la flor de los años no aromó de esencias\nla tierra de los ancestros.",
+        "Si rearmo mi horca cada vez\nque un verso estigma mi anatomía\nes porque nada se mueve fuera\nde lo convencional de un suicidio\ny digo suicidio como podría decir\nescasez de sangre en los axones vida-deseo.",
+        "¿Y entonces?",
+        "Será mañana quizás\nque deje de trazar rayitas en la celda\ncronómetro inútil de un diario funerario.\nHe leído a Walt en sus hojas nefastas\ny me atormentó la idea de no ser como él.\nAlguien con voz y formas libres\ntan libres como un suicidio.\nSí. Otra vez digo suicidio\ncomo podría decir analfabeto\naunque Walt no lo era.\nEra al fin un hombre como yo\no podría decir simplemente alguien.\nÉl no diría lo mismo de mí.\nY sinceramente, poco me importaría.\nUno, cien, mil;\nsigo trazando rayitas en mi celda."
+      ]
+    },
+    {
+      "type": "text",
+      "id": "eoy-curated-0073",
+      "movement": "movement-05",
+      "title": "En la rumba amarga de los días",
+      "originalDate": "17 de junio de 2011",
+      "body": [
+        "Esta hora es mía,\nes el saldo del resto de los días,\nla suma de mañanas inciertos\nque pugnan por salir en caravana\na morir en el intento.\nHaber cruzado la mortal espesura\nde un trabalenguas existencial,\ndejó expuesto un calcáreo esqueleto\nen la rumba amarga de los días.",
+        "Esa hora fue mía,\nfue el salvavidas en la arena,\nla piedra que elevó la ballesta\ndespedazando la cuerda liviandad\ncon que caminan mis años.\nCansado estoy de pisar las ruinas."
+      ]
+    },
+    {
+      "type": "text",
+      "id": "eoy-curated-0074",
+      "movement": "movement-05",
+      "title": "Córdoba de fuegos",
+      "originalDate": "27 de julio de 2011",
+      "body": [
+        "Córdoba era una llama,\nun clamor encendido\ncon antorchas y pancartas.\nUn ulular de sirenas confundía la noche.\nSus transeúntes amanecidos,\nsucumbían bajo lloviznas de hollín\nque sangraban los rascacielos incendiados.\nEsa noche barrió el viento las huellas.\nDesorientados faros escaneaban las calles;\nlos perros de fuego saboreaban un festín\nmientras dos escobillas sacudían el polvo de los ojos.",
+        "Y vos y yo, lamíamos las manos.",
+        "Los tornillos de un reloj desajustado\ntañían las horas bajo una campana de silencios;\nno pudimos decirnos adiós\ny los ojos brillaron como vidrios en los rostros.\nHabía tanta intemperie en los adoquines\nque los pasos se enfriaron.\nLuego explotó la luna,\naplastando las cabezas de los amantes\ny la ciudad ardió en Sodoma y Gomorra.",
+        "Cargó de azufre el aire;\nlos tímpanos de los edificios\nabrieron los oídos de sus ventanas;\ncayeron boca abajo\nlos últimos besos de lava.",
+        "Y nosotros; lamíamos las manos,\ndel último escalón al infierno."
+      ]
+    },
+    {
+      "type": "text",
+      "id": "eoy-curated-0075",
+      "movement": "movement-05",
+      "title": "Piedras en los bolsillos",
+      "originalDate": "13 de agosto de 2011",
+      "body": [
+        "Busco en los bolsillos\nlas piedras rescatadas de los íconos,\nen los años que aún sobreviven al deshielo,\ny todo palidece en la hambruna\nque limita la memoria a futuro.",
+        "Qué hay, qué queda después de la embriaguez,\nluego de los tragos ácidos\nque socavan los nichos salobres del cuerpo.",
+        "Ser barro, amasijo de un orfebre sin manos\nque no entalló en la rueda sus formas\nni su esencia ni su perfume de niño.",
+        "Y se fagocita sin atenuantes ni prórroga\ncomo viento en la grieta de la roca\nque pasa en silbo\ny aturde la sordera del silencio\nde una guerra derrotada.",
+        "He visto morir demasiadas vidas,\ntodas en una, una en cada mañana;\nde boca troglodita, ansiosa\npor acosar los pies que tiemblan\ncuando el remesón socava.",
+        "No sé, no sé,\npalabras huecas,\ndiamantadas cuchillas de lenguas.",
+        "Soy eso, soy eso\ngritando a los oídos fantasmales\ndesposeídos de perdones,\ny esta sumisión fascinada por la muerte\nque arremolina sobre coronas secas.",
+        "Se ha despintado el hombre marrón,\nel árbol que llora pájaros\nderrumba sus nidos,\nmientras sobreviene la noche\nde la cadavérica memoria,\nque no se resigna a ser menos\nque un apéndice de olvidos,\nepitafio del libro muerto de la vida."
+      ]
+    },
+    {
+      "type": "text",
+      "id": "eoy-curated-0076",
+      "movement": "movement-05",
+      "title": "Innecesaria prórroga de un suicidio",
+      "originalDate": "9 de octubre de 2011",
+      "body": [
+        "He mentido tres veces;\ntres veces he perdido la palabra;\ntres veces escupí cielo arriba;\notras tantas, el baño ácido lamió mi rostro,\npulió su rudeza de cobarde\ny moldeó una mueca parecida a un llanto.",
+        "/Tierra, saliva, ojera de barro: cobardía/",
+        "He mordido el polvo,\nrasgado la rama verde en la aridez de la caída,\npero no pude verte detrás de mi ceguera:\nacurrucada de hambre,\ntiritando de esperanza.\nAbúlica mansedumbre escurridiza\nque no ventila por sus pleuras\ne irónicamente sonríe.",
+        "Cien veces he caído,\nde ninguna me he puesto de pie;\ncon todas he tenido un hijo de piedra;\nuna por una he ido tropezando,\nhasta me tragó la tierra.\nY sigo mintiendo, mintiéndome;\nhastiado de las congestionadas vías\ndel tren al cadalso.\nAy mañana, mañana;\ninnecesaria prórroga de un suicidio."
+      ]
+    },
+    {
+      "type": "text",
+      "id": "eoy-curated-0077",
+      "movement": "movement-05",
+      "title": "Sequía",
+      "originalDate": "23 de octubre de 2011",
+      "body": [
+        "No he caminado lo suficiente\nes difícil pintar paisajes entre cuatro paredes\nson siempre los mismos reflejos\nlas mismas formas clandestinas\nque la ignorancia visual lo determina.\nHoy he vuelto a pintar los mismos versos\ny sus manchas de humedad\nsus musgos verdes con formas extrañas\nque de memoria desdibuja la memoria.\nOtra sombra repetida ha huido esta tarde.\nNo quiso entrar en el paisaje.\nDebo modificar la rutina\nrotar la silla\ncolgarme del techo como murciélago\ny pintar el calidoscopio de mosaicos etruscos.\nPuede que la sangre irrigue\nla escasa temporalidad de ideas."
+      ]
+    },
+    {
+      "type": "text",
+      "id": "eoy-curated-0078",
+      "movement": "movement-05",
+      "title": "Pordioseros comunes de un sistema",
+      "originalDate": "11 de diciembre de 2011",
+      "body": [
+        "Arrojé mi saco al aire\ncomo sólo se arroja un saco al aire;\nno importó la forma entonces.\nVi cómo se estrellaba torpemente sobre una mata espinosa;\nsus formas dejaron de ser estrictas, sobrias;\nhasta me imaginé un diario de envoltura arrojado por el viento.\nEn el parque todos arrojaban sacos al aire;\nlas matas espinosas estaban cubiertas de sacos\n-de diarios de envolturas arrojadas por el viento-\nsacos negros, grises, rayados, fuera de época.\nCantamos bajo esa lluvia de sacos;\ndisfrutamos entonces\ndescubrirnos pordioseros comunes de un sistema\nviciado de nulidad, de aberrantes apariencias."
+      ]
+    },
+    {
+      "type": "text",
+      "id": "eoy-curated-0079",
+      "movement": "movement-05",
+      "title": "Contaminando la génesis",
+      "originalDate": "19 de enero de 2012",
+      "body": [
+        "La ambición se estrella como un torpedo\ncontra el paisaje\nque cede al impulso violento de su paso\nse ensancha como arteria hambrienta de oxígeno\nla engulle entre sus epitelios\nhasta contaminar su identidad",
+        "es entonces un miembro extraño\nen la flora de su génesis\nviolando un futuro que se aborta\nen cada instante mutilado\ninseminando despojos atómicos\nenfermedades sociales\ndesarraigo de raíces\nla nefasta y usurera violencia\nde un apetito miserable\ny no hay juicio que lo condene\npor violar tanta naturaleza muerta."
+      ]
+    },
+    {
+      "type": "text",
+      "id": "eoy-curated-0080",
+      "movement": "movement-05",
+      "title": "Resaca",
+      "originalDate": "19 de febrero de 2012",
+      "body": [
+        "I\nDecanta el vino en la rugosidad de una lengua\ny un aliento a vides trasnochadas te evoca\nmadreperla\nentrepierna de la vida\ncoraje que enfrenta los refucilos del alba\ny no es\nni siquiera se parece\npero se desliza ladera abajo\npendiente frutal sin sabores étnicos\nanalfabeto de amores.",
+        "II\nSoledad senil\nen este huracán que explota sus venas vacías de sangre\nambiciosas de muerte –como las uvas muertas del vino-\nllenando arterias anegadas de ocios.",
+        "III\nDesflora la piel en un bautismo de piras\ny va a morir con él la garganta que engulle\nel escaso aire de esencias\ny ya no sabe vivir\nno desea vivir\ny es una costra empotrada en la roca\nque el mar no descuece con su furia\ny es la muerte golpeando la puerta\nsuplicando que se diluyan los ríos\npara evaporarse con ellos\ny ser polvo de nada\ncomo el tiempo.",
+        "IV\nAy si pudiera\nsi pudiera recuperar la memoria\ndecodificar el olvido\ny volver a llenar un abrazo de amor\ny temblar e inundarme de espasmos\ny decir te amo y todos sus sinónimos\nsólo por un instante\ncomo un flash que besa el último deseo.",
+        "V\nDelatora resaca."
+      ]
+    },
+    {
+      "type": "text",
+      "id": "eoy-curated-0081",
+      "movement": "movement-05",
+      "title": "Cuando los pájaros mienten con sus cantos",
+      "originalDate": "18 de marzo de 2012",
+      "body": [
+        "El cielo y sus pasarelas acatan el reglamento:\nmostrarse inmune a los prejuicios,\na los desvalores de la vida\nque confunden con sus cantos de sirenas.\nLos pájaros se asfixian entre el hollín capitalista,\nsus trinos armoniosos se tornan iracundos\nante las balas que arrojan las humanas miserias.\nNo quedan burbujas de oxígeno para aislarse del odio.",
+        "Dadme la llave que encarcele a los necios;\nprovocadme la rebeldía que nacionalice la vida\ny la esclavice al amor con argumentos de paz;\nno quiero desabrazar mi afligida utopía.",
+        "/saben de mí los cantos que asesiné\ncuando la culpa era tan ajena a mi inocencia:\nlos enterraba en el descuido/",
+        "En el arbitrio vagabundo de una infantil valentía:\n¿A dónde van los niños cuando mueren los pájaros,\nqué nicho indiferente los acuna en sus penas?\nA sus oníricas mentes de héroes de historietas:\n¿Quién las libera del genético egoísmo\nque les altera el orden y los vuelve miserables?",
+        "/como los pájaros que mienten con sus cantos/"
+      ]
+    },
+    {
+      "type": "text",
+      "id": "eoy-curated-0082",
+      "movement": "movement-05",
+      "title": "Intemperie",
+      "originalDate": "23 de agosto de 2012",
+      "body": [
+        "A veces soy el ciego\nque mira la pantalla blanca de sus ojos,\nsabiendo que delante de ese velo la vida se devela\ny me quedo entonces observándote,\nimaginando tus movimientos ínfimos, precisos,\nhasta aquellos inciertos que no tienen recorridos determinados.\nTacto buscando quién sabe qué en la memoria\na pesar de no saber la razón de mi estatismo\nde estirar los ojos y desgarrar la tela y tocar\ny palpar más allá de las palabras.\nEs que el tiempo ha olvidado sus formas, sus temperaturas interiores\ny el temor a una autocombustión del cuerpo se diluye en ese olvido\ny las manos se esconden entre las piernas de la impotencia,\nde la ignorancia del frío que todo lo abarca.\nTantas veces he querido decapitar las manos de mi memoria\npara no pintarte en el mural de los lamentos."
+      ]
+    },
+    {
+      "type": "text",
+      "id": "eoy-curated-0083",
+      "movement": "movement-05",
+      "title": "Cianosis",
+      "originalDate": "25 de agosto de 2012",
+      "body": [
+        "Cada gramo de violentas refriegas\nque adolecieron en las fauces del miedo,\nhoy carecen de sustento\npor el trasfigurado obraje del tiempo.\nCada simposio de piedras sobre las chapas de zinc\nde mi alocado mutismo,\nrefrendan con solapados labios azules\nun pacto cianótico que mora en la piel\ndonde boquean sentimentales tertulias de fango.",
+        "/Trascribo violando ancestrales secretos\n-liberados de moralistas eufemismos -\nla palabra natural que expresa en verbo y forma\nla cobardía del lobo cazador de mentiras./",
+        "Una presea de barro por un golpe de ternura;\nun extinto delirio trashumante\na cambio de un lar de velas encendidas;\nun descorrer de cortinas de humo,\npor un amanecer de migas recogidas:\nmágico ritual de un desayuno de besos.",
+        "/Desnudo de mí mismo veo mutar la intemperie\ncon un cerrado aplauso de incordura.\nSi hasta los vahídos del alba parecen incoloros\nsobre un horizonte de piel que se aleja./",
+        "Y llueven paradojas sin consignas\ny el bis no se devuelve tras la mascarada,\ncerrando el telón en el penúltimo acto…",
+        "/…a sala vacía./"
+      ]
+    },
+    {
+      "type": "text",
+      "id": "eoy-curated-0084",
+      "movement": "movement-05",
+      "title": "Apuntes entre líneas",
+      "originalDate": "17 de diciembre de 2012",
+      "body": [
+        "A dos espacios entre líneas",
+        "cubriendo distancias intangibles",
+        "invadiendo anexos impolutos",
+        "distanciando años nuevos y viejos",
+        "A dos espacios entre líneas",
+        "me veo sacudiendo mis rodillas",
+        "nadando entre flores de lino",
+        "con amores de juegos.",
+        "A un espacio entre líneas",
+        "acortando la cuerda del péndulo",
+        "entre ancianos vetustos solemnes ciegos",
+        "entre algodones que supuran olvidos",
+        "por resquicios de apneas",
+        "movilizo",
+        "oxígeno",
+        "morfina",
+        "orines",
+        "A un espacio entre líneas",
+        "la tapa cubre la vida",
+        "lo necrótico endurece mi rodilla de lino",
+        "mis amores de juego regalan coronas de muérdago",
+        "y una cinta lila con bordes dorados\nrecuerda los que me quisieron",
+        "/o me ignoraron en vida/",
+        "porque la muerte recupera memorias",
+        "como domingos de inviernos",
+        "subrayando renglones",
+        "historias añejas",
+        "futuros sin futuros",
+        "agotando los espacios /entre líneas/"
+      ]
+    },
+    {
+      "type": "text",
+      "id": "eoy-curated-0085",
+      "movement": "movement-05",
+      "title": "El hombre circular",
+      "originalDate": "20 de diciembre de 2012",
+      "body": [
+        "El hombre circular tiene un radio\nun cúbito dorsal\nuna tangente intangible bordeando la urbe",
+        "de su apolillado círculo.",
+        "Un hombre circular circula",
+        "adosado a un eje imaginario rutinario\nmientras su especie deambula inconsistente\npor las mutaciones naturales de la evolución.\nEvoluciona mientras involucionan sus círculos sin inercia.\nTiene frío y un sórdido pasado.\nSus garras antiguas sostienen huellas muertas\nbajo la epidermis de una nevada de polvo.",
+        "Camina erguido encorvando su torso\ndistribuyendo siglos entre ojos y huesos.",
+        "Calvicies de cueros y rebaños\nsostienen su esencia de emigrante sin destino.",
+        "El hombre circular refugia entre sus manos\ncalles arrítmicas de abulias de autoría.\nCuando chista un taxi chista un entusiasmo\nuna rotura umbilical de sus raíces\nun intento de socavar la atracción cenital\npara luego adquirir impulso y dejarse llevar\nen andas por las sinuosas curvaturas lunares.",
+        "Pero la gravedad acorde a su peso\ndenso como su inequívoca mentira\nsubyuga la traición a su derecho\ny se retrae instintivamente",
+        "domesticado a sus funciones\na su centro vicioso de rectas circulares sin salidas\ndonde reposan sus restos."
+      ]
+    },
+    {
+      "type": "text",
+      "id": "eoy-curated-0086",
+      "movement": "movement-05",
+      "title": "Cuando el sopor de los vocablos",
+      "originalDate": "5 de enero de 2013",
+      "body": [
+        "Del transcurrir nada queda,\nlos prefacios cerrados de una infancia\nsuelen abrirse a los ojos de una noche de cemento:\npasan de largo por la acera de los recuerdos.",
+        "En lugares entablados, fantasmas hacen tabla\nencerrados en alcoholizadas botellas;\nla mano que mece la muerte\nno alcanzó a tomar la guadaña;\nel virus inmaculado de un infante preñado de ilusiones",
+        "reposa bajo la forma de una dádiva.",
+        "/He salido a buscarte en casas extrañas,\nen pertrechos de guerras sufragadas\nque dejaron saldos negativos de auroras/",
+        "¿Dónde estás niña de río?\nDejé dos nenúfares en tu orilla de juncos\ny una nota desterrada\nsubiendo la cascada de las palabras.",
+        "/Eras entonces en aquella jangada: prisionera de mis juegos,\nla Roma incendiada con pétalos de naranjas,\nuna selva entre lianas y balcones de inocencia,",
+        "la fluidez de la paloma encaramada en mi espalda./",
+        "Agradezco los rebaños que contaste para mí\ncuando el sopor de los vocablos\nno mitigaba el hambre de los espantos,\nrellanos de alboradas sin reflejos de vida.",
+        "De todo eso no distraigo mi consciente inconsciencia\ny el paso abarcador que nada abarca\npero que cubre más de una distancia.",
+        "Más allá de las palabras: nada"
+      ]
+    },
+    {
+      "type": "text",
+      "id": "eoy-curated-0087",
+      "movement": "movement-05",
+      "title": "Vestigios genéticos de impunidades",
+      "originalDate": "28 de enero de 2013",
+      "body": [
+        "Veo cómo los malos ejemplos cunden\nmás rápido que la cultura social\nuna madre cruza la calzada por el centro de la cuadra\ncon su pequeño hijo en brazos\nsorteando coches que en veloz fuga atraviesan cerca de sus muertes\nmientras la ciudad contempla indiferente y se estimula\nseguro que también puedo\nseguro que soy más rápido que esa madre con su carga\ny atraviesa una y otra vez tantas calles como puede\ntantas miradas como indiferencias",
+        "Veo un semáforo en rojo que no se detiene\nque un vehículo en veloz fuga atraviesa cerca de dos vidas\nde cien inmensas indiferencias\nsorteando humanos que cruzan por sus sendas de cebras",
+        "mientras la ciudad contempla indiferente y se estimula\nseguro que también puedo\nseguro que soy más audaz que ese coche que en veloz fuga\ncruza la calzada atestada de transeúntes en ciega indiferencia.",
+        "Veo un niño a upas de su madre",
+        "cruzar la calzada por el centro de la cuadra\nsorteando su futuro entre indiferencias y aprendizaje de vida\nseguro que también podré\nseguro que seré más rápido que mi madre que me carga\ny que el coche que en veloz fuga atraviesa cerca de mi futuro\nmientras la ciudad contempla indiferente y se estimula.",
+        "Me veo repartiendo mortajas a una sociedad indiferente\nlas vendas de mis ojos no discriminan entre vivos y muertos\nentre asesinos y suicidas\nentre pasado indiferente y futuro inexistente\nsomos vestigios de impunidades\nde una ciudad cementerio de equidades cruzando calzadas\npor la mitad de cada cuadra de una vida en contramano."
+      ]
+    },
+    {
+      "type": "text",
+      "id": "eoy-curated-0088",
+      "movement": "movement-05",
+      "title": "Conceptos",
+      "originalDate": "9 de julio de 2013",
+      "body": [
+        "Escribo poesía para los muertos,\nlos vivos ya leyeron todos mis derrumbes\ny huyeron despavoridos\nen busca de una verde pradera;\nes posible que regresen cuando la amnistía\nque produzca mi muerte,\ntizne de olvidos los rezos misericordiosos,",
+        "hasta puede que susurren a mis orejas\nun distendido: no eras tan mal poeta,\nen el fondo, muy al fondo de tus oscuros."
+      ]
+    },
+    {
+      "type": "text",
+      "id": "eoy-curated-0089",
+      "movement": "movement-05",
+      "title": "De grises y otras yerbas",
+      "originalDate": "24 de agosto de 2013",
+      "body": [
+        "Vengo de una noche azul,\nla luna ha dejado de llover\ny a mí me gusta el gris.",
+        "Cada amanecer visto mi desayuno\nde grises y salgo hacia la fábrica\nen donde comparto otras lluvias\ncon otros compañeros también grises.",
+        "Una campanilla roja\ndespierta mis grises interiores\nque escapan deseosos de ver risas amarillas,\nde niñas amarillas,\nque tiñan con sus despeinados bostezos:\nlos grises de las máquinas,\nlos pisos grises del hastío,\nlos rostros enojados y grises de los gerentes.",
+        "/Hay un hombre de sed salada,\nuna angustia cerrada mordiendo los labios,\ny el reloj de piedra, oculta, su perezosa vergüenza/",
+        "Recién es lunes:\nlunes de pájaros abrazados a una almohada",
+        "lamiendo un sueño inconcluso.",
+        "Y aún queda bastante día para sobrevivir a la intemperie."
+      ]
+    },
+    {
+      "type": "text",
+      "id": "eoy-curated-0090",
+      "movement": "movement-05",
+      "title": "Más bien digo:",
+      "originalDate": "17 de abril de 2015",
+      "body": [
+        "Ahora que esta rabia me crece\ntanto como decrece mi cuerpo,\nse apoltrona en mi vocabulario\nun liviano viento de abandonos.\nAhora que me visto de caminos\ntratando de pavimentar la analfabeta memoria\nque alguna vez eduqué\ncon ternura de manos con pinceles en los dedos.",
+        "Ahora, podría decir, más bien digo:\nel codo del olvido no logró borrar\nla ignominia de un pasado\nni rasguñando la lapidaria piedra",
+        "que me sepultó vivo tres palmos bajo tierra.\nJunto a mi ignorancia de vivir\ncomo la muerte manda."
+      ]
+    }
+  ]
+}
