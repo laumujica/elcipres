@@ -171,3 +171,8 @@ The current focus is no longer basic generation, but improving the quality and c
 
 - **July 12, 2026** — Initial archive extraction, website build, deployment, search, contact, donation integration, and launch troubleshooting.
 - **September 21, 2026** — Editorial automation milestone: Markdown-to-JSON workflow, InDesign UXP generation, pagination logic, source versioning, GitHub Desktop synchronization, and production QA workflow.
+
+---
+
+**Laura Mujica · 2026 ⚡**  
+[lauramujica.com](https://lauramujica.com)
