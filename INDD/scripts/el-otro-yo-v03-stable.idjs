@@ -1,0 +1,759 @@
+const {
+  app,
+  LocationOptions,
+  RulerOrigin,
+  Justification,
+  FitOptions,
+  MeasurementUnits,
+  SpecialCharacters,
+  NothingEnum,
+  VerticalJustification,
+  ColorModel,
+} = require("indesign");
+
+const fs = require("uxp").storage.localFileSystem;
+
+// --------------------------------------------------
+// CHOOSE AND READ JSON
+// --------------------------------------------------
+
+const file = await fs.getFileForOpening({
+  types: ["json"],
+});
+
+const jsonText = await file.read();
+const data = JSON.parse(jsonText);
+
+// --------------------------------------------------
+// VALIDATE SOURCE DATA
+// --------------------------------------------------
+
+function validateData(data) {
+  const issues = [];
+
+  // Root object
+  if (!data || typeof data !== "object") {
+    issues.push("Root object is missing.");
+
+    throw new Error("JSON validation failed:\n\n" + issues.join("\n"));
+  }
+
+  // Volume
+  if (!data.volume || typeof data.volume !== "object") {
+    issues.push("Volume object is missing.");
+  } else if (
+    typeof data.volume.title !== "string" ||
+    data.volume.title.trim() === ""
+  ) {
+    issues.push("Volume title is missing.");
+  }
+
+  // Movements
+  if (!Array.isArray(data.movements)) {
+    issues.push("Movements must be an array.");
+  } else if (data.movements.length === 0) {
+    issues.push("Movements array is empty.");
+  }
+
+  // Sequence
+  if (!Array.isArray(data.sequence)) {
+    issues.push("Sequence must be an array.");
+  } else if (data.sequence.length === 0) {
+    issues.push("Sequence array is empty.");
+  } else {
+    data.sequence.forEach((item, index) => {
+      const position = index + 1;
+
+      if (!item || typeof item !== "object") {
+        issues.push(`Sequence item ${position}: invalid object.`);
+
+        return;
+      }
+
+      if (typeof item.type !== "string" || item.type.trim() === "") {
+        issues.push(`Sequence item ${position}: type is missing.`);
+
+        return;
+      }
+
+      if (item.type === "section_cover") {
+        if (typeof item.title !== "string" || item.title.trim() === "") {
+          issues.push(
+            `Sequence item ${position}: section cover title is missing.`,
+          );
+        }
+      } else if (item.type === "blank_page") {
+        // No extra validation needed for now
+      } else if (item.type === "text") {
+        if (typeof item.title !== "string" || item.title.trim() === "") {
+          issues.push(
+            `Sequence item ${position}: text title is missing or empty.`,
+          );
+        }
+
+        if (
+          typeof item.originalDate !== "string" ||
+          item.originalDate.trim() === ""
+        ) {
+          issues.push(
+            `Sequence item ${position}: originalDate is missing or empty.`,
+          );
+        }
+
+        if (!Array.isArray(item.body)) {
+          issues.push(`Sequence item ${position}: body must be an array.`);
+        } else if (item.body.length === 0) {
+          issues.push(`Sequence item ${position}: body is empty.`);
+        } else {
+          item.body.forEach((paragraph, paragraphIndex) => {
+            if (typeof paragraph !== "string" || paragraph.trim() === "") {
+              issues.push(
+                `Sequence item ${position}: body block ${paragraphIndex + 1} is empty or invalid.`,
+              );
+            }
+          });
+        }
+      } else {
+        issues.push(
+          `Sequence item ${position}: unsupported type "${item.type}".`,
+        );
+      }
+    });
+  }
+
+  if (issues.length > 0) {
+    throw new Error("JSON validation failed:\n\n" + issues.join("\n"));
+  }
+}
+
+validateData(data);
+
+// --------------------------------------------------
+// DOCUMENT SETTINGS
+// --------------------------------------------------
+
+const PAGE_WIDTH = 148;
+const PAGE_HEIGHT = 210;
+
+const MARGIN_TOP = 15;
+const MARGIN_BOTTOM = 18;
+const MARGIN_INSIDE = 20;
+const MARGIN_OUTSIDE = 15;
+
+const FOLIO_HEIGHT = 6;
+
+// Distance from trim to bottom of folio frame
+const FOLIO_BOTTOM_SAFE = 8;
+
+const DATE_TITLE_GAP = 4;
+
+const BODY_LEADING = 16;
+
+// 16 pt = approx. 5.64 mm
+const TITLE_BODY_GAP = (BODY_LEADING * 25.4) / 72;
+
+// Extend body frame downward by one line
+const BODY_BOTTOM_EXTENSION = (BODY_LEADING * 25.4) / 72;
+
+// Cover positioning
+const COVER_TITLE_FRAME_HEIGHT = 30;
+const COVER_TITLE_OFFSET_UP = 10;
+
+const MAX_CONTINUATION_PAGES = 10;
+
+function mm(value) {
+  return `${value}mm`;
+}
+
+// --------------------------------------------------
+// GENERATION STATS
+// --------------------------------------------------
+
+const generationStats = {
+  textsProcessed: 0,
+  continuationPages: 0,
+  sectionCovers: 0,
+  blankPages: 0,
+};
+
+// --------------------------------------------------
+// CREATE DOCUMENT
+// --------------------------------------------------
+
+const document = app.documents.add();
+
+document.documentPreferences.pageWidth = mm(PAGE_WIDTH);
+
+document.documentPreferences.pageHeight = mm(PAGE_HEIGHT);
+
+document.documentPreferences.facingPages = true;
+
+document.viewPreferences.rulerOrigin = RulerOrigin.PAGE_ORIGIN;
+
+document.viewPreferences.horizontalMeasurementUnits =
+  MeasurementUnits.MILLIMETERS;
+
+document.viewPreferences.verticalMeasurementUnits =
+  MeasurementUnits.MILLIMETERS;
+
+// --------------------------------------------------
+// GET BOOK FONTS
+// --------------------------------------------------
+
+const interRegular = app.fonts.item("Inter 24pt\tRegular");
+
+const interMedium = app.fonts.item("Inter 24pt\tMedium");
+
+const atkinsonRegular = app.fonts.item("Atkinson Hyperlegible\tRegular");
+
+const crimsonBold = app.fonts.item("Crimson Pro\tBold");
+
+// --------------------------------------------------
+// CREATE BOOK COLOR
+// --------------------------------------------------
+
+const otroYoColor = document.colors.add({
+  name: "El Otro Yo",
+  model: ColorModel.process,
+  colorValue: [0, 31, 71, 39],
+});
+
+// --------------------------------------------------
+// CREATE PARAGRAPH STYLES
+// --------------------------------------------------
+
+const volumeTitleStyle = document.paragraphStyles.add({
+  name: "Volume Title",
+  appliedFont: crimsonBold,
+  pointSize: 28,
+  leading: 31,
+  justification: Justification.CENTER_ALIGN,
+  hyphenation: false,
+});
+
+const sectionCoverTitleStyle = document.paragraphStyles.add({
+  name: "Section Cover Title",
+  appliedFont: crimsonBold,
+  pointSize: 24,
+  leading: 28,
+  justification: Justification.CENTER_ALIGN,
+  hyphenation: false,
+});
+
+const sectionCoverDateRangeStyle = document.paragraphStyles.add({
+  name: "Section Cover Date Range",
+  appliedFont: interMedium,
+  pointSize: 11,
+  leading: 14,
+  justification: Justification.CENTER_ALIGN,
+  hyphenation: false,
+});
+
+const dateStyle = document.paragraphStyles.add({
+  name: "Date",
+  appliedFont: interMedium,
+  pointSize: 9.5,
+  leading: 12,
+  justification: Justification.LEFT_ALIGN,
+  hyphenation: false,
+});
+
+const textTitleStyle = document.paragraphStyles.add({
+  name: "Text Title",
+  appliedFont: crimsonBold,
+  pointSize: 18,
+  leading: 21,
+  justification: Justification.LEFT_ALIGN,
+  hyphenation: false,
+});
+
+const bodyStyle = document.paragraphStyles.add({
+  name: "Body",
+  appliedFont: atkinsonRegular,
+  pointSize: 12,
+  leading: BODY_LEADING,
+  spaceAfter: 2,
+
+  justification: Justification.LEFT_JUSTIFIED,
+
+  hyphenation: false,
+
+  minimumWordSpacing: 85,
+  desiredWordSpacing: 100,
+  maximumWordSpacing: 120,
+
+  minimumLetterSpacing: -2,
+  desiredLetterSpacing: 0,
+  maximumLetterSpacing: 2,
+
+  minimumGlyphScaling: 98,
+  desiredGlyphScaling: 100,
+  maximumGlyphScaling: 102,
+});
+
+const folioStyle = document.paragraphStyles.add({
+  name: "Folio",
+  appliedFont: interRegular,
+  pointSize: 8,
+  leading: 10,
+  justification: Justification.CENTER_ALIGN,
+  hyphenation: false,
+});
+
+// --------------------------------------------------
+// APPLY BOOK COLOR TO STYLES
+// --------------------------------------------------
+
+volumeTitleStyle.fillColor = document.colors.item("El Otro Yo");
+
+sectionCoverTitleStyle.fillColor = document.colors.item("El Otro Yo");
+
+textTitleStyle.fillColor = document.colors.item("El Otro Yo");
+
+// --------------------------------------------------
+// HELPER FUNCTION: APPLY STYLE TO STORY
+// --------------------------------------------------
+
+function applyStyleToStory(story, paragraphStyle) {
+  for (let i = 0; i < story.paragraphs.length; i++) {
+    story.paragraphs.item(i).applyParagraphStyle(paragraphStyle, true);
+  }
+}
+
+// --------------------------------------------------
+// HELPER FUNCTION: PAGE SIDE + TEXT AREA
+// --------------------------------------------------
+
+function isRightHandPage(page) {
+  return page.documentOffset % 2 === 0;
+}
+
+function getTextArea(page) {
+  const rightHand = isRightHandPage(page);
+
+  const left = rightHand ? MARGIN_INSIDE : MARGIN_OUTSIDE;
+
+  const right = PAGE_WIDTH - (rightHand ? MARGIN_OUTSIDE : MARGIN_INSIDE);
+
+  const top = MARGIN_TOP;
+
+  const bottom =
+    PAGE_HEIGHT - MARGIN_BOTTOM - FOLIO_HEIGHT - 4 + BODY_BOTTOM_EXTENSION;
+
+  return {
+    left,
+    right,
+    top,
+    bottom,
+  };
+}
+
+// --------------------------------------------------
+// HELPER FUNCTION: PARENT PAGE TEXT AREA
+// --------------------------------------------------
+
+function getParentTextArea(rightHand) {
+  const left = rightHand ? MARGIN_INSIDE : MARGIN_OUTSIDE;
+
+  const right = PAGE_WIDTH - (rightHand ? MARGIN_OUTSIDE : MARGIN_INSIDE);
+
+  return {
+    left,
+    right,
+  };
+}
+
+// --------------------------------------------------
+// CREATE CONTENT PARENT
+// --------------------------------------------------
+
+const contentParent = document.masterSpreads.item(0);
+
+contentParent.namePrefix = "A";
+
+contentParent.baseName = "Content";
+
+const parentLeftPage = contentParent.pages.item(0);
+
+const parentRightPage = contentParent.pages.item(1);
+
+// --------------------------------------------------
+// ADD AUTOMATIC FOLIOS TO CONTENT PARENT
+// --------------------------------------------------
+
+function addParentFolio(parentPage, rightHand) {
+  const area = getParentTextArea(rightHand);
+
+  const folioBottom = PAGE_HEIGHT - FOLIO_BOTTOM_SAFE;
+
+  const folioTop = folioBottom - FOLIO_HEIGHT;
+
+  const folioFrame = parentPage.textFrames.add();
+
+  folioFrame.geometricBounds = [
+    mm(folioTop),
+    mm(area.left),
+    mm(folioBottom),
+    mm(area.right),
+  ];
+
+  folioFrame.contents = SpecialCharacters.AUTO_PAGE_NUMBER;
+
+  folioFrame.textFramePreferences.verticalJustification =
+    VerticalJustification.CENTER_ALIGN;
+
+  applyStyleToStory(folioFrame.parentStory, folioStyle);
+}
+
+addParentFolio(parentLeftPage, false);
+
+addParentFolio(parentRightPage, true);
+
+// --------------------------------------------------
+// HELPER FUNCTION: CREATE NEW PAGE AT END
+// --------------------------------------------------
+
+function createPageAtEnd() {
+  const lastPage = document.pages.item(document.pages.length - 1);
+
+  const newPage = document.pages.add(LocationOptions.AFTER, lastPage);
+
+  newPage.appliedMaster = contentParent;
+
+  return newPage;
+}
+
+// --------------------------------------------------
+// CREATE VOLUME OPENING
+// --------------------------------------------------
+
+const volumePage = document.pages.item(0);
+
+volumePage.appliedMaster = NothingEnum.NOTHING;
+
+const volumeArea = getTextArea(volumePage);
+
+// --------------------------------------------------
+// CALCULATE COVER TITLE POSITION
+// --------------------------------------------------
+
+const usableTop = MARGIN_TOP;
+
+const usableBottom = PAGE_HEIGHT - MARGIN_BOTTOM;
+
+const usableCenter = (usableTop + usableBottom) / 2;
+
+const coverTitleCenter = usableCenter - COVER_TITLE_OFFSET_UP;
+
+const coverTitleTop = coverTitleCenter - COVER_TITLE_FRAME_HEIGHT / 2;
+
+const coverTitleBottom = coverTitleCenter + COVER_TITLE_FRAME_HEIGHT / 2;
+
+// --------------------------------------------------
+// CREATE COVER TITLE
+// --------------------------------------------------
+
+const volumeTitleFrame = volumePage.textFrames.add();
+
+volumeTitleFrame.geometricBounds = [
+  mm(coverTitleTop),
+  mm(volumeArea.left),
+  mm(coverTitleBottom),
+  mm(volumeArea.right),
+];
+
+volumeTitleFrame.contents = data.volume.title;
+
+volumeTitleFrame.textFramePreferences.verticalJustification =
+  VerticalJustification.CENTER_ALIGN;
+
+applyStyleToStory(volumeTitleFrame.parentStory, volumeTitleStyle);
+
+// --------------------------------------------------
+// CREATE BLANK VERSO
+// --------------------------------------------------
+
+const blankVerso = createPageAtEnd();
+
+blankVerso.appliedMaster = NothingEnum.NOTHING;
+
+// --------------------------------------------------
+// HELPER FUNCTION: CREATE SECTION COVER
+// --------------------------------------------------
+
+function createSectionCover(item, page) {
+  page.appliedMaster = NothingEnum.NOTHING;
+
+  const backgroundFrame = page.rectangles.add();
+
+  backgroundFrame.geometricBounds = [
+    mm(0),
+    mm(0),
+    mm(PAGE_HEIGHT),
+    mm(PAGE_WIDTH),
+  ];
+
+  backgroundFrame.fillColor = document.colors.item("Black");
+
+  backgroundFrame.fillTint = 10;
+
+  backgroundFrame.strokeWeight = 0;
+
+  const titleFrame = page.textFrames.add();
+
+  titleFrame.geometricBounds = [mm(55), mm(15), mm(125), mm(PAGE_WIDTH - 15)];
+
+  titleFrame.contents = item.title;
+
+  titleFrame.textFramePreferences.verticalJustification =
+    VerticalJustification.CENTER_ALIGN;
+
+  applyStyleToStory(titleFrame.parentStory, sectionCoverTitleStyle);
+
+  if (item.dateRange && item.dateRange.trim() !== "") {
+    const dateRangeFrame = page.textFrames.add();
+
+    dateRangeFrame.geometricBounds = [
+      mm(128),
+      mm(15),
+      mm(142),
+      mm(PAGE_WIDTH - 15),
+    ];
+
+    dateRangeFrame.contents = item.dateRange;
+
+    applyStyleToStory(dateRangeFrame.parentStory, sectionCoverDateRangeStyle);
+  }
+}
+
+
+// --------------------------------------------------
+// HELPER FUNCTION: CREATE TEXT
+// --------------------------------------------------
+
+function createText(text, page) {
+  const area = getTextArea(page);
+
+  // ------------------------------------------------
+  // ORIGINAL DATE
+  // ------------------------------------------------
+
+  const dateFrame = page.textFrames.add();
+
+  dateFrame.geometricBounds = [
+    mm(area.top),
+    mm(area.left),
+    mm(area.top + 6),
+    mm(area.right),
+  ];
+
+  dateFrame.contents = text.originalDate;
+
+  applyStyleToStory(dateFrame.parentStory, dateStyle);
+
+  // ------------------------------------------------
+  // TEXT TITLE
+  // ------------------------------------------------
+
+  const titleTop = area.top + 6 + DATE_TITLE_GAP;
+
+  const textTitleFrame = page.textFrames.add();
+
+  textTitleFrame.geometricBounds = [
+    mm(titleTop),
+    mm(area.left),
+    mm(titleTop + 30),
+    mm(area.right),
+  ];
+
+  textTitleFrame.contents = text.title;
+
+  applyStyleToStory(textTitleFrame.parentStory, textTitleStyle);
+
+  textTitleFrame.parentStory.recompose();
+
+  textTitleFrame.fit(FitOptions.frameToContent);
+
+  // ------------------------------------------------
+  // CALCULATE BODY POSITION
+  // ------------------------------------------------
+
+  const titleBounds = textTitleFrame.geometricBounds;
+
+  const titleBottom = titleBounds[2];
+
+  const bodyTop = titleBottom + TITLE_BODY_GAP;
+
+  // ------------------------------------------------
+  // BODY
+  // ------------------------------------------------
+
+  const bodyFrame = page.textFrames.add();
+
+  bodyFrame.geometricBounds = [
+    mm(bodyTop),
+    mm(area.left),
+    mm(area.bottom),
+    mm(area.right),
+  ];
+
+  bodyFrame.contents = text.body.join("\r");
+
+  applyStyleToStory(bodyFrame.parentStory, bodyStyle);
+
+  bodyFrame.parentStory.recompose();
+
+  // ------------------------------------------------
+  // HANDLE OVERSET SAFELY
+  // ------------------------------------------------
+
+  let currentFrame = bodyFrame;
+
+  let continuationCount = 0;
+
+  while (currentFrame.overflows && continuationCount < MAX_CONTINUATION_PAGES) {
+    const continuationPage = createPageAtEnd();
+
+    const continuationArea = getTextArea(continuationPage);
+
+    const continuationFrame = continuationPage.textFrames.add();
+
+    continuationFrame.geometricBounds = [
+      mm(continuationArea.top),
+
+      mm(continuationArea.left),
+
+      mm(continuationArea.bottom),
+
+      mm(continuationArea.right),
+    ];
+
+    currentFrame.nextTextFrame = continuationFrame;
+
+    bodyFrame.parentStory.recompose();
+
+    currentFrame = continuationFrame;
+
+    continuationCount++;
+
+    generationStats.continuationPages++;
+  }
+
+  // ------------------------------------------------
+  // CHECK FOR UNRESOLVED OVERSET
+  // ------------------------------------------------
+
+  if (currentFrame.overflows) {
+    throw new Error(
+      `Overset detected: "${text.title}" exceeded ` +
+        `${MAX_CONTINUATION_PAGES} continuation pages.`,
+    );
+  }
+}
+
+// --------------------------------------------------
+// GENERATE CURATED SEQUENCE
+// --------------------------------------------------
+
+data.sequence.forEach(
+  (item) => {
+
+    const page =
+      createPageAtEnd();
+
+    if (
+      item.type === "section_cover"
+    ) {
+
+      createSectionCover(
+        item,
+        page
+      );
+
+      generationStats
+        .sectionCovers++;
+    }
+
+    else if (
+      item.type === "blank_page"
+    ) {
+
+      page.appliedMaster =
+        NothingEnum.NOTHING;
+
+      generationStats
+        .blankPages++;
+    }
+
+    else if (
+      item.type === "text"
+    ) {
+
+      createText(
+        item,
+        page
+      );
+
+      generationStats
+        .textsProcessed++;
+    }
+  }
+);
+
+// --------------------------------------------------
+// GENERATION REPORT
+// --------------------------------------------------
+
+const reportDialog =
+  app.dialogs.add({
+    name: "Generation Report",
+    canCancel: false
+  });
+
+const reportColumn =
+  reportDialog
+    .dialogColumns
+    .add();
+
+reportColumn.staticTexts.add({
+  staticLabel:
+    "El Ciprés — Generation complete"
+});
+
+reportColumn.staticTexts.add({
+  staticLabel:
+    `Volume: ${data.volume.title}`
+});
+
+reportColumn.staticTexts.add({
+  staticLabel:
+    `Movements: ${data.movements.length}`
+});
+
+reportColumn.staticTexts.add({
+  staticLabel:
+    `Section covers: ${generationStats.sectionCovers}`
+});
+
+reportColumn.staticTexts.add({
+  staticLabel:
+    `Blank pages: ${generationStats.blankPages}`
+});
+
+reportColumn.staticTexts.add({
+  staticLabel:
+    `Texts processed: ${generationStats.textsProcessed}`
+});
+
+reportColumn.staticTexts.add({
+  staticLabel:
+    `Total pages: ${document.pages.length}`
+});
+
+reportColumn.staticTexts.add({
+  staticLabel:
+    `Continuation pages: ${generationStats.continuationPages}`
+});
+
+reportDialog.show();
+reportDialog.destroy();
