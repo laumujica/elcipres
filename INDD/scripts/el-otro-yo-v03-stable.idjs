@@ -478,6 +478,27 @@ const blankVerso = createPageAtEnd();
 blankVerso.appliedMaster = NothingEnum.NOTHING;
 
 // --------------------------------------------------
+// HELPER FUNCTION: FORMAT SECTION DATE RANGE
+// --------------------------------------------------
+
+function formatSectionDateRange(dateRange) {
+  const years = dateRange.match(/\b\d{4}\b/g);
+
+  if (!years || years.length === 0) {
+    return dateRange;
+  }
+
+  const firstYear = years[0];
+  const lastYear = years[years.length - 1];
+
+  if (firstYear === lastYear) {
+    return firstYear;
+  }
+
+  return `${firstYear}–${lastYear}`;
+}
+
+// --------------------------------------------------
 // HELPER FUNCTION: CREATE SECTION COVER
 // --------------------------------------------------
 
@@ -520,7 +541,7 @@ function createSectionCover(item, page) {
       mm(PAGE_WIDTH - 15),
     ];
 
-    dateRangeFrame.contents = item.dateRange;
+    dateRangeFrame.contents = formatSectionDateRange(item.dateRange);
 
     applyStyleToStory(dateRangeFrame.parentStory, sectionCoverDateRangeStyle);
   }
@@ -658,8 +679,21 @@ function createText(text, page) {
 data.sequence.forEach(
   (item) => {
 
-    const page =
+    let page =
       createPageAtEnd();
+
+    if (
+      item.type === "section_cover" &&
+      item.startOn === "recto" &&
+      !isRightHandPage(page)
+    ) {
+
+      page.appliedMaster =
+        NothingEnum.NOTHING;
+
+      page =
+        createPageAtEnd();
+    }
 
     if (
       item.type === "section_cover"
