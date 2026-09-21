@@ -53,10 +53,7 @@ body {
   font-size: 19px;
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
-<<<<<<< HEAD
   overflow-x: hidden;
-=======
->>>>>>> 0acd3bcdc8af40aa5794f480746e03388f027e69
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -157,16 +154,12 @@ button:focus-visible {
   box-sizing: border-box;
 }
 
-<<<<<<< HEAD
 .buscador-wrap--portada {
   position: relative;
   left: auto;
   transform: none;
   margin: 2rem auto 0;
 }
-
-=======
->>>>>>> 0acd3bcdc8af40aa5794f480746e03388f027e69
 .buscador-caja {
   display: flex;
   align-items: center;
@@ -290,7 +283,6 @@ button:focus-visible {
 }
 
 @media (max-width: 640px) {
-<<<<<<< HEAD
   .buscador-wrap:not(.buscador-wrap--portada) {
     position: static;
     left: auto;
@@ -335,13 +327,12 @@ button:focus-visible {
   .buscador-wrap:not(.buscador-wrap--portada).expandido .buscador-caja input {
     width: 100%;
     opacity: 1;
-=======
+  }
   .buscador-resultado {
     grid-template-columns: auto 1fr;
   }
   .buscador-fecha {
     display: none;
->>>>>>> 0acd3bcdc8af40aa5794f480746e03388f027e69
   }
 }
 
@@ -699,11 +690,7 @@ button:focus-visible {
   position: fixed;
   top: 1rem;
   right: 1.25rem;
-<<<<<<< HEAD
   z-index: 50; /* siempre por encima, incluso del buscador expandido en mobile */
-=======
-  z-index: 40; /* por encima del topbar sticky */
->>>>>>> 0acd3bcdc8af40aa5794f480746e03388f027e69
 }
 
 .menu-boton {
@@ -712,11 +699,7 @@ button:focus-visible {
   display: flex;
   align-items: center;
   justify-content: center;
-<<<<<<< HEAD
-  background: var(--paper);
-=======
   background: transparent;
->>>>>>> 0acd3bcdc8af40aa5794f480746e03388f027e69
   border: 1.5px solid var(--ink);
   border-radius: 999px;
   cursor: pointer;
@@ -817,12 +800,6 @@ button:focus-visible {
 }
 
 @media (max-width: 640px) {
-<<<<<<< HEAD
-=======
-  .buscador-wrap:not(.buscador-wrap--portada) {
-    display: none;
-  }
->>>>>>> 0acd3bcdc8af40aa5794f480746e03388f027e69
   .buscador-wrap--portada {
     margin-top: 6rem;
   }

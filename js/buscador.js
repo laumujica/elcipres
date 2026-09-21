@@ -189,7 +189,6 @@
     input.addEventListener('focus', function () {
       if (input.value.trim()) contenedor.classList.add('activo');
     });
-<<<<<<< HEAD
 
     var wrap = input.closest('.buscador-wrap');
     if (wrap && !wrap.classList.contains('buscador-wrap--portada')) {
@@ -212,9 +211,4 @@
   document.addEventListener('DOMContentLoaded', initBuscador);
 
 
-=======
-  }
-
-  document.addEventListener('DOMContentLoaded', initBuscador);
->>>>>>> 0acd3bcdc8af40aa5794f480746e03388f027e69
 })();
