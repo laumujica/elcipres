@@ -1,39 +1,119 @@
 # El Ciprés — Project Report
 
-**A website to preserve and share a writer's literary work, built end-to-end using digital tools and AI assistance.**
+**A website and editorial automation project created to preserve, organize, and publish a writer's literary archive.**
 
 ---
 
 ## About the project
 
-El Ciprés (**elcipres.com.ar**) is a website that brings together the complete written work of Daniel Mujica — over 650 poems, haikus, and short stories originally published across 4 different blogs between 2008 and 2015 — into a single place, with custom design, a search engine, and spaces for the original reader community to reconnect with his work.
+El Ciprés (**elcipres.com.ar**) brings together the complete written work of Daniel Mujica — more than 650 poems, haikus, and short stories originally published across four blogs between 2008 and 2015 — into a single place, with custom design, search, and spaces for the original reader community to reconnect with his work.
 
-The project started as a personal gift and grew into a fully published website, with its own custom domain and ongoing improvements.
+The project started as a personal preservation initiative and gradually expanded into two connected systems: a published website and an editorial workflow for producing a physical book from the same archive.
 
-*Note: the site's content is in Spanish (it preserves the original author's writing), but the project itself — architecture, tooling, and process — is documented here in English for an international audience.*
+*Note: the literary content remains in Spanish in order to preserve the author's original writing. The project architecture, tooling, and process are documented here in English for an international audience.*
 
 ---
 
 ## What was done, and with what tools
 
 ### 1. Content migration and organization
-The complete content of 4 **Google Blogger** blogs (posts, comments, and images spanning more than 15 years) was exported and recovered using **Google Takeout**, Google's official data export tool. This made it possible to retrieve not just what was publicly published, but also drafts, reader comments, and material that was no longer publicly visible.
+
+The complete content of four **Google Blogger** blogs — posts, comments, images, drafts, and material no longer publicly visible — was recovered using **Google Takeout**.
+
+The archive was then reorganized into a cleaner structure that could support both web publishing and later editorial processing.
 
 ### 2. Design and site construction
-A custom visual identity was defined (a "writer's notebook" concept: typography, color palette, a distinct icon for each collection of texts), and the site was built in HTML/CSS/JavaScript, organized into a clean, scalable folder structure (pages, styles, and scripts kept separate).
 
-### 3. Deployment and custom domain
-The site was deployed on **Firebase Hosting** (Google's hosting platform), with a **custom domain** (elcipres.com.ar) configured through **Cloudflare**, including DNS management, caching, and performance/security settings.
+A custom visual identity was defined around a "writer's notebook" concept, with typography, color, and a distinct visual language for each collection.
 
-### 4. Features added
-- Navigation menu
-- **Custom-built search engine** that lets users find words or ideas across the 650+ pieces, with no dependency on third-party search services
-- Contact form connected to an external service (**Formsubmit**) to receive messages from readers
-- Integration with **Cafecito.app**, a micro-donation platform, to fund the printing of a physical book featuring a selection of the work
-- A biography page and a section featuring the historical comments readers left on the original blogs
+The site was built in HTML, CSS, and JavaScript using a scalable folder structure with content, styles, and scripts kept separate.
 
-### 5. Testing and quality control
-The site was tested across multiple browsers (Chrome, Firefox, Edge, Brave) and devices (desktop and mobile), identifying and resolving behavioral differences between them — including Cloudflare-specific configuration issues that were affecting the site's functionality.
+### 3. Deployment and infrastructure
+
+The site was deployed on **Firebase Hosting**, with the custom domain **elcipres.com.ar** configured through **Cloudflare** for DNS, caching, and performance/security settings.
+
+### 4. Product features
+
+- Responsive navigation
+- A custom-built search engine across 650+ literary pieces
+- Contact form integration through **Formsubmit**
+- **Cafecito.app** integration for book-printing support
+- Biography and historical reader-comment sections
+- Cross-browser and mobile testing
+
+---
+
+## Editorial automation workflow
+
+On **September 21, 2026**, the project reached a new stage: the literary archive began moving from a manually understood layout process into a reproducible **InDesign automation pipeline**.
+
+The current workflow is:
+
+```text
+Curated Markdown
+      ↓
+Structured JSON
+      ↓
+InDesign UXP (.idjs)
+      ↓
+Automated pagination and layout
+      ↓
+Manual editorial / visual QA
+```
+
+The first production test currently handles:
+
+- 90 curated texts
+- 5 editorial movements
+- automatic section covers
+- blank verso pages
+- recto-aware section starts
+- automatic folios
+- threaded continuation pages
+- paragraph styles and typography
+- overset detection
+- generation statistics and validation
+
+The source manuscript remains versioned separately from generated data, so editorial decisions are not lost when the layout logic changes.
+
+### From manual layout to controlled automation
+
+A key discovery during development was that the goal was not to remove human judgment, but to move it to the right stage.
+
+Early iterations required manually understanding pagination, text flow, page sides, typography, and source inconsistencies. Once those rules became explicit, the script could handle repetitive production tasks while human review became focused on exceptions: literary line breaks, editorial ambiguity, visual rhythm, and final print decisions.
+
+This shifted the workflow from:
+
+```text
+manual production → repeated visual decisions
+```
+
+to:
+
+```text
+structured source → automated production → targeted human control
+```
+
+That distinction has become one of the main design principles of the project.
+
+---
+
+## Versioning and local production workflow
+
+The project is maintained in **GitHub**, with editorial sources, structured data, and InDesign scripts stored separately:
+
+```text
+INDD/
+├─ docs/      editorial Markdown versions
+├─ data/      generated / structured JSON
+└─ scripts/   InDesign UXP automation
+```
+
+**GitHub Desktop** is used to keep the production machine synchronized with the repository.
+
+The local InDesign Scripts Panel is linked directly to the repository's `INDD/scripts` folder, so new script versions can be pulled from GitHub and executed in InDesign without manually downloading or replacing files.
+
+This made the workflow significantly safer: changes are versioned, reversible, and traceable instead of being copied manually between local files.
 
 ---
 
@@ -41,31 +121,53 @@ The site was tested across multiple browsers (Chrome, Firefox, Edge, Brave) and 
 
 | Tool | What it was used for |
 |---|---|
-| Google Blogger / Google Takeout | Source and export of the original content |
+| Google Blogger / Google Takeout | Original archive source and recovery |
+| HTML / CSS / JavaScript | Website development |
 | Firebase Hosting | Website deployment |
-| Cloudflare | Custom domain, DNS, caching, and performance |
-| VS Code (Live Server) | Local development and testing |
-| Cafecito.app | Crowdfunding / micro-donation platform |
-| Formsubmit | Contact form message handling |
-| Compression tools (ZIP/RAR) | Organizing and transferring project files |
-| Browser developer tools | Diagnosing and resolving technical issues |
-| Claude (Anthropic AI) | Technical assistance: code generation, layout, debugging, and content drafting |
+| Cloudflare | Domain, DNS, caching, and performance |
+| Git / GitHub | Source control and project versioning |
+| GitHub Desktop | Local repository synchronization |
+| Adobe InDesign 2025 | Editorial layout and print production |
+| InDesign UXP / `.idjs` | Layout automation and production scripting |
+| Markdown / JSON | Editorial source structure and machine-readable production data |
+| VS Code | Local code inspection and development |
+| ChatGPT / Claude | AI-assisted research, workflow design, scripting, debugging, and documentation |
+| Formsubmit | Contact form handling |
+| Cafecito.app | Crowdfunding / micro-donation integration |
 
 ---
 
 ## Skills demonstrated
 
-- Information architecture and content organization
-- Visual identity and UX design (with a focus on accessibility for an older user)
-- Website deployment and administration (hosting, domains, DNS)
-- Methodical technical troubleshooting (step-by-step debugging, cross-browser testing)
-- Third-party tool and service integration
-- Strategic use of AI as a production tool, directing technical work from start to finish
+- Information architecture and large-content organization
+- Editorial systems and print-production logic
+- InDesign automation with UXP scripting
+- Structured data transformation (Markdown → JSON → layout)
+- Human-in-the-loop workflow design
+- Git-based version control and production traceability
+- Debugging and iterative validation
+- Website deployment, DNS, and hosting administration
+- AI-assisted workflow design with explicit human review points
+
+---
+
+## Current status — September 21, 2026
+
+The web archive is published and operational.
+
+The editorial pipeline has successfully generated a complete test document from the curated manuscript, including section logic, continuation pages, automated folios, and layout validation.
+
+The current focus is no longer basic generation, but improving the quality and control of the generated book.
+
+### Backlog
+
+- Review and refine ambiguous literary line breaks
+- Build the book index / table of contents
+- Add remaining front and back matter, including acknowledgements and other required pages
 
 ---
 
 ## Project timeline
 
-Development took place over several work sessions on **July 12, 2026**, covering everything from the initial content extraction to publishing, design adjustments, new feature rollout (menu, search, contact form, donations), and post-launch bug fixing.
-
----
+- **July 12, 2026** — Initial archive extraction, website build, deployment, search, contact, donation integration, and launch troubleshooting.
+- **September 21, 2026** — Editorial automation milestone: Markdown-to-JSON workflow, InDesign UXP generation, pagination logic, source versioning, GitHub Desktop synchronization, and production QA workflow.
