@@ -2,6 +2,7 @@ const {
   app,
   Justification,
   ColorModel,
+  TabStopAlignment,
 } = require("indesign");
 
 function createBookStyles(
@@ -137,6 +138,80 @@ function createBookStyles(
       hyphenation: false,
     });
 
+  const titlePageAuthorStyle =
+    document.paragraphStyles.add({
+      name: "Title Page Author",
+      appliedFont: interMedium,
+      pointSize: 11,
+      leading: 14,
+      justification:
+        Justification.CENTER_ALIGN,
+      hyphenation: false,
+    });
+
+  const frontMatterTitleStyle =
+    document.paragraphStyles.add({
+      name: "Front Matter Title",
+      appliedFont: crimsonBold,
+      pointSize: 24,
+      leading: 28,
+      justification:
+        Justification.LEFT_ALIGN,
+      hyphenation: false,
+      spaceAfter: 12,
+    });
+
+  const tocSectionStyle =
+    document.paragraphStyles.add({
+      name: "TOC Section",
+      appliedFont: crimsonBold,
+      pointSize: 11.5,
+      leading: 15,
+      justification:
+        Justification.LEFT_ALIGN,
+      hyphenation: false,
+      spaceBefore: 7,
+      spaceAfter: 2,
+    });
+
+  const tocEntryStyle =
+    document.paragraphStyles.add({
+      name: "TOC Entry",
+      appliedFont: atkinsonRegular,
+      pointSize: 10.5,
+      leading: 14,
+      justification:
+        Justification.LEFT_ALIGN,
+      hyphenation: false,
+      leftIndent: config.mm(7),
+    });
+
+  tocEntryStyle.tabStops.add({
+    alignment:
+      TabStopAlignment.RIGHT_ALIGN,
+    position: config.mm(110),
+    leader: ".",
+  });
+
+  const tocBackMatterStyle =
+    document.paragraphStyles.add({
+      name: "TOC Back Matter",
+      appliedFont: atkinsonRegular,
+      pointSize: 10.5,
+      leading: 14,
+      justification:
+        Justification.LEFT_ALIGN,
+      hyphenation: false,
+      spaceBefore: 5,
+    });
+
+  tocBackMatterStyle.tabStops.add({
+    alignment:
+      TabStopAlignment.RIGHT_ALIGN,
+    position: config.mm(110),
+    leader: ".",
+  });
+
   const folioStyle =
     document.paragraphStyles.add({
       name: "Folio",
@@ -163,6 +238,16 @@ function createBookStyles(
       "El Otro Yo"
     );
 
+  frontMatterTitleStyle.fillColor =
+    document.colors.item(
+      "El Otro Yo"
+    );
+
+  tocSectionStyle.fillColor =
+    document.colors.item(
+      "El Otro Yo"
+    );
+
   return {
     volumeTitleStyle,
     sectionCoverTitleStyle,
@@ -172,6 +257,11 @@ function createBookStyles(
     textTitleStyle,
     bodyStyle,
     bodyVerseStyle,
+    titlePageAuthorStyle,
+    frontMatterTitleStyle,
+    tocSectionStyle,
+    tocEntryStyle,
+    tocBackMatterStyle,
     folioStyle,
   };
 }
