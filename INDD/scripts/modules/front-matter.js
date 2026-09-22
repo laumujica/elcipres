@@ -195,6 +195,26 @@ function createFrontMatter({
     styles.frontMatterTitleStyle
   );
 
+  const prologueBodyFrame =
+    prologuePage.textFrames.add();
+
+  prologueBodyFrame.geometricBounds = [
+    config.mm(
+      prologueArea.top + 40
+    ),
+    config.mm(prologueArea.left),
+    config.mm(prologueArea.bottom),
+    config.mm(prologueArea.right),
+  ];
+
+  prologueBodyFrame.contents =
+    "[Texto pendiente]";
+
+  layout.applyStyleToStory(
+    prologueBodyFrame.parentStory,
+    styles.bodyStyle
+  );
+
   return {
     halfTitlePage,
     halfTitleVerso,
