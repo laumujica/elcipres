@@ -1,0 +1,36 @@
+const BODY_LEADING = 16;
+
+const config = {
+  PAGE_WIDTH: 148,
+  PAGE_HEIGHT: 210,
+
+  MARGIN_TOP: 15,
+  MARGIN_BOTTOM: 18,
+  MARGIN_INSIDE: 20,
+  MARGIN_OUTSIDE: 15,
+
+  FOLIO_HEIGHT: 6,
+  FOLIO_BOTTOM_SAFE: 8,
+
+  DATE_TITLE_GAP: 4,
+  BODY_LEADING,
+
+  TITLE_BODY_GAP:
+    (BODY_LEADING * 25.4) / 72,
+
+  BODY_BOTTOM_EXTENSION:
+    (BODY_LEADING * 25.4) / 72,
+
+  COVER_TITLE_FRAME_HEIGHT: 30,
+  COVER_TITLE_OFFSET_UP: 10,
+
+  MAX_CONTINUATION_PAGES: 10,
+
+  mm(value) {
+    return `${value}mm`;
+  },
+};
+
+module.exports = {
+  config,
+};
