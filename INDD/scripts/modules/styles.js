@@ -38,7 +38,7 @@ function createBookStyles(
   const halfTitleStyle =
     document.paragraphStyles.add({
       name: "Half Title",
-      appliedFont: crimsonBold,
+      appliedFont: interMedium,
       pointSize: 28,
       leading: 31,
       justification:
@@ -49,7 +49,7 @@ function createBookStyles(
   const volumeTitleStyle =
     document.paragraphStyles.add({
       name: "Volume Title",
-      appliedFont: crimsonBold,
+      appliedFont: interMedium,
       pointSize: 28,
       leading: 31,
       justification:
@@ -163,7 +163,7 @@ function createBookStyles(
   const frontMatterTitleStyle =
     document.paragraphStyles.add({
       name: "Front Matter Title",
-      appliedFont: crimsonBold,
+      appliedFont: interMedium,
       pointSize: 24,
       leading: 28,
       justification:
@@ -175,7 +175,7 @@ function createBookStyles(
   const tocSectionStyle =
     document.paragraphStyles.add({
       name: "TOC Section",
-      appliedFont: crimsonBold,
+      appliedFont: interMedium,
       pointSize: 11.5,
       leading: 15,
       justification:
@@ -223,6 +223,28 @@ function createBookStyles(
     leader: ".",
   });
 
+  const workClosingTitleStyle =
+    document.paragraphStyles.add({
+      name: "Work Closing Title",
+      appliedFont: crimsonBold,
+      pointSize: 18,
+      leading: 21,
+      justification:
+        Justification.CENTER_ALIGN,
+      hyphenation: false,
+    });
+
+  const workClosingNoteStyle =
+    document.paragraphStyles.add({
+      name: "Work Closing Note",
+      appliedFont: interRegular,
+      pointSize: 8.5,
+      leading: 11,
+      justification:
+        Justification.CENTER_ALIGN,
+      hyphenation: false,
+    });
+
   const closingYearStyle =
     document.paragraphStyles.add({
       name: "Closing Year",
@@ -252,7 +274,7 @@ function createBookStyles(
 
   volumeTitleStyle.fillColor =
     document.colors.item(
-      "El Otro Yo"
+      "Black"
     );
 
   sectionCoverTitleStyle.fillColor =
@@ -262,17 +284,17 @@ function createBookStyles(
 
   textTitleStyle.fillColor =
     document.colors.item(
-      "El Otro Yo"
+      "Black"
     );
 
   frontMatterTitleStyle.fillColor =
     document.colors.item(
-      "El Otro Yo"
+      "Black"
     );
 
   tocSectionStyle.fillColor =
     document.colors.item(
-      "El Otro Yo"
+      "Black"
     );
 
   return {
@@ -290,6 +312,8 @@ function createBookStyles(
     tocSectionStyle,
     tocEntryStyle,
     tocBackMatterStyle,
+    workClosingTitleStyle,
+    workClosingNoteStyle,
     closingYearStyle,
     folioStyle,
   };
