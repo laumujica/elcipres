@@ -90,28 +90,8 @@ function createText({
   const area =
     layout.getTextArea(page);
 
-  const dateFrame =
-    page.textFrames.add();
-
-  dateFrame.geometricBounds = [
-    config.mm(area.top),
-    config.mm(area.left),
-    config.mm(area.top + 6),
-    config.mm(area.right),
-  ];
-
-  dateFrame.contents =
-    text.originalDate;
-
-  layout.applyStyleToStory(
-    dateFrame.parentStory,
-    styles.dateStyle
-  );
-
   const titleTop =
-    area.top +
-    6 +
-    config.DATE_TITLE_GAP;
+    area.top;
 
   const textTitleFrame =
     page.textFrames.add();
