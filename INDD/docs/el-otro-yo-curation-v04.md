@@ -3203,8 +3203,7 @@ rellanos de alboradas sin reflejos de vida.
 
 De todo eso no distraigo mi consciente inconsciencia  
 y el paso abarcador que nada abarca  
-pero que cubre más de una distancia.
-
+pero que cubre más de una distancia.  
 Más allá de las palabras: nada
 
 ---
@@ -3236,8 +3235,7 @@ seguro que también puedo
 seguro que soy más audaz que ese coche que en veloz fuga  
 cruza la calzada atestada de transeúntes en ciega indiferencia.
 
-Veo un niño a upas de su madre
-
+Veo un niño a upas de su madre  
 cruzar la calzada por el centro de la cuadra  
 sorteando su futuro entre indiferencias y aprendizaje de vida  
 seguro que también podré  
