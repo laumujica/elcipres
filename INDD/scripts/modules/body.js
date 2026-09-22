@@ -2,13 +2,24 @@ const {
   FitOptions,
 } = require("indesign");
 
-function detectBodyStyle(
-  block,
+function getBodyStyle(
+  blockType,
   styles
 ) {
-  return block.includes("\n")
-    ? styles.bodyVerseStyle
-    : styles.bodyStyle;
+  if (blockType === "prose") {
+    return styles.bodyStyle;
+  }
+
+  if (
+    blockType === "verse" ||
+    blockType === "visual"
+  ) {
+    return styles.bodyVerseStyle;
+  }
+
+  throw new Error(
+    `Unsupported body block type: "${blockType}".`
+  );
 }
 
 function prepareBodyBlocks(
@@ -17,12 +28,12 @@ function prepareBodyBlocks(
 ) {
   return bodyBlocks.map(
     (block) => ({
-      contents: block,
-      style:
-        detectBodyStyle(
-          block,
-          styles
-        ),
+      contents: block.contents,
+      type: block.type,
+      style: getBodyStyle(
+        block.type,
+        styles
+      ),
     })
   );
 }
@@ -30,7 +41,7 @@ function prepareBodyBlocks(
 function applyPreparedBodyStylesToStory(
   story,
   preparedBlocks,
-  styles
+  keepTogether
 ) {
   for (
     let i = 0;
@@ -40,16 +51,31 @@ function applyPreparedBodyStylesToStory(
     const preparedBlock =
       preparedBlocks[i];
 
-    const style =
-      preparedBlock
-        ? preparedBlock.style
-        : styles.bodyStyle;
-
-    story.paragraphs.item(i)
-      .applyParagraphStyle(
-        style,
-        true
+    if (!preparedBlock) {
+      throw new Error(
+        `Body paragraph ${i + 1} has no matching structured block.`
       );
+    }
+
+    const paragraph =
+      story.paragraphs.item(i);
+
+    paragraph.applyParagraphStyle(
+      preparedBlock.style,
+      true
+    );
+
+    if (keepTogether) {
+      paragraph.keepAllLinesTogether =
+        true;
+
+      if (
+        i <
+        story.paragraphs.length - 1
+      ) {
+        paragraph.keepWithNext = 1;
+      }
+    }
   }
 }
 
@@ -149,7 +175,7 @@ function createText({
   applyPreparedBodyStylesToStory(
     bodyFrame.parentStory,
     preparedBodyBlocks,
-    styles
+    text.keepTogether === true
   );
 
   bodyFrame.parentStory
@@ -216,6 +242,6 @@ function createText({
 
 module.exports = {
   createText,
-  detectBodyStyle,
+  getBodyStyle,
   prepareBodyBlocks,
 };
