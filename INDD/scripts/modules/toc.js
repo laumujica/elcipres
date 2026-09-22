@@ -122,15 +122,27 @@ function applyTocStyles(
 
   entries.forEach(
     (entry, index) => {
-      story.paragraphs
-        .item(index + 1)
-        .applyParagraphStyle(
-          getEntryStyle(
-            entry,
-            styles
-          ),
-          true
+      const paragraph =
+        story.paragraphs.item(
+          index + 1
         );
+
+      paragraph.applyParagraphStyle(
+        getEntryStyle(
+          entry,
+          styles
+        ),
+        true
+      );
+
+      // "Prólogo" stays close to the TOC title.
+      // Movement headings keep the larger section spacing.
+      if (
+        index === 0 &&
+        entry.title === "Prólogo"
+      ) {
+        paragraph.spaceBefore = 0;
+      }
     }
   );
 }
