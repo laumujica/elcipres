@@ -19,7 +19,6 @@ const {
 } = require("./modules/back-matter.js");
 const { createSectionCover } = require("./modules/section-cover.js");
 const { createText } = require("./modules/body.js");
-const { showGenerationReport } = require("./modules/report.js");
 
 // --------------------------------------------------
 // CHOOSE AND READ JSON
@@ -205,12 +204,3 @@ createTableOfContents({
   config,
 });
 
-// --------------------------------------------------
-// REPORT
-// --------------------------------------------------
-
-showGenerationReport({
-  data,
-  document,
-  generationStats,
-});
