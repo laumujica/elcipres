@@ -35,6 +35,17 @@ function createBookStyles(
     colorValue: [0, 31, 71, 39],
   });
 
+  const halfTitleStyle =
+    document.paragraphStyles.add({
+      name: "Half Title",
+      appliedFont: crimsonBold,
+      pointSize: 28,
+      leading: 31,
+      justification:
+        Justification.CENTER_ALIGN,
+      hyphenation: false,
+    });
+
   const volumeTitleStyle =
     document.paragraphStyles.add({
       name: "Volume Title",
@@ -158,7 +169,7 @@ function createBookStyles(
       justification:
         Justification.LEFT_ALIGN,
       hyphenation: false,
-      spaceAfter: 12,
+      spaceAfter: config.mm(4),
     });
 
   const tocSectionStyle =
@@ -170,7 +181,7 @@ function createBookStyles(
       justification:
         Justification.LEFT_ALIGN,
       hyphenation: false,
-      spaceBefore: 7,
+      spaceBefore: 0,
       spaceAfter: 2,
     });
 
@@ -212,6 +223,17 @@ function createBookStyles(
     leader: ".",
   });
 
+  const closingYearStyle =
+    document.paragraphStyles.add({
+      name: "Closing Year",
+      appliedFont: crimsonBold,
+      pointSize: 9,
+      leading: 11,
+      justification:
+        Justification.CENTER_ALIGN,
+      hyphenation: false,
+    });
+
   const folioStyle =
     document.paragraphStyles.add({
       name: "Folio",
@@ -222,6 +244,11 @@ function createBookStyles(
         Justification.CENTER_ALIGN,
       hyphenation: false,
     });
+
+  halfTitleStyle.fillColor =
+    document.colors.item(
+      "Black"
+    );
 
   volumeTitleStyle.fillColor =
     document.colors.item(
@@ -249,6 +276,7 @@ function createBookStyles(
     );
 
   return {
+    halfTitleStyle,
     volumeTitleStyle,
     sectionCoverTitleStyle,
     sectionCoverDateRangeStyle,
@@ -262,6 +290,7 @@ function createBookStyles(
     tocSectionStyle,
     tocEntryStyle,
     tocBackMatterStyle,
+    closingYearStyle,
     folioStyle,
   };
 }
