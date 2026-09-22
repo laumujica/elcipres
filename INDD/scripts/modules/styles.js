@@ -89,6 +89,18 @@ function createBookStyles(
       hyphenation: false,
     });
 
+  const datedEntryDateStyle =
+    document.paragraphStyles.add({
+      name: "Dated Entry Date",
+      appliedFont: atkinsonRegular,
+      pointSize: 12,
+      leading: config.BODY_LEADING,
+      spaceAfter: 0,
+      justification:
+        Justification.LEFT_ALIGN,
+      hyphenation: false,
+    });
+
   const bodyStyle =
     document.paragraphStyles.add({
       name: "Body",
@@ -156,6 +168,7 @@ function createBookStyles(
     sectionCoverTitleStyle,
     sectionCoverDateRangeStyle,
     dateStyle,
+    datedEntryDateStyle,
     textTitleStyle,
     bodyStyle,
     bodyVerseStyle,
