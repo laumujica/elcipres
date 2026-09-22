@@ -45,7 +45,7 @@ The site was deployed on **Firebase Hosting**, with the custom domain **elcipres
 
 ## Editorial automation workflow
 
-On **September 21, 2026**, the project reached a new stage: the literary archive began moving from a manually understood layout process into a reproducible **InDesign automation pipeline**.
+On **September 21–22, 2026**, the project moved from a manually understood layout process into a reproducible **InDesign automation pipeline**, with editorial metadata, pagination rules, front/back matter, and a generated table of contents.
 
 The current workflow is:
 
@@ -61,20 +61,24 @@ Automated pagination and layout
 Manual editorial / visual QA
 ```
 
-The first production test currently handles:
+The current production build handles:
 
-- 90 curated texts
-- 5 editorial movements
-- automatic section covers
-- blank verso pages
-- recto-aware section starts
-- automatic folios
-- threaded continuation pages
-- paragraph styles and typography
-- overset detection
-- generation statistics and validation
+- 90 curated texts across 5 chronological editorial movements
+- explicit literary metadata for `prose`, `verse`, `hybrid`, and `visual` texts
+- automatic section covers and recto-aware starts
+- blank verso pages and hidden/visible folio rules
+- Arabic numbering beginning at the prologue while keeping its folio hidden
+- threaded continuation pages and overset protection
+- verse pagination rules that avoid isolated single lines
+- body dates preserved as metadata but hidden in the printed composition
+- automated multi-page table of contents
+- front matter scaffolding, credits, prologue placeholder, and back matter sections
+- a dedicated end-of-work page before the back matter
+- validation of structured JSON before document generation
 
 The source manuscript remains versioned separately from generated data, so editorial decisions are not lost when the layout logic changes.
+
+The current editorial source of truth is `INDD/docs/el-otro-yo-curation-v04.md`. Its structured production counterpart is `INDD/data/el-otro-yo-curation-v04.json`; previous JSON versions are archived under `INDD/data/old/`.
 
 ### From manual layout to controlled automation
 
@@ -151,19 +155,24 @@ This made the workflow significantly safer: changes are versioned, reversible, a
 
 ---
 
-## Current status — September 21, 2026
+## Current status — September 22, 2026
 
 The web archive is published and operational.
 
-The editorial pipeline has successfully generated a complete test document from the curated manuscript, including section logic, continuation pages, automated folios, and layout validation.
+The editorial pipeline now generates a near-complete book structure from the curated manuscript. Editorial classification is explicit in Markdown metadata instead of inferred by the script, and the current InDesign build includes body pagination, recto/verso logic, hidden and visible folios, a multi-page TOC, front matter, a closing page for the literary work, and structured back matter.
 
-The current focus is no longer basic generation, but improving the quality and control of the generated book.
+Editorial QA on the 90-text body is substantially complete. The remaining work has shifted from core automation to final content, visual refinement, and print preparation.
 
 ### Backlog
 
-- Review and refine ambiguous literary line breaks
-- Build the book index / table of contents
-- Add remaining front and back matter, including acknowledgements and other required pages
+- Write and place the final prologue.
+- Add final **About the Author** and **About this Edition** copy.
+- Receive and place the epilogue after external family review.
+- Add Daniel's acknowledgements after he receives the first physical copy.
+- Refine styles for the new front/back matter sections.
+- Finalize movement-cover imagery and cover design.
+- Run a final proofread / human-read PDF pass.
+- Prepare print-production files and determine final imposition / blank-page requirements with the chosen printing method.
 
 ---
 
@@ -171,6 +180,7 @@ The current focus is no longer basic generation, but improving the quality and c
 
 - **July 12, 2026** — Initial archive extraction, website build, deployment, search, contact, donation integration, and launch troubleshooting.
 - **September 21, 2026** — Editorial automation milestone: Markdown-to-JSON workflow, InDesign UXP generation, pagination logic, source versioning, GitHub Desktop synchronization, and production QA workflow.
+- **September 22, 2026** — Curation v04 and book-structure milestone: explicit literary metadata, body-date policy, verse pagination rules, automated TOC, front/back matter scaffolding, credits, end-of-work transition, epilogue placeholder, and final-stage editorial QA.
 
 ---
 
