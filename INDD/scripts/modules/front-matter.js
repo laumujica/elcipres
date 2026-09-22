@@ -1,7 +1,44 @@
 const {
   NothingEnum,
   VerticalJustification,
+  PageNumberStyle,
 } = require("indesign");
+
+function createCenteredTitleFrame({
+  page,
+  contents,
+  style,
+  layout,
+  config,
+  top,
+  bottom,
+}) {
+  const area =
+    layout.getTextArea(page);
+
+  const frame =
+    page.textFrames.add();
+
+  frame.geometricBounds = [
+    config.mm(top),
+    config.mm(area.left),
+    config.mm(bottom),
+    config.mm(area.right),
+  ];
+
+  frame.contents = contents;
+
+  frame.textFramePreferences
+    .verticalJustification =
+      VerticalJustification.CENTER_ALIGN;
+
+  layout.applyStyleToStory(
+    frame.parentStory,
+    style
+  );
+
+  return frame;
+}
 
 function createFrontMatter({
   document,
@@ -10,14 +47,12 @@ function createFrontMatter({
   layout,
   config,
 }) {
-  const volumePage =
+  // Half title: current first page.
+  const halfTitlePage =
     document.pages.item(0);
 
-  volumePage.appliedMaster =
+  halfTitlePage.appliedMaster =
     NothingEnum.NOTHING;
-
-  const volumeArea =
-    layout.getTextArea(volumePage);
 
   const usableTop =
     config.MARGIN_TOP;
@@ -50,34 +85,125 @@ function createFrontMatter({
       2
     );
 
-  const volumeTitleFrame =
-    volumePage.textFrames.add();
+  createCenteredTitleFrame({
+    page: halfTitlePage,
+    contents: data.volume.title,
+    style: styles.volumeTitleStyle,
+    layout,
+    config,
+    top: coverTitleTop,
+    bottom: coverTitleBottom,
+  });
 
-  volumeTitleFrame.geometricBounds = [
-    config.mm(coverTitleTop),
-    config.mm(volumeArea.left),
-    config.mm(coverTitleBottom),
-    config.mm(volumeArea.right),
-  ];
-
-  volumeTitleFrame.contents =
-    data.volume.title;
-
-  volumeTitleFrame
-    .textFramePreferences
-    .verticalJustification =
-      VerticalJustification.CENTER_ALIGN;
-
-  layout.applyStyleToStory(
-    volumeTitleFrame.parentStory,
-    styles.volumeTitleStyle
-  );
-
-  const blankVerso =
+  // Blank verso after half title.
+  const halfTitleVerso =
     layout.createPageAtEnd();
 
-  blankVerso.appliedMaster =
+  halfTitleVerso.appliedMaster =
     NothingEnum.NOTHING;
+
+  // Full title page.
+  const titlePage =
+    layout.createPageAtEnd();
+
+  titlePage.appliedMaster =
+    NothingEnum.NOTHING;
+
+  createCenteredTitleFrame({
+    page: titlePage,
+    contents: data.volume.title,
+    style: styles.volumeTitleStyle,
+    layout,
+    config,
+    top: 65,
+    bottom: 105,
+  });
+
+  createCenteredTitleFrame({
+    page: titlePage,
+    contents: "Daniel Mujica",
+    style: styles.titlePageAuthorStyle,
+    layout,
+    config,
+    top: 108,
+    bottom: 126,
+  });
+
+  // Reserved copyright / credits verso.
+  // It intentionally has no visible placeholder text.
+  const copyrightPage =
+    layout.createPageAtEnd();
+
+  copyrightPage.appliedMaster =
+    NothingEnum.NOTHING;
+
+  // Table of contents opening.
+  const tocPage =
+    layout.createPageAtEnd();
+
+  tocPage.appliedMaster =
+    NothingEnum.NOTHING;
+
+  // Temporary alignment verso. The TOC module removes
+  // and recreates it only if the final TOC length needs it.
+  const tocAlignmentBlank =
+    layout.createPageAtEnd();
+
+  tocAlignmentBlank.appliedMaster =
+    NothingEnum.NOTHING;
+
+  // Prologue begins the counted section at page 1,
+  // but keeps the folio hidden.
+  const prologuePage =
+    layout.createPageAtEnd();
+
+  prologuePage.appliedMaster =
+    NothingEnum.NOTHING;
+
+  document.sections.add(
+    prologuePage,
+    {
+      continueNumbering: false,
+      pageNumberStart: 1,
+      pageNumberStyle:
+        PageNumberStyle.ARABIC,
+    }
+  );
+
+  const prologueArea =
+    layout.getTextArea(
+      prologuePage
+    );
+
+  const prologueTitleFrame =
+    prologuePage.textFrames.add();
+
+  prologueTitleFrame.geometricBounds = [
+    config.mm(prologueArea.top),
+    config.mm(prologueArea.left),
+    config.mm(
+      prologueArea.top + 35
+    ),
+    config.mm(prologueArea.right),
+  ];
+
+  prologueTitleFrame.contents =
+    "Prólogo";
+
+  layout.applyStyleToStory(
+    prologueTitleFrame.parentStory,
+    styles.frontMatterTitleStyle
+  );
+
+  return {
+    halfTitlePage,
+    halfTitleVerso,
+    titlePage,
+    copyrightPage,
+    tocPage,
+    tocAlignmentBlank,
+    prologuePage,
+  };
 }
 
 module.exports = {
