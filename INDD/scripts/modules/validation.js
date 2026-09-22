@@ -1,3 +1,16 @@
+const ALLOWED_TEXT_TYPES = [
+  "prose",
+  "verse",
+  "hybrid",
+  "visual",
+];
+
+const ALLOWED_BLOCK_TYPES = [
+  "prose",
+  "verse",
+  "visual",
+];
+
 function validateData(data) {
   const issues = [];
 
@@ -127,6 +140,25 @@ function validateData(data) {
           }
 
           if (
+            !ALLOWED_TEXT_TYPES.includes(
+              item.textType
+            )
+          ) {
+            issues.push(
+              `Sequence item ${position}: unsupported textType "${item.textType}".`
+            );
+          }
+
+          if (
+            typeof item.keepTogether !==
+            "boolean"
+          ) {
+            issues.push(
+              `Sequence item ${position}: keepTogether must be boolean.`
+            );
+          }
+
+          if (
             !Array.isArray(item.body)
           ) {
             issues.push(
@@ -144,13 +176,44 @@ function validateData(data) {
 
           else {
             item.body.forEach(
-              (paragraph, paragraphIndex) => {
+              (block, blockIndex) => {
                 if (
-                  typeof paragraph !== "string" ||
-                  paragraph.trim() === ""
+                  !block ||
+                  typeof block !== "object"
                 ) {
                   issues.push(
-                    `Sequence item ${position}: body block ${paragraphIndex + 1} is empty or invalid.`
+                    `Sequence item ${position}: body block ${blockIndex + 1} is invalid.`
+                  );
+
+                  return;
+                }
+
+                if (
+                  !ALLOWED_BLOCK_TYPES.includes(
+                    block.type
+                  )
+                ) {
+                  issues.push(
+                    `Sequence item ${position}: body block ${blockIndex + 1} has unsupported type "${block.type}".`
+                  );
+                }
+
+                if (
+                  typeof block.contents !==
+                    "string" ||
+                  block.contents.trim() === ""
+                ) {
+                  issues.push(
+                    `Sequence item ${position}: body block ${blockIndex + 1} contents are empty or invalid.`
+                  );
+                }
+
+                if (
+                  item.textType !== "hybrid" &&
+                  block.type !== item.textType
+                ) {
+                  issues.push(
+                    `Sequence item ${position}: body block ${blockIndex + 1} type "${block.type}" does not match textType "${item.textType}".`
                   );
                 }
               }
