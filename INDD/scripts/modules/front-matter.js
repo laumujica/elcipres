@@ -2,6 +2,7 @@ const {
   NothingEnum,
   VerticalJustification,
   PageNumberStyle,
+  FitOptions,
 } = require("indesign");
 
 function createCenteredTitleFrame({
@@ -109,25 +110,41 @@ function createFrontMatter({
   titlePage.appliedMaster =
     NothingEnum.NOTHING;
 
-  createCenteredTitleFrame({
-    page: titlePage,
-    contents: data.volume.title,
-    style: styles.volumeTitleStyle,
-    layout,
-    config,
-    top: 65,
-    bottom: 105,
-  });
+  const titlePageTitleFrame =
+    createCenteredTitleFrame({
+      page: titlePage,
+      contents: data.volume.title,
+      style: styles.volumeTitleStyle,
+      layout,
+      config,
+      top: 78,
+      bottom: 108,
+    });
 
-  createCenteredTitleFrame({
-    page: titlePage,
-    contents: "Walter Daniel Mujica",
-    style: styles.titlePageAuthorStyle,
-    layout,
-    config,
-    top: 108,
-    bottom: 126,
-  });
+  titlePageTitleFrame.fit(
+    FitOptions.frameToContent
+  );
+
+  const titlePageTitleBottom =
+    titlePageTitleFrame
+      .geometricBounds[2];
+
+  const titlePageAuthorFrame =
+    createCenteredTitleFrame({
+      page: titlePage,
+      contents: "Walter Daniel Mujica",
+      style: styles.titlePageAuthorStyle,
+      layout,
+      config,
+      top:
+        titlePageTitleBottom + 4,
+      bottom:
+        titlePageTitleBottom + 20,
+    });
+
+  titlePageAuthorFrame.fit(
+    FitOptions.frameToContent
+  );
 
   // Reserved copyright / credits verso.
   // It intentionally has no visible placeholder text.
@@ -195,13 +212,19 @@ function createFrontMatter({
     styles.frontMatterTitleStyle
   );
 
+  prologueTitleFrame.fit(
+    FitOptions.frameToContent
+  );
+
+  const prologueBodyTop =
+    prologueTitleFrame
+      .geometricBounds[2] + 4;
+
   const prologueBodyFrame =
     prologuePage.textFrames.add();
 
   prologueBodyFrame.geometricBounds = [
-    config.mm(
-      prologueArea.top + 40
-    ),
+    config.mm(prologueBodyTop),
     config.mm(prologueArea.left),
     config.mm(prologueArea.bottom),
     config.mm(prologueArea.right),
