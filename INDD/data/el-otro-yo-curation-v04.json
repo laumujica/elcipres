@@ -1003,48 +1003,59 @@
       "keepTogether": false,
       "body": [
         {
-          "type": "prose",
-          "contents": "30-may-2009 09:13\nSoy noche veinticuatro horas, a veces me descuido y un destello llamado amor invade mi oscuridad y pronto se vuelve sombra para oscurecerme un segundo más."
+          "type": "dated_entry",
+          "date": "30-may-2009 09:13",
+          "contents": "Soy noche veinticuatro horas, a veces me descuido y un destello llamado amor invade mi oscuridad y pronto se vuelve sombra para oscurecerme un segundo más."
         },
         {
-          "type": "prose",
-          "contents": "24-jun-2009 09:18\nAl final de cada noche hay otra noche, sólo que la luz del sol no la deja ver."
+          "type": "dated_entry",
+          "date": "24-jun-2009 09:18",
+          "contents": "Al final de cada noche hay otra noche, sólo que la luz del sol no la deja ver."
         },
         {
-          "type": "prose",
-          "contents": "26-jun-2009 12:38\nHoy fue una noche diferente; hoy te besé y lo más bello: no eras un sueño."
+          "type": "dated_entry",
+          "date": "26-jun-2009 12:38",
+          "contents": "Hoy fue una noche diferente; hoy te besé y lo más bello: no eras un sueño."
         },
         {
-          "type": "prose",
-          "contents": "27-jun-2009 11:03\nConozco dos noches: la de afuera y la de adentro; la de afuera al menos acaba al amanecer."
+          "type": "dated_entry",
+          "date": "27-jun-2009 11:03",
+          "contents": "Conozco dos noches: la de afuera y la de adentro; la de afuera al menos acaba al amanecer."
         },
         {
-          "type": "prose",
-          "contents": "03-jul-2009 10:09\nDe una noche distingo dos colores: su negrura y la mía. No veo los límites."
+          "type": "dated_entry",
+          "date": "03-jul-2009 10:09",
+          "contents": "De una noche distingo dos colores: su negrura y la mía. No veo los límites."
         },
         {
-          "type": "prose",
-          "contents": "03-ago-2009 09:03\nEs en la oscuridad de la noche donde encuentro el camino más claro."
+          "type": "dated_entry",
+          "date": "03-ago-2009 09:03",
+          "contents": "Es en la oscuridad de la noche donde encuentro el camino más claro."
         },
         {
-          "type": "prose",
-          "contents": "05-ago-2009 10:35\nNo soy yo; es la oscuridad de esta noche que llora en mis ojos, por tu silencio de amor."
+          "type": "dated_entry",
+          "date": "05-ago-2009 10:35",
+          "contents": "No soy yo; es la oscuridad de esta noche que llora en mis ojos, por tu silencio de amor."
         },
         {
-          "type": "prose",
-          "contents": "07-ago-2009 01:49\nAmor, no te vuelvas noche, por favor; no hoy, que la oscuridad me ahuyenta de esta vida."
+          "type": "dated_entry",
+          "date": "07-ago-2009 01:49",
+          "contents": "Amor, no te vuelvas noche, por favor; no hoy, que la oscuridad me ahuyenta de esta vida."
         },
         {
-          "type": "prose",
-          "contents": "07-ago-2009 09:30\nCuriosa noche; afuera llueve y adentro también y el limpiaparabrisas de mis ojos dejó de funcionar, curiosamente esta noche."
+          "type": "dated_entry",
+          "date": "07-ago-2009 09:30",
+          "contents": "Curiosa noche; afuera llueve y adentro también y el limpiaparabrisas de mis ojos dejó de funcionar, curiosamente esta noche."
         },
         {
-          "type": "prose",
-          "contents": "09-ago-2009 07:46\nAmor, cuando al irte cierres la puerta, me tragará la noche del encierro y seré noche por siempre."
+          "type": "dated_entry",
+          "date": "09-ago-2009 07:46",
+          "contents": "Amor, cuando al irte cierres la puerta, me tragará la noche del encierro y seré noche por siempre."
         },
         {
-          "type": "prose",
-          "contents": "12-ago-2009 09:20\nDuele esta noche, amor, duele mucho."
+          "type": "dated_entry",
+          "date": "12-ago-2009 09:20",
+          "contents": "Duele esta noche, amor, duele mucho."
         }
       ]
     },
