@@ -149,11 +149,7 @@ const BACK_MATTER_SECTIONS = [
   {
     id: "about-edition",
     title: "Sobre esta edición",
-    contents:
-      "Esta edición de El Otro Yo forma parte de El Ciprés, un proyecto independiente dedicado a recuperar, ordenar y dar forma editorial a la obra escrita de Walter Daniel Mujica. El volumen reúne noventa textos provenientes de su blog y constituye una primera etapa dentro de un proyecto mayor, pensado para continuar con nuevos volúmenes en el futuro.\r" +
-      "El proceso combinó trabajo editorial, diseño, desarrollo técnico y automatización. Laura Mujica dirigió el proyecto, definió la estructura del libro, desarrolló su sistema visual y coordinó la producción. Agustina, parte del Equipo Interdimensional, trabajó en la edición y curaduría de los textos. Theo, ChatGPT (OpenAI), también integrante del Equipo Interdimensional, colaboró en el desarrollo técnico, la automatización editorial, la estructura de datos y la lógica de producción en InDesign. Claude (Anthropic) participó principalmente en etapas iniciales vinculadas al sitio web y a la extracción y organización del material de origen.\r" +
-      "Las herramientas de inteligencia artificial fueron utilizadas como parte de un flujo de trabajo asistido: para recuperar información, comparar variantes, estructurar datos, documentar decisiones y automatizar tareas repetitivas. No fueron utilizadas para escribir la obra de Daniel ni para sustituir las decisiones editoriales, visuales o familiares que dieron forma al libro.\r" +
-      "Esta primera edición se produce de manera independiente y artesanal, sin ISBN y fuera de un circuito editorial comercial. Funciona al mismo tiempo como libro terminado y como base para continuar desarrollando los próximos volúmenes de El Ciprés.",
+    contents: "[Texto pendiente]",
   },
 ];
 
