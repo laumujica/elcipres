@@ -2,6 +2,38 @@ const {
   NothingEnum,
 } = require("indesign");
 
+function toRoman(value) {
+  const numerals = [
+    [1000, "M"],
+    [900, "CM"],
+    [500, "D"],
+    [400, "CD"],
+    [100, "C"],
+    [90, "XC"],
+    [50, "L"],
+    [40, "XL"],
+    [10, "X"],
+    [9, "IX"],
+    [5, "V"],
+    [4, "IV"],
+    [1, "I"],
+  ];
+
+  let number = value;
+  let result = "";
+
+  numerals.forEach(
+    ([unit, symbol]) => {
+      while (number >= unit) {
+        result += symbol;
+        number -= unit;
+      }
+    }
+  );
+
+  return result;
+}
+
 const BACK_MATTER_SECTIONS = [
   {
     id: "about-author",
@@ -76,10 +108,65 @@ function createBackMatter({
     }
   );
 
+  // Closing page: a quiet editorial end mark.
+  // It starts recto, has no visible folio, and is
+  // followed by a final blank verso.
+  let closingPage =
+    layout.createPageAtEnd();
+
+  if (
+    !layout.isRightHandPage(
+      closingPage
+    )
+  ) {
+    closingPage.appliedMaster =
+      NothingEnum.NOTHING;
+
+    closingPage =
+      layout.createPageAtEnd();
+  }
+
+  closingPage.appliedMaster =
+    NothingEnum.NOTHING;
+
+  const closingFrame =
+    closingPage.textFrames.add();
+
+  closingFrame.geometricBounds = [
+    config.mm(
+      config.PAGE_HEIGHT - 28
+    ),
+    config.mm(config.MARGIN_OUTSIDE),
+    config.mm(
+      config.PAGE_HEIGHT - 16
+    ),
+    config.mm(
+      config.PAGE_WIDTH -
+      config.MARGIN_OUTSIDE
+    ),
+  ];
+
+  closingFrame.contents =
+    toRoman(
+      config.PUBLICATION_YEAR
+    );
+
+  layout.applyStyleToStory(
+    closingFrame.parentStory,
+    styles.closingYearStyle
+  );
+
+  const finalBlankVerso =
+    layout.createPageAtEnd();
+
+  finalBlankVerso.appliedMaster =
+    NothingEnum.NOTHING;
+
   return entries;
 }
 
 module.exports = {
   createBackMatter,
   BACK_MATTER_SECTIONS,
+  toRoman,
 };
