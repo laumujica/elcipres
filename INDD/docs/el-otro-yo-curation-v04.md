@@ -1063,35 +1063,57 @@ y se apodera del alma.
 
 <!-- ELCIPRES:TEXT_TYPE prose -->
 
+<!-- ELCIPRES:BLOCK type="dated_entry" -->
+
 30-may-2009 09:13  
 Soy noche veinticuatro horas, a veces me descuido y un destello llamado amor invade mi oscuridad y pronto se vuelve sombra para oscurecerme un segundo más.
+
+<!-- ELCIPRES:BLOCK type="dated_entry" -->
 
 24-jun-2009 09:18  
 Al final de cada noche hay otra noche, sólo que la luz del sol no la deja ver.
 
+<!-- ELCIPRES:BLOCK type="dated_entry" -->
+
 26-jun-2009 12:38  
 Hoy fue una noche diferente; hoy te besé y lo más bello: no eras un sueño.
+
+<!-- ELCIPRES:BLOCK type="dated_entry" -->
 
 27-jun-2009 11:03  
 Conozco dos noches: la de afuera y la de adentro; la de afuera al menos acaba al amanecer.
 
+<!-- ELCIPRES:BLOCK type="dated_entry" -->
+
 03-jul-2009 10:09  
 De una noche distingo dos colores: su negrura y la mía. No veo los límites.
+
+<!-- ELCIPRES:BLOCK type="dated_entry" -->
 
 03-ago-2009 09:03  
 Es en la oscuridad de la noche donde encuentro el camino más claro.
 
+<!-- ELCIPRES:BLOCK type="dated_entry" -->
+
 05-ago-2009 10:35  
 No soy yo; es la oscuridad de esta noche que llora en mis ojos, por tu silencio de amor.
+
+<!-- ELCIPRES:BLOCK type="dated_entry" -->
 
 07-ago-2009 01:49  
 Amor, no te vuelvas noche, por favor; no hoy, que la oscuridad me ahuyenta de esta vida.
 
+<!-- ELCIPRES:BLOCK type="dated_entry" -->
+
 07-ago-2009 09:30  
 Curiosa noche; afuera llueve y adentro también y el limpiaparabrisas de mis ojos dejó de funcionar, curiosamente esta noche.
 
+<!-- ELCIPRES:BLOCK type="dated_entry" -->
+
 09-ago-2009 07:46  
 Amor, cuando al irte cierres la puerta, me tragará la noche del encierro y seré noche por siempre.
+
+<!-- ELCIPRES:BLOCK type="dated_entry" -->
 
 12-ago-2009 09:20  
 Duele esta noche, amor, duele mucho.
