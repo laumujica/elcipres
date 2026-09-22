@@ -3,13 +3,13 @@ const ALLOWED_TEXT_TYPES = [
   "verse",
   "hybrid",
   "visual",
-  "dated_entry",
 ];
 
 const ALLOWED_BLOCK_TYPES = [
   "prose",
   "verse",
   "visual",
+  "dated_entry",
 ];
 
 function validateData(data) {
