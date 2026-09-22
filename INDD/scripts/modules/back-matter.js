@@ -1,5 +1,6 @@
 const {
   NothingEnum,
+  FitOptions,
 } = require("indesign");
 
 function toRoman(value) {
@@ -61,9 +62,9 @@ function createWorkClosing({
     closingPage.textFrames.add();
 
   titleFrame.geometricBounds = [
-    config.mm(72),
+    config.mm(82),
     config.mm(config.MARGIN_INSIDE),
-    config.mm(98),
+    config.mm(104),
     config.mm(
       config.PAGE_WIDTH -
       config.MARGIN_OUTSIDE
@@ -78,13 +79,20 @@ function createWorkClosing({
     styles.workClosingTitleStyle
   );
 
+  titleFrame.fit(
+    FitOptions.frameToContent
+  );
+
+  const noteTop =
+    titleFrame.geometricBounds[2] + 4;
+
   const noteFrame =
     closingPage.textFrames.add();
 
   noteFrame.geometricBounds = [
-    config.mm(108),
+    config.mm(noteTop),
     config.mm(config.MARGIN_INSIDE),
-    config.mm(120),
+    config.mm(noteTop + 12),
     config.mm(
       config.PAGE_WIDTH -
       config.MARGIN_OUTSIDE
@@ -177,13 +185,18 @@ function createBackMatter({
         styles.frontMatterTitleStyle
       );
 
+      titleFrame.fit(
+        FitOptions.frameToContent
+      );
+
+      const bodyTop =
+        titleFrame.geometricBounds[2] + 4;
+
       const bodyFrame =
         page.textFrames.add();
 
       bodyFrame.geometricBounds = [
-        config.mm(
-          area.top + 40
-        ),
+        config.mm(bodyTop),
         config.mm(area.left),
         config.mm(area.bottom),
         config.mm(area.right),
