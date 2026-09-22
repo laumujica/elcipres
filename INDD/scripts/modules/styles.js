@@ -227,12 +227,12 @@ function createBookStyles(
     document.paragraphStyles.add({
       name: "Credits",
       appliedFont: atkinsonRegular,
-      pointSize: 9.5,
-      leading: 13,
+      pointSize: 8.5,
+      leading: 11,
       justification:
         Justification.LEFT_ALIGN,
       hyphenation: false,
-      spaceAfter: 3,
+      spaceAfter: 1.5,
     });
 
   const workClosingTitleStyle =
