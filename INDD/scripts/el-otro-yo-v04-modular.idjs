@@ -12,6 +12,8 @@ const { validateData } = require("./modules/validation.js");
 const { createBookStyles } = require("./modules/styles.js");
 const { createLayoutHelpers } = require("./modules/layout.js");
 const { createFrontMatter } = require("./modules/front-matter.js");
+const { createTableOfContents } = require("./modules/toc.js");
+const { createBackMatter } = require("./modules/back-matter.js");
 const { createSectionCover } = require("./modules/section-cover.js");
 const { createText } = require("./modules/body.js");
 const { showGenerationReport } = require("./modules/report.js");
@@ -81,13 +83,16 @@ const layout =
 // FRONT MATTER
 // --------------------------------------------------
 
-createFrontMatter({
-  document,
-  data,
-  styles,
-  layout,
-  config,
-});
+const frontMatter =
+  createFrontMatter({
+    document,
+    data,
+    styles,
+    layout,
+    config,
+  });
+
+const bodyEntries = [];
 
 // --------------------------------------------------
 // BODY SEQUENCE
@@ -122,6 +127,12 @@ data.sequence.forEach((item) => {
     });
 
     generationStats.sectionCovers++;
+
+    bodyEntries.push({
+      kind: "section",
+      title: item.title,
+      showPage: false,
+    });
   }
 
   else if (
@@ -146,7 +157,39 @@ data.sequence.forEach((item) => {
     });
 
     generationStats.textsProcessed++;
+
+    bodyEntries.push({
+      kind: "text",
+      title: item.title,
+      page,
+      showPage: true,
+    });
   }
+});
+
+// --------------------------------------------------
+// BACK MATTER
+// --------------------------------------------------
+
+const backMatterEntries =
+  createBackMatter({
+    styles,
+    layout,
+    config,
+  });
+
+// --------------------------------------------------
+// TABLE OF CONTENTS
+// --------------------------------------------------
+
+createTableOfContents({
+  document,
+  frontMatter,
+  bodyEntries,
+  backMatterEntries,
+  styles,
+  layout,
+  config,
 });
 
 // --------------------------------------------------
