@@ -3,6 +3,7 @@ const ALLOWED_TEXT_TYPES = [
   "verse",
   "hybrid",
   "visual",
+  "dated_entry",
 ];
 
 const ALLOWED_BLOCK_TYPES = [
@@ -209,8 +210,24 @@ function validateData(data) {
                 }
 
                 if (
+                  block.type === "dated_entry" &&
+                  (
+                    typeof block.date !== "string" ||
+                    block.date.trim() === ""
+                  )
+                ) {
+                  issues.push(
+                    `Sequence item ${position}: dated entry block ${blockIndex + 1} date is missing or invalid.`
+                  );
+                }
+
+                if (
                   item.textType !== "hybrid" &&
-                  block.type !== item.textType
+                  block.type !== item.textType &&
+                  !(
+                    item.textType === "prose" &&
+                    block.type === "dated_entry"
+                  )
                 ) {
                   issues.push(
                     `Sequence item ${position}: body block ${blockIndex + 1} type "${block.type}" does not match textType "${item.textType}".`
