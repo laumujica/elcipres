@@ -26,6 +26,8 @@ const config = {
 
   MAX_CONTINUATION_PAGES: 10,
 
+  PUBLICATION_YEAR: 2026,
+
   mm(value) {
     return `${value}mm`;
   },
