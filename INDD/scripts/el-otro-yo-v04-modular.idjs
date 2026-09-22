@@ -13,7 +13,10 @@ const { createBookStyles } = require("./modules/styles.js");
 const { createLayoutHelpers } = require("./modules/layout.js");
 const { createFrontMatter } = require("./modules/front-matter.js");
 const { createTableOfContents } = require("./modules/toc.js");
-const { createBackMatter } = require("./modules/back-matter.js");
+const {
+  createWorkClosing,
+  createBackMatter,
+} = require("./modules/back-matter.js");
 const { createSectionCover } = require("./modules/section-cover.js");
 const { createText } = require("./modules/body.js");
 const { showGenerationReport } = require("./modules/report.js");
@@ -165,6 +168,16 @@ data.sequence.forEach((item) => {
       showPage: true,
     });
   }
+});
+
+// --------------------------------------------------
+// WORK CLOSING
+// --------------------------------------------------
+
+createWorkClosing({
+  styles,
+  layout,
+  config,
 });
 
 // --------------------------------------------------
