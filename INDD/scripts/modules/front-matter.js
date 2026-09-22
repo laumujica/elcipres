@@ -88,7 +88,7 @@ function createFrontMatter({
   createCenteredTitleFrame({
     page: halfTitlePage,
     contents: data.volume.title,
-    style: styles.volumeTitleStyle,
+    style: styles.halfTitleStyle,
     layout,
     config,
     top: coverTitleTop,
@@ -121,7 +121,7 @@ function createFrontMatter({
 
   createCenteredTitleFrame({
     page: titlePage,
-    contents: "Daniel Mujica",
+    contents: "Walter Daniel Mujica",
     style: styles.titlePageAuthorStyle,
     layout,
     config,
