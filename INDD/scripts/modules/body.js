@@ -1,5 +1,6 @@
 const {
   FitOptions,
+  NothingEnum,
 } = require("indesign");
 
 function getBodyStyle(
@@ -26,16 +27,41 @@ function prepareBodyBlocks(
   bodyBlocks,
   styles
 ) {
-  return bodyBlocks.map(
-    (block) => ({
+  const preparedBlocks = [];
+
+  bodyBlocks.forEach((block) => {
+    if (block.type === "dated_entry") {
+      preparedBlocks.push({
+        contents: block.date,
+        type: "dated_entry_date",
+        style: styles.datedEntryDateStyle,
+        keepWithNext: 1,
+      });
+
+      preparedBlocks.push({
+        contents: block.contents,
+        type: "dated_entry_text",
+        style: styles.bodyStyle,
+      });
+
+      return;
+    }
+
+    const explicitLineCount =
+      block.contents.split("\n").length;
+
+    preparedBlocks.push({
       contents: block.contents,
       type: block.type,
       style: getBodyStyle(
         block.type,
         styles
       ),
-    })
-  );
+      explicitLineCount,
+    });
+  });
+
+  return preparedBlocks;
 }
 
 function applyPreparedBodyStylesToStory(
@@ -65,6 +91,32 @@ function applyPreparedBodyStylesToStory(
       true
     );
 
+    if (
+      preparedBlock.keepWithNext
+    ) {
+      paragraph.keepWithNext =
+        preparedBlock.keepWithNext;
+    }
+
+    if (
+      preparedBlock.type === "verse"
+    ) {
+      if (
+        preparedBlock.explicitLineCount <= 3
+      ) {
+        paragraph.keepAllLinesTogether =
+          true;
+      }
+
+      else {
+        paragraph.keepLinesTogether =
+          true;
+
+        paragraph.keepFirstLines = 2;
+        paragraph.keepLastLines = 2;
+      }
+    }
+
     if (keepTogether) {
       paragraph.keepAllLinesTogether =
         true;
@@ -77,6 +129,36 @@ function applyPreparedBodyStylesToStory(
       }
     }
   }
+}
+
+function applySpacingRescue(
+  story,
+  preparedBlocks
+) {
+  for (
+    let i = 0;
+    i < story.paragraphs.length;
+    i++
+  ) {
+    const preparedBlock =
+      preparedBlocks[i];
+
+    if (!preparedBlock) {
+      continue;
+    }
+
+    if (
+      preparedBlock.type ===
+        "dated_entry_date"
+    ) {
+      continue;
+    }
+
+    story.paragraphs.item(i)
+      .spaceAfter = 0;
+  }
+
+  story.recompose();
 }
 
 function createText({
@@ -165,6 +247,8 @@ function createText({
     bodyFrame;
 
   let continuationCount = 0;
+  const continuationFrames = [];
+  const continuationPages = [];
 
   while (
     currentFrame.overflows &&
@@ -207,6 +291,14 @@ function createText({
     currentFrame =
       continuationFrame;
 
+    continuationFrames.push(
+      continuationFrame
+    );
+
+    continuationPages.push(
+      continuationPage
+    );
+
     continuationCount++;
     generationStats
       .continuationPages++;
@@ -217,6 +309,40 @@ function createText({
       `Overset detected: "${text.title}" exceeded ` +
       `${config.MAX_CONTINUATION_PAGES} continuation pages.`
     );
+  }
+
+  if (
+    continuationFrames.length > 0 &&
+    currentFrame.lines.length === 1
+  ) {
+    applySpacingRescue(
+      bodyFrame.parentStory,
+      preparedBodyBlocks
+    );
+
+    if (
+      currentFrame.lines.length === 0
+    ) {
+      const lastIndex =
+        continuationFrames.length - 1;
+
+      const previousFrame =
+        lastIndex === 0
+          ? bodyFrame
+          : continuationFrames[
+              lastIndex - 1
+            ];
+
+      previousFrame.nextTextFrame =
+        NothingEnum.NOTHING;
+
+      continuationPages[
+        lastIndex
+      ].remove();
+
+      generationStats
+        .continuationPages--;
+    }
   }
 }
 
