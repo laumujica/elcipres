@@ -223,6 +223,18 @@ function createBookStyles(
     leader: ".",
   });
 
+  const creditsStyle =
+    document.paragraphStyles.add({
+      name: "Credits",
+      appliedFont: atkinsonRegular,
+      pointSize: 9.5,
+      leading: 13,
+      justification:
+        Justification.LEFT_ALIGN,
+      hyphenation: false,
+      spaceAfter: 3,
+    });
+
   const workClosingTitleStyle =
     document.paragraphStyles.add({
       name: "Work Closing Title",
@@ -312,6 +324,7 @@ function createBookStyles(
     tocSectionStyle,
     tocEntryStyle,
     tocBackMatterStyle,
+    creditsStyle,
     workClosingTitleStyle,
     workClosingNoteStyle,
     closingYearStyle,
