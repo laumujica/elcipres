@@ -207,10 +207,15 @@ function createTableOfContents({
   ];
 
   while (currentFrame.overflows) {
+    const currentPage =
+      tocPages[
+        tocPages.length - 1
+      ];
+
     const page =
       document.pages.add(
-        LocationOptions.BEFORE,
-        prologuePage
+        LocationOptions.AFTER,
+        currentPage
       );
 
     page.appliedMaster =
