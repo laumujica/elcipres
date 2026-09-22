@@ -34,6 +34,83 @@ function toRoman(value) {
   return result;
 }
 
+function createWorkClosing({
+  styles,
+  layout,
+  config,
+}) {
+  let closingPage =
+    layout.createPageAtEnd();
+
+  if (
+    !layout.isRightHandPage(
+      closingPage
+    )
+  ) {
+    closingPage.appliedMaster =
+      NothingEnum.NOTHING;
+
+    closingPage =
+      layout.createPageAtEnd();
+  }
+
+  closingPage.appliedMaster =
+    NothingEnum.NOTHING;
+
+  const titleFrame =
+    closingPage.textFrames.add();
+
+  titleFrame.geometricBounds = [
+    config.mm(72),
+    config.mm(config.MARGIN_INSIDE),
+    config.mm(98),
+    config.mm(
+      config.PAGE_WIDTH -
+      config.MARGIN_OUTSIDE
+    ),
+  ];
+
+  titleFrame.contents =
+    "EL OTRO YO";
+
+  layout.applyStyleToStory(
+    titleFrame.parentStory,
+    styles.workClosingTitleStyle
+  );
+
+  const noteFrame =
+    closingPage.textFrames.add();
+
+  noteFrame.geometricBounds = [
+    config.mm(108),
+    config.mm(config.MARGIN_INSIDE),
+    config.mm(120),
+    config.mm(
+      config.PAGE_WIDTH -
+      config.MARGIN_OUTSIDE
+    ),
+  ];
+
+  noteFrame.contents =
+    "fin de la obra";
+
+  layout.applyStyleToStory(
+    noteFrame.parentStory,
+    styles.workClosingNoteStyle
+  );
+
+  const blankVerso =
+    layout.createPageAtEnd();
+
+  blankVerso.appliedMaster =
+    NothingEnum.NOTHING;
+
+  return {
+    closingPage,
+    blankVerso,
+  };
+}
+
 const BACK_MATTER_SECTIONS = [
   {
     id: "about-author",
@@ -98,6 +175,26 @@ function createBackMatter({
       layout.applyStyleToStory(
         titleFrame.parentStory,
         styles.frontMatterTitleStyle
+      );
+
+      const bodyFrame =
+        page.textFrames.add();
+
+      bodyFrame.geometricBounds = [
+        config.mm(
+          area.top + 40
+        ),
+        config.mm(area.left),
+        config.mm(area.bottom),
+        config.mm(area.right),
+      ];
+
+      bodyFrame.contents =
+        "[Texto pendiente]";
+
+      layout.applyStyleToStory(
+        bodyFrame.parentStory,
+        styles.bodyStyle
       );
 
       entries.push({
@@ -166,6 +263,7 @@ function createBackMatter({
 }
 
 module.exports = {
+  createWorkClosing,
   createBackMatter,
   BACK_MATTER_SECTIONS,
   toRoman,
