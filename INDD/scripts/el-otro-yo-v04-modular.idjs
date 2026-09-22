@@ -1,0 +1,160 @@
+const {
+  app,
+  RulerOrigin,
+  MeasurementUnits,
+  NothingEnum,
+} = require("indesign");
+
+const fs = require("uxp").storage.localFileSystem;
+
+const { config } = require("./modules/config.js");
+const { validateData } = require("./modules/validation.js");
+const { createBookStyles } = require("./modules/styles.js");
+const { createLayoutHelpers } = require("./modules/layout.js");
+const { createFrontMatter } = require("./modules/front-matter.js");
+const { createSectionCover } = require("./modules/section-cover.js");
+const { createText } = require("./modules/body.js");
+const { showGenerationReport } = require("./modules/report.js");
+
+// --------------------------------------------------
+// CHOOSE AND READ JSON
+// --------------------------------------------------
+
+const file = await fs.getFileForOpening({
+  types: ["json"],
+});
+
+const jsonText = await file.read();
+const data = JSON.parse(jsonText);
+
+validateData(data);
+
+// --------------------------------------------------
+// GENERATION STATS
+// --------------------------------------------------
+
+const generationStats = {
+  textsProcessed: 0,
+  continuationPages: 0,
+  sectionCovers: 0,
+  blankPages: 0,
+};
+
+// --------------------------------------------------
+// CREATE DOCUMENT
+// --------------------------------------------------
+
+const document = app.documents.add();
+
+document.documentPreferences.pageWidth =
+  config.mm(config.PAGE_WIDTH);
+
+document.documentPreferences.pageHeight =
+  config.mm(config.PAGE_HEIGHT);
+
+document.documentPreferences.facingPages = true;
+
+document.viewPreferences.rulerOrigin =
+  RulerOrigin.PAGE_ORIGIN;
+
+document.viewPreferences.horizontalMeasurementUnits =
+  MeasurementUnits.MILLIMETERS;
+
+document.viewPreferences.verticalMeasurementUnits =
+  MeasurementUnits.MILLIMETERS;
+
+// --------------------------------------------------
+// CREATE SHARED BOOK SYSTEM
+// --------------------------------------------------
+
+const styles =
+  createBookStyles(document, config);
+
+const layout =
+  createLayoutHelpers(
+    document,
+    styles,
+    config
+  );
+
+// --------------------------------------------------
+// FRONT MATTER
+// --------------------------------------------------
+
+createFrontMatter({
+  document,
+  data,
+  styles,
+  layout,
+  config,
+});
+
+// --------------------------------------------------
+// BODY SEQUENCE
+// --------------------------------------------------
+
+data.sequence.forEach((item) => {
+  let page =
+    layout.createPageAtEnd();
+
+  if (
+    item.type === "section_cover" &&
+    item.startOn === "recto" &&
+    !layout.isRightHandPage(page)
+  ) {
+    page.appliedMaster =
+      NothingEnum.NOTHING;
+
+    page =
+      layout.createPageAtEnd();
+  }
+
+  if (
+    item.type === "section_cover"
+  ) {
+    createSectionCover({
+      document,
+      item,
+      page,
+      styles,
+      layout,
+      config,
+    });
+
+    generationStats.sectionCovers++;
+  }
+
+  else if (
+    item.type === "blank_page"
+  ) {
+    page.appliedMaster =
+      NothingEnum.NOTHING;
+
+    generationStats.blankPages++;
+  }
+
+  else if (
+    item.type === "text"
+  ) {
+    createText({
+      text: item,
+      page,
+      styles,
+      layout,
+      config,
+      generationStats,
+    });
+
+    generationStats.textsProcessed++;
+  }
+});
+
+// --------------------------------------------------
+// REPORT
+// --------------------------------------------------
+
+showGenerationReport({
+  data,
+  document,
+  generationStats,
+});
