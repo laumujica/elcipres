@@ -38,7 +38,7 @@ function createBookStyles(
   const halfTitleStyle =
     document.paragraphStyles.add({
       name: "Half Title",
-      appliedFont: interMedium,
+      appliedFont: crimsonBold,
       pointSize: 28,
       leading: 31,
       justification:
@@ -181,7 +181,7 @@ function createBookStyles(
       justification:
         Justification.LEFT_ALIGN,
       hyphenation: false,
-      spaceBefore: 0,
+      spaceBefore: config.mm(5),
       spaceAfter: 2,
     });
 
