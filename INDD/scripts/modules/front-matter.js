@@ -146,13 +146,58 @@ function createFrontMatter({
     FitOptions.frameToContent
   );
 
-  // Reserved copyright / credits verso.
-  // It intentionally has no visible placeholder text.
+  // Copyright / credits verso.
   const copyrightPage =
     layout.createPageAtEnd();
 
   copyrightPage.appliedMaster =
     NothingEnum.NOTHING;
+
+  const copyrightArea =
+    layout.getTextArea(
+      copyrightPage
+    );
+
+  const creditsFrame =
+    copyrightPage.textFrames.add();
+
+  creditsFrame.geometricBounds = [
+    config.mm(28),
+    config.mm(copyrightArea.left),
+    config.mm(
+      config.PAGE_HEIGHT - 22
+    ),
+    config.mm(copyrightArea.right),
+  ];
+
+  creditsFrame.contents =
+    "EL CIPRÉS\r" +
+    "El Otro Yo · Walter Daniel Mujica\r\r" +
+    "Primera edición, 2026\r" +
+    "Córdoba, Argentina\r\r" +
+    "Edición\r" +
+    "Agustina · Equipo Interdimensional\r\r" +
+    "Diseño editorial, dirección visual y automatización\r" +
+    "Laura Mujica\r\r" +
+    "Desarrollo técnico, automatización y sistema editorial\r" +
+    "Theo · ChatGPT (OpenAI) · Equipo Interdimensional\r\r" +
+    "Extracción inicial y procesamiento digital de los textos\r" +
+    "Laura Mujica, con asistencia de Claude (Anthropic)\r\r" +
+    "Selección de imágenes para las aperturas de los movimientos\r" +
+    "Fernanda Mujica y Daniela Mujica\r\r" +
+    "Diseño de portada\r" +
+    "Laura Mujica\r\r" +
+    "Producción y encuadernación de esta edición\r" +
+    "Laura Mujica\r\r" +
+    "Proceso editorial asistido por herramientas de inteligencia artificial. " +
+    "Más información en Sobre esta edición.\r\r" +
+    "www.elcipres.com.ar\r" +
+    "Edición sin ISBN.";
+
+  layout.applyStyleToStory(
+    creditsFrame.parentStory,
+    styles.creditsStyle
+  );
 
   // Table of contents opening.
   const tocPage =
