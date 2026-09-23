@@ -163,9 +163,9 @@ function createFrontMatter({
     copyrightPage.textFrames.add();
 
   creditsFrame.geometricBounds = [
-    config.mm(16),
+    config.mm(18),
     config.mm(copyrightArea.left),
-    config.mm(158),
+    config.mm(148),
     config.mm(copyrightArea.right),
   ];
 
@@ -234,7 +234,7 @@ function createFrontMatter({
       VerticalJustification.BOTTOM_ALIGN;
 
   const qrSize = 18;
-  const qrTop = 163;
+  const qrTop = 153;
 
   const qrFrame =
     copyrightPage.textFrames.add();
@@ -263,9 +263,9 @@ function createFrontMatter({
     copyrightPage.textFrames.add();
 
   websiteFrame.geometricBounds = [
-    config.mm(183),
+    config.mm(173),
     config.mm(copyrightArea.left),
-    config.mm(191),
+    config.mm(181),
     config.mm(copyrightArea.right),
   ];
 
@@ -281,9 +281,9 @@ function createFrontMatter({
     copyrightPage.textFrames.add();
 
   isbnFrame.geometricBounds = [
-    config.mm(198),
+    config.mm(185),
     config.mm(copyrightArea.left),
-    config.mm(204),
+    config.mm(191),
     config.mm(copyrightArea.right),
   ];
 
