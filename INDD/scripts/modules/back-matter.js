@@ -287,157 +287,162 @@ function createAboutAuthorSection({
   const firstPage =
     page;
 
-  const addTitle = () => {
-    const area =
-      layout.getTextArea(page);
+  const area =
+    layout.getTextArea(page);
 
-    const titleFrame =
-      page.textFrames.add();
+  const titleFrame =
+    page.textFrames.add();
 
-    titleFrame.geometricBounds = [
-      config.mm(area.top),
-      config.mm(area.left),
-      config.mm(area.top + 35),
-      config.mm(area.right),
-    ];
+  titleFrame.geometricBounds = [
+    config.mm(area.top),
+    config.mm(area.left),
+    config.mm(area.top + 35),
+    config.mm(area.right),
+  ];
 
-    titleFrame.contents =
-      section.title;
+  titleFrame.contents =
+    section.title;
 
-    layout.applyStyleToStory(
-      titleFrame.parentStory,
-      styles.frontMatterTitleStyle
-    );
+  layout.applyStyleToStory(
+    titleFrame.parentStory,
+    styles.frontMatterTitleStyle
+  );
 
-    titleFrame.fit(
-      FitOptions.frameToContent
-    );
+  titleFrame.fit(
+    FitOptions.frameToContent
+  );
 
-    return {
-      area,
-      y:
-        titleFrame.geometricBounds[2] +
-        4,
-    };
+  let state = {
+    page,
+    area,
+    y:
+      titleFrame.geometricBounds[2] +
+      4,
   };
-
-  let state =
-    addTitle();
 
   const newContinuationPage = () => {
-    page =
+    const newPage =
       layout.createPageAtEnd();
 
-    const area =
-      layout.getTextArea(page);
+    const newArea =
+      layout.getTextArea(
+        newPage
+      );
 
     state = {
-      area,
-      y: area.top,
+      page:
+        newPage,
+      area:
+        newArea,
+      y:
+        newArea.top,
     };
   };
 
-  const normalGap =
-    2;
+  const addFlowingText = (
+    text
+  ) => {
+    let frame =
+      state.page.textFrames.add();
 
-  const quoteGap =
-    4;
+    frame.geometricBounds = [
+      config.mm(state.y),
+      config.mm(state.area.left),
+      config.mm(state.area.bottom),
+      config.mm(state.area.right),
+    ];
 
-  const quoteInset =
-    7;
+    frame.contents =
+      text;
 
-  const quoteRightInset =
-    3;
+    layout.applyStyleToStory(
+      frame.parentStory,
+      styles.bodyStyle
+    );
 
-  const barWidth =
-    0.5;
+    applyAboutAuthorInlineStyles({
+      story:
+        frame.parentStory,
+      styles,
+    });
 
-  const barLeftInset =
-    2;
+    frame.parentStory.recompose();
 
-  const blocks =
-    section.contents.split("\r");
+    let currentFrame =
+      frame;
 
-  blocks.forEach((text) => {
-    const isQuote =
-      text.indexOf(
-        "“Pasos desde la nada"
-      ) === 0 ||
-      text.indexOf(
-        "“Si no te emociona"
-      ) === 0;
+    while (
+      currentFrame.overflows
+    ) {
+      newContinuationPage();
 
-    const addNormalFrame = () => {
-      const frame =
-        page.textFrames.add();
+      const continuationFrame =
+        state.page.textFrames.add();
 
-      frame.geometricBounds = [
-        config.mm(state.y),
+      continuationFrame.geometricBounds = [
+        config.mm(state.area.top),
         config.mm(state.area.left),
         config.mm(state.area.bottom),
         config.mm(state.area.right),
       ];
 
-      frame.contents =
-        text;
+      currentFrame.nextTextFrame =
+        continuationFrame;
 
-      layout.applyStyleToStory(
-        frame.parentStory,
-        styles.bodyStyle
-      );
+      continuationFrame.parentStory
+        .recompose();
 
-      applyAboutAuthorInlineStyles({
-        story:
-          frame.parentStory,
-        styles,
-      });
-
-      frame.fit(
-        FitOptions.frameToContent
-      );
-
-      return frame;
-    };
-
-    if (!isQuote) {
-      let frame =
-        addNormalFrame();
-
-      if (
-        frame.geometricBounds[2] >
-        state.area.bottom
-      ) {
-        frame.remove();
-        newContinuationPage();
-        frame =
-          addNormalFrame();
-      }
-
-      state.y =
-        frame.geometricBounds[2] +
-        normalGap;
-
-      return;
+      currentFrame =
+        continuationFrame;
     }
 
-    const addQuoteFrames = () => {
+    currentFrame.fit(
+      FitOptions.frameToContent
+    );
+
+    state.y =
+      currentFrame
+        .geometricBounds[2] +
+      2;
+  };
+
+  const addQuote = (
+    text
+  ) => {
+    const quoteGap =
+      4;
+
+    const quoteLeft =
+      7;
+
+    const quoteRight =
+      3;
+
+    const barLeft =
+      2;
+
+    const barWidth =
+      0.5;
+
+    const createQuotePair = () => {
       const quoteFrame =
-        page.textFrames.add();
+        state.page.textFrames.add();
 
       quoteFrame.geometricBounds = [
         config.mm(
-          state.y + quoteGap
+          state.y +
+          quoteGap
         ),
         config.mm(
           state.area.left +
-          quoteInset
+          quoteLeft
         ),
         config.mm(
           state.area.bottom
         ),
         config.mm(
           state.area.right -
-          quoteRightInset
+          quoteRight
         ),
       ];
 
@@ -460,18 +465,18 @@ function createAboutAuthorSection({
         quoteFrame.geometricBounds[2];
 
       const barFrame =
-        page.rectangles.add();
+        state.page.rectangles.add();
 
       barFrame.geometricBounds = [
         quoteTop,
         config.mm(
           state.area.left +
-          barLeftInset
+          barLeft
         ),
         quoteBottom,
         config.mm(
           state.area.left +
-          barLeftInset +
+          barLeft +
           barWidth
         ),
       ];
@@ -491,12 +496,11 @@ function createAboutAuthorSection({
     };
 
     let quote =
-      addQuoteFrames();
+      createQuotePair();
 
     if (
       quote.quoteFrame
-        .geometricBounds[2] +
-        config.mm(quoteGap) >
+        .geometricBounds[2] >
       state.area.bottom
     ) {
       quote.quoteFrame.remove();
@@ -505,14 +509,95 @@ function createAboutAuthorSection({
       newContinuationPage();
 
       quote =
-        addQuoteFrames();
+        createQuotePair();
     }
 
     state.y =
       quote.quoteFrame
         .geometricBounds[2] +
       quoteGap;
-  });
+  };
+
+  const paragraphs =
+    section.contents.split(
+      "\r"
+    );
+
+  const quoteOneIndex =
+    paragraphs.findIndex(
+      (text) =>
+        text.indexOf(
+          "“Pasos desde la nada"
+        ) === 0
+    );
+
+  const quoteTwoIndex =
+    paragraphs.findIndex(
+      (text) =>
+        text.indexOf(
+          "“Si no te emociona"
+        ) === 0
+    );
+
+  if (
+    quoteOneIndex < 0 ||
+    quoteTwoIndex < 0
+  ) {
+    throw new Error(
+      "About Author quotes were not found."
+    );
+  }
+
+  const beforeQuoteOne =
+    paragraphs
+      .slice(
+        0,
+        quoteOneIndex
+      )
+      .join("\r");
+
+  const betweenQuotes =
+    paragraphs
+      .slice(
+        quoteOneIndex + 1,
+        quoteTwoIndex
+      )
+      .join("\r");
+
+  const afterQuoteTwo =
+    paragraphs
+      .slice(
+        quoteTwoIndex + 1
+      )
+      .join("\r");
+
+  addFlowingText(
+    beforeQuoteOne
+  );
+
+  addQuote(
+    paragraphs[
+      quoteOneIndex
+    ]
+  );
+
+  addFlowingText(
+    betweenQuotes
+  );
+
+  addQuote(
+    paragraphs[
+      quoteTwoIndex
+    ]
+  );
+
+  if (
+    afterQuoteTwo.length > 0
+  ) {
+    addFlowingText(
+      afterQuoteTwo
+    );
+  }
 
   return {
     page:
