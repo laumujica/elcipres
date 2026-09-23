@@ -171,12 +171,12 @@ function createFrontMatter({
 
   creditsFrame.contents =
     "EL CIPRÉS\r\r" +
-    "El Otro Yo · Walter Daniel Mujica\r" +
+    "El otro yo · Walter Daniel Mujica\r" +
     "Primera edición, 2026\r" +
     "Córdoba, Argentina\r" +
-    "Edición\r" +
+    "Curaduría y edición\r" +
     "Agustina · Equipo Interdimensional\r" +
-    "Diseño editorial, dirección visual y automatización\r" +
+    "Diseño editorial, dirección visual y dirección de automatización\r" +
     "Laura Mujica\r" +
     "Desarrollo técnico, automatización y sistema editorial\r" +
     "Theo · ChatGPT (OpenAI) · Equipo Interdimensional\r" +
@@ -188,7 +188,7 @@ function createFrontMatter({
     "Laura Mujica\r" +
     "Producción y encuadernación de esta edición\r" +
     "Laura Mujica\r" +
-    "Esta edición fue desarrollada mediante un proceso editorial asistido por herramientas de inteligencia artificial. ChatGPT (OpenAI) y Claude (Anthropic) participaron en distintas etapas técnicas y de producción. Las decisiones de selección, edición, estructura y diseño fueron realizadas por personas. Más información sobre el proceso en Sobre esta edición.";
+    "Esta edición fue desarrollada mediante un proceso editorial asistido por herramientas de inteligencia artificial. ChatGPT (OpenAI) y Claude (Anthropic) participaron en distintas etapas editoriales, técnicas y de producción. Las decisiones finales de selección, edición, estructura y diseño fueron realizadas por personas. Más información sobre el proceso en Sobre esta edición.";
 
   const creditsStory =
     creditsFrame.parentStory;
