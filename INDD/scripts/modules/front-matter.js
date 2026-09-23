@@ -162,11 +162,9 @@ function createFrontMatter({
     copyrightPage.textFrames.add();
 
   creditsFrame.geometricBounds = [
-    config.mm(18),
+    config.mm(16),
     config.mm(copyrightArea.left),
-    config.mm(
-      config.PAGE_HEIGHT - 14
-    ),
+    config.mm(158),
     config.mm(copyrightArea.right),
   ];
 
@@ -189,14 +187,111 @@ function createFrontMatter({
     "Laura Mujica\r" +
     "Producción y encuadernación de esta edición\r" +
     "Laura Mujica\r" +
-    "Proceso editorial asistido por herramientas de inteligencia artificial. " +
-    "Más información en Sobre esta edición.\r" +
-    "www.elcipres.com.ar\r" +
+    "Esta edición fue desarrollada mediante un proceso editorial asistido por herramientas de inteligencia artificial. ChatGPT (OpenAI) y Claude (Anthropic) participaron en distintas etapas técnicas y de producción. Las decisiones de selección, edición, estructura y diseño fueron realizadas por personas. Más información sobre el proceso en Sobre esta edición.";
+
+  const creditsStory =
+    creditsFrame.parentStory;
+
+  const creditsStyles = [
+    styles.creditsProjectStyle,
+    styles.creditsProjectStyle,
+    styles.creditsTextStyle,
+    styles.creditsTextStyle,
+    styles.creditsRoleStyle,
+    styles.creditsTextStyle,
+    styles.creditsRoleStyle,
+    styles.creditsTextStyle,
+    styles.creditsRoleStyle,
+    styles.creditsTextStyle,
+    styles.creditsRoleStyle,
+    styles.creditsTextStyle,
+    styles.creditsRoleStyle,
+    styles.creditsTextStyle,
+    styles.creditsRoleStyle,
+    styles.creditsTextStyle,
+    styles.creditsRoleStyle,
+    styles.creditsTextStyle,
+    styles.creditsNoteStyle,
+  ];
+
+  for (
+    let i = 0;
+    i < creditsStyles.length;
+    i++
+  ) {
+    creditsStory.paragraphs
+      .item(i)
+      .applyParagraphStyle(
+        creditsStyles[i],
+        true
+      );
+  }
+
+  creditsFrame
+    .textFramePreferences
+    .verticalJustification =
+      VerticalJustification.BOTTOM_ALIGN;
+
+  const qrSize = 18;
+  const qrTop = 163;
+
+  const qrFrame =
+    copyrightPage.textFrames.add();
+
+  qrFrame.geometricBounds = [
+    config.mm(qrTop),
+    config.mm(copyrightArea.left),
+    config.mm(qrTop + qrSize),
+    config.mm(
+      copyrightArea.left + qrSize
+    ),
+  ];
+
+  qrFrame.contents = "QR";
+
+  qrFrame
+    .textFramePreferences
+    .verticalJustification =
+      VerticalJustification.CENTER_ALIGN;
+
+  qrFrame.parentStory.paragraphs
+    .item(0).justification =
+      Justification.CENTER_ALIGN;
+
+  const websiteFrame =
+    copyrightPage.textFrames.add();
+
+  websiteFrame.geometricBounds = [
+    config.mm(183),
+    config.mm(copyrightArea.left),
+    config.mm(191),
+    config.mm(copyrightArea.right),
+  ];
+
+  websiteFrame.contents =
+    "www.elcipres.com.ar";
+
+  layout.applyStyleToStory(
+    websiteFrame.parentStory,
+    styles.creditsWebsiteStyle
+  );
+
+  const isbnFrame =
+    copyrightPage.textFrames.add();
+
+  isbnFrame.geometricBounds = [
+    config.mm(198),
+    config.mm(copyrightArea.left),
+    config.mm(204),
+    config.mm(copyrightArea.right),
+  ];
+
+  isbnFrame.contents =
     "Edición sin ISBN.";
 
   layout.applyStyleToStory(
-    creditsFrame.parentStory,
-    styles.creditsStyle
+    isbnFrame.parentStory,
+    styles.creditsFooterStyle
   );
 
   // Table of contents opening.
