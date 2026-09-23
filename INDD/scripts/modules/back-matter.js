@@ -287,6 +287,123 @@ function styleAboutAuthorStory({
   });
 }
 
+function addAboutAuthorQuoteRules({
+  story,
+  document,
+  config,
+}) {
+  const quoteStarts = [
+    "“Pasos desde la nada",
+    "“Si no te emociona",
+  ];
+
+  for (
+    let i = 0;
+    i < story.paragraphs.length;
+    i++
+  ) {
+    const paragraph =
+      story.paragraphs.item(i);
+
+    const contents =
+      paragraph.contents;
+
+    if (
+      !quoteStarts.some(
+        (start) =>
+          contents.indexOf(start) === 0
+      )
+    ) {
+      continue;
+    }
+
+    const lineCount =
+      paragraph.lines.length;
+
+    if (lineCount === 0) {
+      continue;
+    }
+
+    let startIndex = 0;
+
+    while (startIndex < lineCount) {
+      const firstLine =
+        paragraph.lines.item(
+          startIndex
+        );
+
+      const firstFrame =
+        firstLine.parentTextFrames[0];
+
+      let endIndex =
+        startIndex;
+
+      while (
+        endIndex + 1 <
+        lineCount
+      ) {
+        const nextLine =
+          paragraph.lines.item(
+            endIndex + 1
+          );
+
+        const nextFrame =
+          nextLine.parentTextFrames[0];
+
+        if (
+          nextFrame.id !==
+          firstFrame.id
+        ) {
+          break;
+        }
+
+        endIndex++;
+      }
+
+      const lastLine =
+        paragraph.lines.item(
+          endIndex
+        );
+
+      const page =
+        firstFrame.parentPage;
+
+      const x =
+        firstLine.horizontalOffset -
+        config.mm(3);
+
+      const top =
+        firstLine.baseline -
+        firstLine.ascent;
+
+      const bottom =
+        lastLine.baseline +
+        lastLine.descent;
+
+      const rule =
+        page.graphicLines.add();
+
+      rule.geometricBounds = [
+        top,
+        x,
+        bottom,
+        x,
+      ];
+
+      rule.strokeWeight =
+        0.5;
+
+      rule.strokeColor =
+        document.colors.item(
+          "Black"
+        );
+
+      startIndex =
+        endIndex + 1;
+    }
+  }
+}
+
 function createBackMatterContinuation({
   previousFrame,
   styles,
@@ -321,6 +438,7 @@ function createBackMatterContinuation({
 }
 
 function createBackMatter({
+  document,
   styles,
   layout,
   config,
@@ -434,6 +552,18 @@ function createBackMatter({
         throw new Error(
           `Back matter section "${section.title}" exceeded 10 continuation pages.`
         );
+      }
+
+      if (
+        section.id ===
+        "about-author"
+      ) {
+        addAboutAuthorQuoteRules({
+          story:
+            bodyFrame.parentStory,
+          document,
+          config,
+        });
       }
 
       entries.push({
