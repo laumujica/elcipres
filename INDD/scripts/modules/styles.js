@@ -322,10 +322,10 @@ function createBookStyles(
       justification:
         Justification.LEFT_ALIGN,
       hyphenation: false,
-      leftIndent: config.mm(5),
-      rightIndent: config.mm(3),
-      spaceBefore: config.mm(4),
-      spaceAfter: config.mm(4),
+      leftIndent: 0,
+      rightIndent: 0,
+      spaceBefore: 0,
+      spaceAfter: 0,
     });
 
   const backMatterBoldStyle =
