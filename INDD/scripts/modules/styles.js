@@ -3,6 +3,7 @@ const {
   Justification,
   ColorModel,
   TabStopAlignment,
+  ParagraphBorderEnum,
 } = require("indesign");
 
 function createBookStyles(
@@ -313,6 +314,43 @@ function createBookStyles(
       spaceAfter: 0,
     });
 
+  const backMatterQuoteStyle =
+    document.paragraphStyles.add({
+      name: "Back Matter Quote",
+      appliedFont: atkinsonItalic,
+      pointSize: 11,
+      leading: 15,
+      justification:
+        Justification.LEFT_ALIGN,
+      hyphenation: false,
+      leftIndent: config.mm(5),
+      rightIndent: config.mm(3),
+      spaceBefore: config.mm(4),
+      spaceAfter: config.mm(4),
+      paragraphBorderOn: true,
+      paragraphBorderColor:
+        document.colors.item("Black"),
+      paragraphBorderLeftLineWeight: 0.5,
+      paragraphBorderTopLineWeight: 0,
+      paragraphBorderRightLineWeight: 0,
+      paragraphBorderBottomLineWeight: 0,
+      paragraphBorderWidth:
+        ParagraphBorderEnum.COLUMN_WIDTH,
+      paragraphBorderDisplayIfSplits: true,
+    });
+
+  const backMatterBoldStyle =
+    document.characterStyles.add({
+      name: "Back Matter Bold",
+      appliedFont: atkinsonBold,
+    });
+
+  const backMatterItalicStyle =
+    document.characterStyles.add({
+      name: "Back Matter Italic",
+      appliedFont: atkinsonItalic,
+    });
+
   const workClosingTitleStyle =
     document.paragraphStyles.add({
       name: "Work Closing Title",
@@ -409,6 +447,9 @@ function createBookStyles(
     creditsEmphasisStyle,
     creditsWebsiteStyle,
     creditsFooterStyle,
+    backMatterQuoteStyle,
+    backMatterBoldStyle,
+    backMatterItalicStyle,
     workClosingTitleStyle,
     workClosingNoteStyle,
     closingYearStyle,
