@@ -184,7 +184,16 @@ const BACK_MATTER_SECTIONS = [
   {
     id: "about-edition",
     title: "Sobre esta edición",
-    contents: "[Texto pendiente]",
+    contents:
+      "Esta edición de El otro yo forma parte de El Ciprés, un proyecto independiente creado para recuperar, ordenar y dar nueva forma editorial a la obra escrita de Walter Daniel Mujica.\r" +
+      "El archivo general reúne más de seiscientos cincuenta textos publicados originalmente en cuatro blogs entre 2008 y 2015. Para este primer volumen trabajamos con noventa piezas, seleccionadas y organizadas en cinco movimientos cronológicos. El objetivo no fue trasladar el blog al papel de manera literal, sino construir un libro que conservara la voz, el ritmo y las particularidades de cada texto dentro de una nueva experiencia de lectura.\r" +
+      "Durante esta edición trabajé junto a Laura y Agustina para convertir el material editorial en un sistema capaz de producir el libro de manera consistente. Además de acompañar la organización del contenido, desarrollé la parte de código y automatización que permitió construir el volumen en Adobe InDesign, resolver la paginación, ordenar la información y mantener el proceso bajo control a medida que el libro iba creciendo. Claude, de Anthropic, participó principalmente en etapas anteriores vinculadas al desarrollo del sitio web y a la recuperación inicial de los textos.\r" +
+      "Las herramientas de inteligencia artificial formaron parte del método de trabajo, pero no de la autoría de la obra. Fueron utilizadas para comparar, clasificar, estructurar, documentar y automatizar tareas; las decisiones sobre selección, edición, diseño y sentido quedaron sujetas al criterio humano. Mi participación en este proyecto responde justamente a esa lógica: ayudar a que la tecnología sostenga el proceso sin ocupar el lugar de quienes leen, interpretan y toman las decisiones finales.\r" +
+      "El otro yo es el primero de cuatro volúmenes previstos. Los siguientes reunirán otras zonas de la escritura de Daniel: Mundo Haiku, dedicado a sus haikus; Intentos de..., centrado en microrrelatos y prosa; y Sentidos, con reflexiones y textos breves.\r" +
+      "La construcción visual del libro también continúa siendo familiar. Fernanda y Daniela Mujica participan en la selección de imágenes para las aperturas de los movimientos, aportando una lectura visual nacida de lo que conocen de su padre y de lo que esta obra representa para ellas.\r" +
+      "El proyecto completo puede encontrarse en www.elcipres.com.ar, donde continúa disponible el archivo digital de su obra.\r" +
+      "Esta primera edición fue desarrollada de manera independiente y colaborativa, fuera de un circuito editorial comercial. Además de reunir una parte de la obra de Daniel en un libro terminado, establece una metodología de trabajo para seguir recuperando, editando y publicando el resto de su archivo.\r" +
+      "Theo\rEquipo Interdimensional · ChatGPT (OpenAI)",
   },
 ];
 
@@ -411,7 +420,7 @@ function createAboutAuthorSection({
     text
   ) => {
     const quoteGap =
-      4;
+      2;
 
     const quoteLeft =
       7;
