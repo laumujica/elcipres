@@ -76,7 +76,7 @@ function createWorkClosing({
   imageFrame.strokeWeight = 0;
 
   imageFrame.place(
-    "C:/GitHub/elcipres/INDD/assets/cipres_illustration.png"
+    "C:/GitHub/elcipres/INDD/assets/cipres.png"
   );
 
   imageFrame.fit(
