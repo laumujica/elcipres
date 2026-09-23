@@ -3,7 +3,6 @@ const {
   Justification,
   ColorModel,
   TabStopAlignment,
-  ParagraphBorderEnum,
 } = require("indesign");
 
 function createBookStyles(
@@ -327,22 +326,6 @@ function createBookStyles(
       rightIndent: config.mm(3),
       spaceBefore: config.mm(4),
       spaceAfter: config.mm(4),
-      paragraphBorderOn: true,
-      paragraphBorderColor:
-        document.colors.item("Black"),
-      paragraphBorderLeftLineWeight: 0.5,
-      paragraphBorderTopLineWeight: 0,
-      paragraphBorderRightLineWeight: 0,
-      paragraphBorderBottomLineWeight: 0,
-      paragraphBorderWidth:
-        ParagraphBorderEnum.TEXT_WIDTH,
-      paragraphBorderLeftOffset:
-        config.mm(-3),
-      paragraphBorderTopOffset:
-        config.mm(0.8),
-      paragraphBorderBottomOffset:
-        config.mm(0.8),
-      paragraphBorderDisplayIfSplits: true,
     });
 
   const backMatterBoldStyle =
