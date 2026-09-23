@@ -185,6 +185,7 @@ createWorkClosing({
 
 const backMatterEntries =
   createBackMatter({
+    document,
     styles,
     layout,
     config,
