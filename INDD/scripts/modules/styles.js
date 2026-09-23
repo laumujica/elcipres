@@ -29,6 +29,11 @@ function createBookStyles(
       "Atkinson Hyperlegible\tItalic"
     );
 
+  const atkinsonBold =
+    app.fonts.item(
+      "Atkinson Hyperlegible\tBold"
+    );
+
   const crimsonBold =
     app.fonts.item(
       "Crimson Pro\tBold"
@@ -231,7 +236,7 @@ function createBookStyles(
   const creditsProjectStyle =
     document.paragraphStyles.add({
       name: "Credits Project",
-      appliedFont: interMedium,
+      appliedFont: atkinsonBold,
       pointSize: 8.5,
       leading: 9,
       justification:
@@ -243,13 +248,13 @@ function createBookStyles(
   const creditsRoleStyle =
     document.paragraphStyles.add({
       name: "Credits Role",
-      appliedFont: interMedium,
+      appliedFont: atkinsonBold,
       pointSize: 8.5,
       leading: 9,
       justification:
         Justification.LEFT_ALIGN,
       hyphenation: false,
-      spaceBefore: 1.2,
+      spaceBefore: 3,
       spaceAfter: 0,
     });
 
@@ -281,7 +286,7 @@ function createBookStyles(
   const creditsWebsiteStyle =
     document.paragraphStyles.add({
       name: "Credits Website",
-      appliedFont: interMedium,
+      appliedFont: atkinsonBold,
       pointSize: 8.2,
       leading: 9,
       justification:
