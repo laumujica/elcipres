@@ -1,6 +1,7 @@
 const {
   NothingEnum,
   FitOptions,
+  AutoSizingTypeEnum,
 } = require("indesign");
 
 function toRoman(value) {
@@ -454,9 +455,13 @@ function createAboutAuthorSection({
         styles.backMatterQuoteStyle
       );
 
-      quoteFrame.fit(
-        FitOptions.frameToContent
-      );
+      quoteFrame
+        .textFramePreferences
+        .autoSizingType =
+          AutoSizingTypeEnum.HEIGHT_ONLY;
+
+      quoteFrame.parentStory
+        .recompose();
 
       const quoteTop =
         quoteFrame.geometricBounds[0];
