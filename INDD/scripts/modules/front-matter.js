@@ -1,6 +1,7 @@
 const {
   NothingEnum,
   VerticalJustification,
+  Justification,
   PageNumberStyle,
   FitOptions,
 } = require("indesign");
