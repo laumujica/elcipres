@@ -317,8 +317,8 @@ function createBookStyles(
     document.paragraphStyles.add({
       name: "Back Matter Quote",
       appliedFont: atkinsonItalic,
-      pointSize: 11,
-      leading: 15,
+      pointSize: 12,
+      leading: config.BODY_LEADING,
       justification:
         Justification.LEFT_ALIGN,
       hyphenation: false,
