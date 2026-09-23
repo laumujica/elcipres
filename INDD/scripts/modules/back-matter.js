@@ -72,7 +72,7 @@ function createWorkClosing({
   ];
 
   titleFrame.contents =
-    "EL OTRO YO";
+    "El otro yo";
 
   layout.applyStyleToStory(
     titleFrame.parentStory,
