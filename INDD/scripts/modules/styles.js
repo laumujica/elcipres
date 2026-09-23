@@ -40,7 +40,7 @@ function createBookStyles(
     );
 
   document.colors.add({
-    name: "El Otro Yo",
+    name: "El otro yo",
     model: ColorModel.process,
     colorValue: [0, 31, 71, 39],
   });
@@ -369,7 +369,7 @@ function createBookStyles(
 
   sectionCoverTitleStyle.fillColor =
     document.colors.item(
-      "El Otro Yo"
+      "El otro yo"
     );
 
   textTitleStyle.fillColor =
