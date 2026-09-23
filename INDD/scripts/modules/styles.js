@@ -24,6 +24,11 @@ function createBookStyles(
       "Atkinson Hyperlegible\tRegular"
     );
 
+  const atkinsonItalic =
+    app.fonts.item(
+      "Atkinson Hyperlegible\tItalic"
+    );
+
   const crimsonBold =
     app.fonts.item(
       "Crimson Pro\tBold"
@@ -223,16 +228,78 @@ function createBookStyles(
     leader: ".",
   });
 
-  const creditsStyle =
+  const creditsProjectStyle =
     document.paragraphStyles.add({
-      name: "Credits",
-      appliedFont: atkinsonRegular,
+      name: "Credits Project",
+      appliedFont: interMedium,
       pointSize: 8.5,
-      leading: 11,
+      leading: 9,
       justification:
         Justification.LEFT_ALIGN,
       hyphenation: false,
-      spaceAfter: 1.5,
+      spaceAfter: 0,
+    });
+
+  const creditsRoleStyle =
+    document.paragraphStyles.add({
+      name: "Credits Role",
+      appliedFont: interMedium,
+      pointSize: 8.5,
+      leading: 9,
+      justification:
+        Justification.LEFT_ALIGN,
+      hyphenation: false,
+      spaceBefore: 1.2,
+      spaceAfter: 0,
+    });
+
+  const creditsTextStyle =
+    document.paragraphStyles.add({
+      name: "Credits Text",
+      appliedFont: atkinsonRegular,
+      pointSize: 8.5,
+      leading: 9,
+      justification:
+        Justification.LEFT_ALIGN,
+      hyphenation: false,
+      spaceAfter: 0,
+    });
+
+  const creditsNoteStyle =
+    document.paragraphStyles.add({
+      name: "Credits Note",
+      appliedFont: atkinsonItalic,
+      pointSize: 7.8,
+      leading: 9,
+      justification:
+        Justification.LEFT_ALIGN,
+      hyphenation: false,
+      spaceBefore: 1.5,
+      spaceAfter: 0,
+    });
+
+  const creditsWebsiteStyle =
+    document.paragraphStyles.add({
+      name: "Credits Website",
+      appliedFont: interMedium,
+      pointSize: 8.2,
+      leading: 9,
+      justification:
+        Justification.LEFT_ALIGN,
+      hyphenation: false,
+      spaceAfter: 0,
+    });
+
+  const creditsFooterStyle =
+    document.paragraphStyles.add({
+      name: "Credits Footer",
+      appliedFont: atkinsonRegular,
+      pointSize: 8.2,
+      leading: 9,
+      justification:
+        Justification.LEFT_ALIGN,
+      hyphenation: false,
+      spaceAfter: 0,
     });
 
   const workClosingTitleStyle =
@@ -324,7 +391,12 @@ function createBookStyles(
     tocSectionStyle,
     tocEntryStyle,
     tocBackMatterStyle,
-    creditsStyle,
+    creditsProjectStyle,
+    creditsRoleStyle,
+    creditsTextStyle,
+    creditsNoteStyle,
+    creditsWebsiteStyle,
+    creditsFooterStyle,
     workClosingTitleStyle,
     workClosingNoteStyle,
     closingYearStyle,
