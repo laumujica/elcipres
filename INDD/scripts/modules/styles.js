@@ -283,6 +283,12 @@ function createBookStyles(
       spaceAfter: 0,
     });
 
+  const creditsEmphasisStyle =
+    document.characterStyles.add({
+      name: "Credits Emphasis",
+      appliedFont: atkinsonBold,
+    });
+
   const creditsWebsiteStyle =
     document.paragraphStyles.add({
       name: "Credits Website",
@@ -400,6 +406,7 @@ function createBookStyles(
     creditsRoleStyle,
     creditsTextStyle,
     creditsNoteStyle,
+    creditsEmphasisStyle,
     creditsWebsiteStyle,
     creditsFooterStyle,
     workClosingTitleStyle,
