@@ -335,7 +335,13 @@ function createBookStyles(
       paragraphBorderRightLineWeight: 0,
       paragraphBorderBottomLineWeight: 0,
       paragraphBorderWidth:
-        ParagraphBorderEnum.COLUMN_WIDTH,
+        ParagraphBorderEnum.TEXT_WIDTH,
+      paragraphBorderLeftOffset:
+        config.mm(-3),
+      paragraphBorderTopOffset:
+        config.mm(0.8),
+      paragraphBorderBottomOffset:
+        config.mm(0.8),
       paragraphBorderDisplayIfSplits: true,
     });
 
