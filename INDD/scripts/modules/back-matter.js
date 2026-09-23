@@ -58,11 +58,40 @@ function createWorkClosing({
   closingPage.appliedMaster =
     NothingEnum.NOTHING;
 
+  const imageWidth = 30;
+  const imageHeight = 62;
+  const imageLeft =
+    (config.PAGE_WIDTH - imageWidth) / 2;
+
+  const imageFrame =
+    closingPage.rectangles.add();
+
+  imageFrame.geometricBounds = [
+    config.mm(17),
+    config.mm(imageLeft),
+    config.mm(17 + imageHeight),
+    config.mm(imageLeft + imageWidth),
+  ];
+
+  imageFrame.strokeWeight = 0;
+
+  imageFrame.place(
+    "C:/GitHub/elcipres/INDD/assets/cipres_illustration.png"
+  );
+
+  imageFrame.fit(
+    FitOptions.PROPORTIONALLY
+  );
+
+  imageFrame.fit(
+    FitOptions.CENTER_CONTENT
+  );
+
   const titleFrame =
     closingPage.textFrames.add();
 
   titleFrame.geometricBounds = [
-    config.mm(82),
+    config.mm(84),
     config.mm(config.MARGIN_INSIDE),
     config.mm(104),
     config.mm(
