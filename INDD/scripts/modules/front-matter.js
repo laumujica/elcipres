@@ -159,18 +159,35 @@ function createFrontMatter({
       copyrightPage
     );
 
+  const projectFrame =
+    copyrightPage.textFrames.add();
+
+  projectFrame.geometricBounds = [
+    config.mm(18),
+    config.mm(copyrightArea.left),
+    config.mm(26),
+    config.mm(copyrightArea.right),
+  ];
+
+  projectFrame.contents =
+    "EL CIPRÉS";
+
+  layout.applyStyleToStory(
+    projectFrame.parentStory,
+    styles.creditsProjectStyle
+  );
+
   const creditsFrame =
     copyrightPage.textFrames.add();
 
   creditsFrame.geometricBounds = [
-    config.mm(18),
+    config.mm(30),
     config.mm(copyrightArea.left),
-    config.mm(148),
+    config.mm(150),
     config.mm(copyrightArea.right),
   ];
 
   creditsFrame.contents =
-    "EL CIPRÉS\r" +
     "El Otro Yo · Walter Daniel Mujica\r" +
     "Primera edición, 2026\r" +
     "Córdoba, Argentina\r" +
@@ -194,8 +211,7 @@ function createFrontMatter({
     creditsFrame.parentStory;
 
   const creditsStyles = [
-    styles.creditsProjectStyle,
-    styles.creditsProjectStyle,
+    styles.creditsTextStyle,
     styles.creditsTextStyle,
     styles.creditsTextStyle,
     styles.creditsRoleStyle,
@@ -237,7 +253,7 @@ function createFrontMatter({
   const qrTop = 153;
 
   const qrFrame =
-    copyrightPage.textFrames.add();
+    copyrightPage.rectangles.add();
 
   qrFrame.geometricBounds = [
     config.mm(qrTop),
@@ -248,16 +264,15 @@ function createFrontMatter({
     ),
   ];
 
-  qrFrame.contents = "QR";
+  qrFrame.strokeWeight = 0;
 
-  qrFrame
-    .textFramePreferences
-    .verticalJustification =
-      VerticalJustification.CENTER_ALIGN;
+  qrFrame.place(
+    "C:/GitHub/elcipres/INDD/assets/elcipres_qr.svg"
+  );
 
-  qrFrame.parentStory.paragraphs
-    .item(0).justification =
-      Justification.CENTER_ALIGN;
+  qrFrame.fit(
+    FitOptions.CONTENT_TO_FRAME
+  );
 
   const websiteFrame =
     copyrightPage.textFrames.add();
