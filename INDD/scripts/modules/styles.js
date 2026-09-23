@@ -254,7 +254,7 @@ function createBookStyles(
       justification:
         Justification.LEFT_ALIGN,
       hyphenation: false,
-      spaceBefore: 3,
+      spaceBefore: config.mm(4),
       spaceAfter: 0,
     });
 
@@ -279,7 +279,7 @@ function createBookStyles(
       justification:
         Justification.LEFT_ALIGN,
       hyphenation: false,
-      spaceBefore: 1.5,
+      spaceBefore: config.mm(4),
       spaceAfter: 0,
     });
 
