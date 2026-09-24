@@ -420,7 +420,7 @@ function createAboutAuthorSection({
     text
   ) => {
     const quoteGap =
-      2;
+      5;
 
     const quoteLeft =
       7;
@@ -562,13 +562,21 @@ function createAboutAuthorSection({
     );
   }
 
-  const beforeQuoteOne =
-    paragraphs
-      .slice(
-        0,
-        quoteOneIndex
-      )
+  const beforeQuoteOneParagraphs =
+    paragraphs.slice(
+      0,
+      quoteOneIndex
+    );
+
+  const beforeQuoteOneLead =
+    beforeQuoteOneParagraphs
+      .slice(0, -1)
       .join("\r");
+
+  const beforeQuoteOneTail =
+    beforeQuoteOneParagraphs[
+      beforeQuoteOneParagraphs.length - 1
+    ] || "";
 
   const betweenQuotes =
     paragraphs
@@ -585,9 +593,66 @@ function createAboutAuthorSection({
       )
       .join("\r");
 
-  addFlowingText(
-    beforeQuoteOne
-  );
+  if (
+    beforeQuoteOneLead.length > 0
+  ) {
+    addFlowingText(
+      beforeQuoteOneLead
+    );
+  }
+
+  if (
+    beforeQuoteOneTail.length > 0
+  ) {
+    const createTailFrame = () => {
+      const frame =
+        state.page.textFrames.add();
+
+      frame.geometricBounds = [
+        config.mm(state.y),
+        config.mm(state.area.left),
+        config.mm(state.area.bottom),
+        config.mm(state.area.right),
+      ];
+
+      frame.contents =
+        beforeQuoteOneTail;
+
+      layout.applyStyleToStory(
+        frame.parentStory,
+        styles.bodyStyle
+      );
+
+      applyAboutAuthorInlineStyles({
+        story:
+          frame.parentStory,
+        styles,
+      });
+
+      frame.fit(
+        FitOptions.frameToContent
+      );
+
+      return frame;
+    };
+
+    let tailFrame =
+      createTailFrame();
+
+    if (
+      tailFrame.geometricBounds[2] >
+      state.area.bottom
+    ) {
+      tailFrame.remove();
+      newContinuationPage();
+      tailFrame =
+        createTailFrame();
+    }
+
+    state.y =
+      tailFrame.geometricBounds[2] +
+      2;
+  }
 
   addQuote(
     paragraphs[
