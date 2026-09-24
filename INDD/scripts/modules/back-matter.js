@@ -282,6 +282,25 @@ function applyAboutAuthorParagraphSpacing(
   }
 }
 
+function applyAboutAuthorWidowOrphanControl(
+  story
+) {
+  for (
+    let i = 0;
+    i < story.paragraphs.length;
+    i++
+  ) {
+    const paragraph =
+      story.paragraphs.item(i);
+
+    paragraph.keepLinesTogether =
+      true;
+
+    paragraph.keepFirstLines = 2;
+    paragraph.keepLastLines = 2;
+  }
+}
+
 function applyAboutAuthorInlineStyles({
   story,
   styles,
@@ -715,6 +734,10 @@ function createAboutAuthorSection({
     });
 
     applyAboutAuthorParagraphSpacing(
+      frame.parentStory
+    );
+
+    applyAboutAuthorWidowOrphanControl(
       frame.parentStory
     );
 

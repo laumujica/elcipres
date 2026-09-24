@@ -77,6 +77,7 @@ The current production build handles:
 - styled author quotations with dedicated quote/bar frames
 - a dedicated end-of-work page before the back matter, including the cypress illustration
 - validation of structured JSON before document generation
+- runtime regression checks for stable counts, required styles, back-matter structure, and text-frame page bounds
 
 The source manuscript remains versioned separately from generated data, so editorial decisions are not lost when the layout logic changes.
 
@@ -157,7 +158,7 @@ This made the workflow significantly safer: changes are versioned, reversible, a
 
 ---
 
-## Current status — September 23, 2026
+## Current status — September 24, 2026
 
 The web archive is published and operational.
 
@@ -176,15 +177,17 @@ Today's editorial / production milestone included:
 
 The **About the Author** layout is considered ready for this checkpoint, with one small pagination refinement intentionally deferred: one sentence currently begins alone at the top of a continuation page. The quote spacing is now close to the intended visual rhythm and will be fine-tuned only if needed during the final QA pass.
 
-The epilogue author has already agreed to participate, so that section is now externally pending rather than an internal writing task. The next work session will shift toward the prologue and visual design.
+The epilogue has now been received, editorially reviewed, approved, and integrated into the automated book build. The print cover design has also been completed and prepared for press in a separate cover/imposition workflow.
+
+The remaining content work is narrow: the final prologue still needs to be written and placed, and the five movement-opening images still depend on family selection. A first regression-check layer has now been added to the InDesign generation workflow so small late-stage changes can be checked against stable production invariants instead of relying only on visual inspection.
 
 ### Backlog
 
 - Write and place the final **Prologue**.
-- Receive and place the **Epilogue** from its confirmed writer.
 - Speak with Fernanda and Daniela and select imagery for the five movement openings.
-- Begin and develop the **cover design**.
-- Fine-tune the remaining orphan sentence in **About the Author** if it still appears during final QA.
+- Recheck the **About the Author** widow/orphan control after the latest two-line keep rule.
+- Add and expand regression checks as the final book stabilizes.
+- Create a separate **digital PDF edition** with reader-facing pagination that starts at the first PDF page, plus PDF-specific margins/layout adjustments.
 - Add Daniel's acknowledgements after he receives the first physical copy.
 - Finalize movement-cover imagery and its production treatment.
 - Run a final proofread / human-read PDF pass.
@@ -199,6 +202,7 @@ The epilogue author has already agreed to participate, so that section is now ex
 - **September 21, 2026** — Editorial automation milestone: Markdown-to-JSON workflow, InDesign UXP generation, pagination logic, source versioning, GitHub Desktop synchronization, and production QA workflow.
 - **September 22, 2026** — Curation v04 and book-structure milestone: explicit literary metadata, body-date policy, verse pagination rules, automated TOC, front/back matter scaffolding, credits, end-of-work transition, epilogue placeholder, and final-stage editorial QA.
 - **September 23, 2026** — Paratext and finishing milestone: official **El otro yo** title casing standardized, credits finalized with QR and updated role language, **About this Edition** and **About the Author** copy completed and placed, author-quote treatment refined, cypress end-of-work image integrated, and remaining backlog shifted to prologue, epilogue delivery, movement imagery, cover design, final QA, and print preparation.
+- **September 24, 2026** — Final-content and regression milestone: approved epilogue integrated, back-matter signatures styled, non-www QR/domain update completed, print cover artwork finished, **About the Author** two-line widow/orphan control restored, and the first runtime regression-check layer added. A separate reader-oriented PDF edition is now tracked as a post-print-production deliverable.
 
 ---
 

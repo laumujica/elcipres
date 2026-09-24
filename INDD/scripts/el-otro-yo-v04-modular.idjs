@@ -19,6 +19,9 @@ const {
 } = require("./modules/back-matter.js");
 const { createSectionCover } = require("./modules/section-cover.js");
 const { createText } = require("./modules/body.js");
+const {
+  runRegressionChecks,
+} = require("./modules/regression.js");
 
 // --------------------------------------------------
 // CHOOSE AND READ JSON
@@ -202,6 +205,19 @@ createTableOfContents({
   backMatterEntries,
   styles,
   layout,
+  config,
+});
+
+// --------------------------------------------------
+// REGRESSION CHECKS
+// --------------------------------------------------
+
+runRegressionChecks({
+  data,
+  document,
+  bodyEntries,
+  backMatterEntries,
+  frontMatter,
   config,
 });
 
