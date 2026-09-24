@@ -449,6 +449,30 @@ function createEpilogueSection({
     styles,
   });
 
+  const keepTogetherText =
+    "Quiero decirte que desde ese sitio en el que hoy estás, hacés, y mucho. Sos el vínculo de amor entre la sangre de tu sangre, frutos de un amor, y nosotros, tus hermanos.";
+
+  for (
+    let i = 0;
+    i <
+      bodyFrame.parentStory
+        .paragraphs.length;
+    i++
+  ) {
+    const paragraph =
+      bodyFrame.parentStory
+        .paragraphs.item(i);
+
+    if (
+      paragraph.contents
+        .replace(/\r$/, "") ===
+      keepTogetherText
+    ) {
+      paragraph.keepAllLinesTogether =
+        true;
+    }
+  }
+
   bodyFrame.parentStory.recompose();
 
   let currentFrame =
