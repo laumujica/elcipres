@@ -2,6 +2,7 @@ const {
   NothingEnum,
   FitOptions,
   AutoSizingTypeEnum,
+  AutoSizingReferenceEnum,
 } = require("indesign");
 
 function toRoman(value) {
@@ -420,7 +421,7 @@ function createAboutAuthorSection({
     text
   ) => {
     const quoteGap =
-      5;
+      4;
 
     const quoteLeft =
       7;
@@ -463,6 +464,11 @@ function createAboutAuthorSection({
         quoteFrame.parentStory,
         styles.backMatterQuoteStyle
       );
+
+      quoteFrame
+        .textFramePreferences
+        .autoSizingReferencePoint =
+          AutoSizingReferenceEnum.TOP_LEFT_POINT;
 
       quoteFrame
         .textFramePreferences
@@ -568,15 +574,43 @@ function createAboutAuthorSection({
       quoteOneIndex
     );
 
-  const beforeQuoteOneLead =
-    beforeQuoteOneParagraphs
-      .slice(0, -1)
-      .join("\r");
-
-  const beforeQuoteOneTail =
+  const lastParagraphBeforeQuote =
     beforeQuoteOneParagraphs[
       beforeQuoteOneParagraphs.length - 1
     ] || "";
+
+  const forcedTail =
+    "No se presentaba como alguien que tuviera respuestas definitivas ni parecía buscar una identidad solemne de escritor. En su blog Intentos de..., bajo el título Algo de mí, dejó una de sus descripciones más personales:";
+
+  const forcedTailIndex =
+    lastParagraphBeforeQuote
+      .indexOf(forcedTail);
+
+  if (
+    forcedTailIndex < 0
+  ) {
+    throw new Error(
+      "About Author forced two-sentence break was not found."
+    );
+  }
+
+  const paragraphLead =
+    lastParagraphBeforeQuote
+      .slice(
+        0,
+        forcedTailIndex
+      )
+      .trim();
+
+  const beforeQuoteOneLead =
+    beforeQuoteOneParagraphs
+      .slice(0, -1)
+      .concat(
+        paragraphLead
+          ? [paragraphLead]
+          : []
+      )
+      .join("\r");
 
   const betweenQuotes =
     paragraphs
@@ -601,58 +635,54 @@ function createAboutAuthorSection({
     );
   }
 
-  if (
-    beforeQuoteOneTail.length > 0
-  ) {
-    const createTailFrame = () => {
-      const frame =
-        state.page.textFrames.add();
+  const createTailFrame = () => {
+    const frame =
+      state.page.textFrames.add();
 
-      frame.geometricBounds = [
-        config.mm(state.y),
-        config.mm(state.area.left),
-        config.mm(state.area.bottom),
-        config.mm(state.area.right),
-      ];
+    frame.geometricBounds = [
+      config.mm(state.y),
+      config.mm(state.area.left),
+      config.mm(state.area.bottom),
+      config.mm(state.area.right),
+    ];
 
-      frame.contents =
-        beforeQuoteOneTail;
+    frame.contents =
+      forcedTail;
 
-      layout.applyStyleToStory(
+    layout.applyStyleToStory(
+      frame.parentStory,
+      styles.bodyStyle
+    );
+
+    applyAboutAuthorInlineStyles({
+      story:
         frame.parentStory,
-        styles.bodyStyle
-      );
+      styles,
+    });
 
-      applyAboutAuthorInlineStyles({
-        story:
-          frame.parentStory,
-        styles,
-      });
+    frame.fit(
+      FitOptions.frameToContent
+    );
 
-      frame.fit(
-        FitOptions.frameToContent
-      );
+    return frame;
+  };
 
-      return frame;
-    };
+  let tailFrame =
+    createTailFrame();
 
-    let tailFrame =
+  if (
+    tailFrame.geometricBounds[2] >
+    state.area.bottom
+  ) {
+    tailFrame.remove();
+    newContinuationPage();
+    tailFrame =
       createTailFrame();
-
-    if (
-      tailFrame.geometricBounds[2] >
-      state.area.bottom
-    ) {
-      tailFrame.remove();
-      newContinuationPage();
-      tailFrame =
-        createTailFrame();
-    }
-
-    state.y =
-      tailFrame.geometricBounds[2] +
-      2;
   }
+
+  state.y =
+    tailFrame.geometricBounds[2] +
+    2;
 
   addQuote(
     paragraphs[
