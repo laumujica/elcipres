@@ -72,8 +72,10 @@ The current production build handles:
 - verse pagination rules that avoid isolated single lines
 - body dates preserved as metadata but hidden in the printed composition
 - automated multi-page table of contents
-- front matter scaffolding, credits, prologue placeholder, and back matter sections
-- a dedicated end-of-work page before the back matter
+- front matter scaffolding, finalized credits, prologue placeholder, and structured back matter sections
+- finalized **About the Author** and **About this Edition** copy
+- styled author quotations with dedicated quote/bar frames
+- a dedicated end-of-work page before the back matter, including the cypress illustration
 - validation of structured JSON before document generation
 
 The source manuscript remains versioned separately from generated data, so editorial decisions are not lost when the layout logic changes.
@@ -155,23 +157,38 @@ This made the workflow significantly safer: changes are versioned, reversible, a
 
 ---
 
-## Current status — September 22, 2026
+## Current status — September 23, 2026
 
 The web archive is published and operational.
 
-The editorial pipeline now generates a near-complete book structure from the curated manuscript. Editorial classification is explicit in Markdown metadata instead of inferred by the script, and the current InDesign build includes body pagination, recto/verso logic, hidden and visible folios, a multi-page TOC, front matter, a closing page for the literary work, and structured back matter.
+The editorial pipeline now generates a near-complete book structure from the curated manuscript. Core body pagination remains stable, and most of the work completed today focused on closing the paratextual system and refining the final book architecture rather than changing the literary body.
 
-Editorial QA on the 90-text body is substantially complete. The remaining work has shifted from core automation to final content, visual refinement, and print preparation.
+Today's editorial / production milestone included:
+
+- standardized the official book title as **El otro yo** throughout the production system
+- finalized the credits page, including role wording, AI-process disclosure, typography, spacing, and a working QR asset
+- finalized and placed the approved **About this Edition** text
+- finalized and placed the **About the Author** text
+- added inline emphasis for author-profile references and a dedicated visual treatment for direct quotations
+- refined the author-profile quote layout into separate text and vertical-bar frames
+- added the cypress illustration to the end-of-work page and reduced it to a 19 mm-wide visual mark
+- continued tightening back-matter spacing and page flow based on visual QA in InDesign
+
+The **About the Author** layout is considered ready for this checkpoint, with one small pagination refinement intentionally deferred: one sentence currently begins alone at the top of a continuation page. The quote spacing is now close to the intended visual rhythm and will be fine-tuned only if needed during the final QA pass.
+
+The epilogue author has already agreed to participate, so that section is now externally pending rather than an internal writing task. The next work session will shift toward the prologue and visual design.
 
 ### Backlog
 
-- Write and place the final prologue.
-- Add final **About the Author** and **About this Edition** copy.
-- Receive and place the epilogue after external family review.
+- Write and place the final **Prologue**.
+- Receive and place the **Epilogue** from its confirmed writer.
+- Speak with Fernanda and Daniela and select imagery for the five movement openings.
+- Begin and develop the **cover design**.
+- Fine-tune the remaining orphan sentence in **About the Author** if it still appears during final QA.
 - Add Daniel's acknowledgements after he receives the first physical copy.
-- Refine styles for the new front/back matter sections.
-- Finalize movement-cover imagery and cover design.
+- Finalize movement-cover imagery and its production treatment.
 - Run a final proofread / human-read PDF pass.
+- Verify final recto/verso starts, folios, blanks, overset, quote spacing, and back-matter flow.
 - Prepare print-production files and determine final imposition / blank-page requirements with the chosen printing method.
 
 ---
@@ -181,6 +198,7 @@ Editorial QA on the 90-text body is substantially complete. The remaining work h
 - **July 12, 2026** — Initial archive extraction, website build, deployment, search, contact, donation integration, and launch troubleshooting.
 - **September 21, 2026** — Editorial automation milestone: Markdown-to-JSON workflow, InDesign UXP generation, pagination logic, source versioning, GitHub Desktop synchronization, and production QA workflow.
 - **September 22, 2026** — Curation v04 and book-structure milestone: explicit literary metadata, body-date policy, verse pagination rules, automated TOC, front/back matter scaffolding, credits, end-of-work transition, epilogue placeholder, and final-stage editorial QA.
+- **September 23, 2026** — Paratext and finishing milestone: official **El otro yo** title casing standardized, credits finalized with QR and updated role language, **About this Edition** and **About the Author** copy completed and placed, author-quote treatment refined, cypress end-of-work image integrated, and remaining backlog shifted to prologue, epilogue delivery, movement imagery, cover design, final QA, and print preparation.
 
 ---
 
