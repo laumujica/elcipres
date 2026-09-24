@@ -159,7 +159,25 @@ const BACK_MATTER_SECTIONS = [
     id: "epilogue",
     title: "Epílogo",
     contents:
-      "[Nombre de la autora]\r[Texto pendiente]",
+      "Hermano:\r" +
+      "Hermoso vínculo sagrado nos une. Con diferencia de tiempo, habitamos el mismo espacio que tan generosamente nos prestó nuestra madre. Un lugar donde nos gustaría haber seguido habitando para ser protegidos de un mundo, adverso a veces, que nos llevó a la negrura de bosques densos y oscuros, pero que nos permitió habitar también espacios llenos de amor y ternura con nuestra madre.\r" +
+      "“Ranita”, te apodó alguien, inquieto, movedizo, escurridizo, con ese afán de niño explorador de árboles y espacios. Eras siempre el perseguido por la escoba o la chinela de nuestra madre, que casi nunca atinaba a darte tu merecido.\r" +
+      "Conociste las letras cuando tenías cinco años, como si ya previeras un futuro enredado entre versos y escritos en los que luego volcarías tus sentimientos cargados de nostalgia, los traviesos pasos de tu niñez, tus amores enredados, tus sueños. Todo aquello que puede leerse solo con el alma de quien ha vivido mucho.\r" +
+      "Creo que la escritura fue uno de los pocos espacios donde abriste plenamente tu corazón, donde expusiste con palabras tu mundo interior, el de un soñador que siempre quiso cambiar el mundo. Pero el gran luchador que fuiste te jugó una mala pasada. Te llevó a un presente que te negás a aceptar, porque creés que te faltó mucho por hacer, porque no lo merecés.\r" +
+      "Quiero decirte que desde ese sitio en el que hoy estás, hacés, y mucho. Sos el vínculo de amor entre la sangre de tu sangre, frutos de un amor, y nosotros, tus hermanos.\r" +
+      "Ya no cargás la gomera en tus manos, ya no sos “el niño asesino de pájaros” de tus once años, pero ahí, cuando le suplicaste a ese chingolo que no muriera, creo que aprendiste una gran lección. Una que hoy, ya adulto, puede servirte para reencontrar en vos a ese pequeño que quiere seguir siendo parte de vos y que, desde adentro, te recuerda que, en este ciclo de la vida, tu misión seguirá mientras sigas respirando.",
+    quote:
+      "“…fui, a veces soy… y conste que quiero ser…”",
+    quoteSource:
+      "Nada de nada, publicado en El Ciprés el 14 de septiembre de 2008.",
+    signature:
+      "Nancy Lilian Mujica",
+    boldTexts: [
+      "adverso a veces",
+      "espacios llenos de amor y ternura con nuestra madre",
+      "llevó",
+      "desde adentro, te recuerda que, en este ciclo de la vida, tu misión seguirá mientras sigas respirando",
+    ],
   },
   {
     id: "about-author",
@@ -228,6 +246,22 @@ function applyCharacterStyleToText({
   }
 }
 
+function applyEpilogueInlineStyles({
+  story,
+  section,
+  styles,
+}) {
+  (section.boldTexts || [])
+    .forEach((text) => {
+      applyCharacterStyleToText({
+        story,
+        text,
+        style:
+          styles.backMatterBoldStyle,
+      });
+    });
+}
+
 function applyAboutAuthorParagraphSpacing(
   story
 ) {
@@ -291,6 +325,289 @@ function applyAboutAuthorInlineStyles({
         styles.backMatterItalicStyle,
     });
   });
+}
+
+
+function createEpilogueSection({
+  document,
+  section,
+  styles,
+  layout,
+  config,
+}) {
+  let page =
+    layout.createPageAtEnd();
+
+  if (
+    !layout.isRightHandPage(
+      page
+    )
+  ) {
+    page.appliedMaster =
+      NothingEnum.NOTHING;
+
+    page =
+      layout.createPageAtEnd();
+  }
+
+  const firstPage =
+    page;
+
+  const area =
+    layout.getTextArea(page);
+
+  const titleFrame =
+    page.textFrames.add();
+
+  titleFrame.geometricBounds = [
+    config.mm(area.top),
+    config.mm(area.left),
+    config.mm(area.top + 35),
+    config.mm(area.right),
+  ];
+
+  titleFrame.contents =
+    section.title;
+
+  layout.applyStyleToStory(
+    titleFrame.parentStory,
+    styles.frontMatterTitleStyle
+  );
+
+  titleFrame.fit(
+    FitOptions.frameToContent
+  );
+
+  let state = {
+    page,
+    area,
+    y:
+      titleFrame.geometricBounds[2] +
+      4,
+  };
+
+  const newContinuationPage = () => {
+    const newPage =
+      layout.createPageAtEnd();
+
+    const newArea =
+      layout.getTextArea(
+        newPage
+      );
+
+    state = {
+      page:
+        newPage,
+      area:
+        newArea,
+      y:
+        newArea.top,
+    };
+  };
+
+  const bodyFrame =
+    state.page.textFrames.add();
+
+  bodyFrame.geometricBounds = [
+    config.mm(state.y),
+    config.mm(state.area.left),
+    config.mm(state.area.bottom),
+    config.mm(state.area.right),
+  ];
+
+  bodyFrame.contents =
+    section.contents;
+
+  layout.applyStyleToStory(
+    bodyFrame.parentStory,
+    styles.bodyStyle
+  );
+
+  applyEpilogueInlineStyles({
+    story:
+      bodyFrame.parentStory,
+    section,
+    styles,
+  });
+
+  bodyFrame.parentStory.recompose();
+
+  let currentFrame =
+    bodyFrame;
+
+  while (
+    currentFrame.overflows
+  ) {
+    newContinuationPage();
+
+    const continuationFrame =
+      state.page.textFrames.add();
+
+    continuationFrame.geometricBounds = [
+      config.mm(state.area.top),
+      config.mm(state.area.left),
+      config.mm(state.area.bottom),
+      config.mm(state.area.right),
+    ];
+
+    currentFrame.nextTextFrame =
+      continuationFrame;
+
+    continuationFrame.parentStory
+      .recompose();
+
+    currentFrame =
+      continuationFrame;
+  }
+
+  currentFrame.fit(
+    FitOptions.frameToContent
+  );
+
+  state.y =
+    currentFrame.geometricBounds[2] +
+    2;
+
+  const quoteGap = 4;
+  const quoteLeft = 7;
+  const quoteRight = 3;
+  const barLeft = 2;
+  const barWidth = 0.5;
+
+  const createQuotePair = () => {
+    const quoteFrame =
+      state.page.textFrames.add();
+
+    quoteFrame.geometricBounds = [
+      config.mm(
+        state.y +
+        quoteGap
+      ),
+      config.mm(
+        state.area.left +
+        quoteLeft
+      ),
+      config.mm(
+        state.area.bottom
+      ),
+      config.mm(
+        state.area.right -
+        quoteRight
+      ),
+    ];
+
+    quoteFrame.contents =
+      section.quote +
+      "\r" +
+      section.quoteSource;
+
+    layout.applyStyleToStory(
+      quoteFrame.parentStory,
+      styles.backMatterQuoteStyle
+    );
+
+    quoteFrame.parentStory
+      .paragraphs.item(1)
+      .spaceBefore = 4;
+
+    quoteFrame
+      .textFramePreferences
+      .autoSizingReferencePoint =
+        AutoSizingReferenceEnum.TOP_LEFT_POINT;
+
+    quoteFrame
+      .textFramePreferences
+      .autoSizingType =
+        AutoSizingTypeEnum.HEIGHT_ONLY;
+
+    quoteFrame.parentStory
+      .recompose();
+
+    const quoteTop =
+      quoteFrame.geometricBounds[0];
+
+    const quoteBottom =
+      quoteFrame.geometricBounds[2];
+
+    const barFrame =
+      state.page.rectangles.add();
+
+    barFrame.geometricBounds = [
+      quoteTop,
+      config.mm(
+        state.area.left +
+        barLeft
+      ),
+      quoteBottom,
+      config.mm(
+        state.area.left +
+        barLeft +
+        barWidth
+      ),
+    ];
+
+    barFrame.fillColor =
+      document.colors.item(
+        "Black"
+      );
+
+    barFrame.strokeWeight =
+      0;
+
+    return {
+      quoteFrame,
+      barFrame,
+    };
+  };
+
+  let quote =
+    createQuotePair();
+
+  if (
+    quote.quoteFrame
+      .geometricBounds[2] >
+    state.area.bottom
+  ) {
+    quote.quoteFrame.remove();
+    quote.barFrame.remove();
+
+    newContinuationPage();
+
+    quote =
+      createQuotePair();
+  }
+
+  state.y =
+    quote.quoteFrame
+      .geometricBounds[2] +
+    quoteGap;
+
+  const signatureFrame =
+    state.page.textFrames.add();
+
+  signatureFrame.geometricBounds = [
+    config.mm(state.y),
+    config.mm(state.area.left),
+    config.mm(state.area.bottom),
+    config.mm(state.area.right),
+  ];
+
+  signatureFrame.contents =
+    section.signature;
+
+  layout.applyStyleToStory(
+    signatureFrame.parentStory,
+    styles.backMatterSignatureStyle
+  );
+
+  signatureFrame.fit(
+    FitOptions.frameToContent
+  );
+
+  return {
+    page:
+      firstPage,
+  };
 }
 
 function createAboutAuthorSection({
@@ -698,6 +1015,29 @@ function createBackMatter({
     (section) => {
       if (
         section.id ===
+        "epilogue"
+      ) {
+        const epilogue =
+          createEpilogueSection({
+            document,
+            section,
+            styles,
+            layout,
+            config,
+          });
+
+        entries.push({
+          id: section.id,
+          title: section.title,
+          page:
+            epilogue.page,
+        });
+
+        return;
+      }
+
+      if (
+        section.id ===
         "about-author"
       ) {
         const aboutAuthor =
@@ -782,6 +1122,46 @@ function createBackMatter({
         bodyFrame.parentStory,
         styles.bodyStyle
       );
+
+      if (
+        section.id ===
+          "editorial-note" ||
+        section.id ===
+          "about-edition"
+      ) {
+        const signatureIndex =
+          bodyFrame.parentStory
+            .paragraphs.length - 2;
+
+        const roleIndex =
+          bodyFrame.parentStory
+            .paragraphs.length - 1;
+
+        const signatureParagraph =
+          bodyFrame.parentStory
+            .paragraphs.item(
+              signatureIndex
+            );
+
+        signatureParagraph
+          .applyParagraphStyle(
+            styles.backMatterSignatureStyle,
+            true
+          );
+
+        signatureParagraph
+          .spaceBefore =
+            config.mm(4);
+
+        bodyFrame.parentStory
+          .paragraphs.item(
+            roleIndex
+          )
+          .applyParagraphStyle(
+            styles.backMatterRoleStyle,
+            true
+          );
+      }
 
       bodyFrame.parentStory
         .recompose();

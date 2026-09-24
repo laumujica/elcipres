@@ -296,7 +296,7 @@ function createFrontMatter({
   ];
 
   websiteFrame.contents =
-    "www.elcipres.com.ar";
+    "elcipres.com.ar";
 
   layout.applyStyleToStory(
     websiteFrame.parentStory,

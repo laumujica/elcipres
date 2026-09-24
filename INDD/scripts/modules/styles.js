@@ -328,6 +328,32 @@ function createBookStyles(
       spaceAfter: 0,
     });
 
+  const backMatterSignatureStyle =
+    document.paragraphStyles.add({
+      name: "Back Matter Signature",
+      appliedFont: atkinsonBold,
+      pointSize: 12,
+      leading: config.BODY_LEADING,
+      justification:
+        Justification.LEFT_ALIGN,
+      hyphenation: false,
+      spaceBefore: 0,
+      spaceAfter: 0,
+    });
+
+  const backMatterRoleStyle =
+    document.paragraphStyles.add({
+      name: "Back Matter Role",
+      appliedFont: atkinsonItalic,
+      pointSize: 12,
+      leading: config.BODY_LEADING,
+      justification:
+        Justification.LEFT_ALIGN,
+      hyphenation: false,
+      spaceBefore: 0,
+      spaceAfter: 0,
+    });
+
   const backMatterBoldStyle =
     document.characterStyles.add({
       name: "Back Matter Bold",
@@ -437,6 +463,8 @@ function createBookStyles(
     creditsWebsiteStyle,
     creditsFooterStyle,
     backMatterQuoteStyle,
+    backMatterSignatureStyle,
+    backMatterRoleStyle,
     backMatterBoldStyle,
     backMatterItalicStyle,
     workClosingTitleStyle,
