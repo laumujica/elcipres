@@ -246,6 +246,26 @@ function applyCharacterStyleToText({
   }
 }
 
+function applyEpilogueParagraphSpacing(
+  story
+) {
+  const count =
+    story.paragraphs.length;
+
+  for (
+    let i = 0;
+    i < count;
+    i++
+  ) {
+    story.paragraphs
+      .item(i)
+      .spaceAfter =
+        i === count - 1
+          ? 0
+          : 4;
+  }
+}
+
 function applyEpilogueInlineStyles({
   story,
   section,
@@ -448,6 +468,10 @@ function createEpilogueSection({
     section,
     styles,
   });
+
+  applyEpilogueParagraphSpacing(
+    bodyFrame.parentStory
+  );
 
   // Epilogue paragraph 5 is a protected editorial unit.
   // Target it structurally rather than by exact text matching.
