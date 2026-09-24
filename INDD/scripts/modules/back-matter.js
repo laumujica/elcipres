@@ -449,31 +449,39 @@ function createEpilogueSection({
     styles,
   });
 
-  const keepTogetherText =
-    "Quiero decirte que desde ese sitio en el que hoy estás, hacés, y mucho. Sos el vínculo de amor entre la sangre de tu sangre, frutos de un amor, y nosotros, tus hermanos.";
+  // Epilogue paragraph 5 is a protected editorial unit.
+  // Target it structurally rather than by exact text matching.
+  const protectedParagraph =
+    bodyFrame.parentStory
+      .paragraphs.item(5);
 
-  for (
-    let i = 0;
-    i <
-      bodyFrame.parentStory
-        .paragraphs.length;
-    i++
+  if (
+    !protectedParagraph ||
+    !protectedParagraph.isValid
   ) {
-    const paragraph =
-      bodyFrame.parentStory
-        .paragraphs.item(i);
-
-    if (
-      paragraph.contents
-        .replace(/\r$/, "") ===
-      keepTogetherText
-    ) {
-      paragraph.keepAllLinesTogether =
-        true;
-    }
+    throw new Error(
+      "Epilogue protected paragraph was not found."
+    );
   }
 
+  protectedParagraph.keepWithNext = 0;
+  protectedParagraph.keepLinesTogether =
+    true;
+  protectedParagraph.keepAllLinesTogether =
+    true;
+  protectedParagraph.keepFirstLines = 2;
+  protectedParagraph.keepLastLines = 2;
+
   bodyFrame.parentStory.recompose();
+
+  if (
+    protectedParagraph
+      .parentTextFrames.length > 1
+  ) {
+    throw new Error(
+      "Epilogue protected paragraph still spans text frames."
+    );
+  }
 
   let currentFrame =
     bodyFrame;
