@@ -228,6 +228,26 @@ function applyCharacterStyleToText({
   }
 }
 
+function applyAboutAuthorParagraphSpacing(
+  story
+) {
+  const count =
+    story.paragraphs.length;
+
+  for (
+    let i = 0;
+    i < count;
+    i++
+  ) {
+    story.paragraphs
+      .item(i)
+      .spaceAfter =
+        i === count - 1
+          ? 0
+          : 4;
+  }
+}
+
 function applyAboutAuthorInlineStyles({
   story,
   styles,
@@ -376,6 +396,10 @@ function createAboutAuthorSection({
         frame.parentStory,
       styles,
     });
+
+    applyAboutAuthorParagraphSpacing(
+      frame.parentStory
+    );
 
     frame.parentStory.recompose();
 
@@ -568,47 +592,11 @@ function createAboutAuthorSection({
     );
   }
 
-  const beforeQuoteOneParagraphs =
-    paragraphs.slice(
-      0,
-      quoteOneIndex
-    );
-
-  const lastParagraphBeforeQuote =
-    beforeQuoteOneParagraphs[
-      beforeQuoteOneParagraphs.length - 1
-    ] || "";
-
-  const forcedTail =
-    "No se presentaba como alguien que tuviera respuestas definitivas ni parecía buscar una identidad solemne de escritor. En su blog Intentos de..., bajo el título Algo de mí, dejó una de sus descripciones más personales:";
-
-  const forcedTailIndex =
-    lastParagraphBeforeQuote
-      .indexOf(forcedTail);
-
-  if (
-    forcedTailIndex < 0
-  ) {
-    throw new Error(
-      "About Author forced two-sentence break was not found."
-    );
-  }
-
-  const paragraphLead =
-    lastParagraphBeforeQuote
+  const beforeQuoteOne =
+    paragraphs
       .slice(
         0,
-        forcedTailIndex
-      )
-      .trim();
-
-  const beforeQuoteOneLead =
-    beforeQuoteOneParagraphs
-      .slice(0, -1)
-      .concat(
-        paragraphLead
-          ? [paragraphLead]
-          : []
+        quoteOneIndex
       )
       .join("\r");
 
@@ -628,61 +616,12 @@ function createAboutAuthorSection({
       .join("\r");
 
   if (
-    beforeQuoteOneLead.length > 0
+    beforeQuoteOne.length > 0
   ) {
     addFlowingText(
-      beforeQuoteOneLead
+      beforeQuoteOne
     );
   }
-
-  const createTailFrame = () => {
-    const frame =
-      state.page.textFrames.add();
-
-    frame.geometricBounds = [
-      config.mm(state.y),
-      config.mm(state.area.left),
-      config.mm(state.area.bottom),
-      config.mm(state.area.right),
-    ];
-
-    frame.contents =
-      forcedTail;
-
-    layout.applyStyleToStory(
-      frame.parentStory,
-      styles.bodyStyle
-    );
-
-    applyAboutAuthorInlineStyles({
-      story:
-        frame.parentStory,
-      styles,
-    });
-
-    frame.fit(
-      FitOptions.frameToContent
-    );
-
-    return frame;
-  };
-
-  let tailFrame =
-    createTailFrame();
-
-  if (
-    tailFrame.geometricBounds[2] >
-    state.area.bottom
-  ) {
-    tailFrame.remove();
-    newContinuationPage();
-    tailFrame =
-      createTailFrame();
-  }
-
-  state.y =
-    tailFrame.geometricBounds[2] +
-    2;
 
   addQuote(
     paragraphs[
