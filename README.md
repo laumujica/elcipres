@@ -1,53 +1,34 @@
-# El Ciprés — Project Report
+# El Ciprés — Editorial Automation & Digital Archive
 
-**A website and editorial automation project created to preserve, organize, and publish a writer's literary archive.**
-
----
-
-## About the project
-
-El Ciprés (**elcipres.com.ar**) brings together the complete written work of Daniel Mujica — more than 650 poems, haikus, and short stories originally published across four blogs between 2008 and 2015 — into a single place, with custom design, search, and spaces for the original reader community to reconnect with his work.
-
-The project started as a personal preservation initiative and gradually expanded into two connected systems: a published website and an editorial workflow for producing a physical book from the same archive.
-
-*Note: the literary content remains in Spanish in order to preserve the author's original writing. The project architecture, tooling, and process are documented here in English for an international audience.*
+**A preservation, publishing, and InDesign automation project built around a literary archive of 650+ texts.**
 
 ---
 
-## What was done, and with what tools
+## Overview
 
-### 1. Content migration and organization
+El Ciprés (**elcipres.com.ar**) is a digital archive and editorial production system created to preserve, organize, and publish the written work of Daniel Mujica.
 
-The complete content of four **Google Blogger** blogs — posts, comments, images, drafts, and material no longer publicly visible — was recovered using **Google Takeout**.
+The project began as a content-recovery and website effort, then evolved into a reproducible publishing pipeline for producing book-length editions from the same archive.
 
-The archive was then reorganized into a cleaner structure that could support both web publishing and later editorial processing.
+The current system combines:
 
-### 2. Design and site construction
+- archive recovery and content normalization
+- custom web publishing
+- structured editorial metadata
+- Markdown / JSON transformation
+- Adobe InDesign 2025 automation with UXP (`.idjs`)
+- pagination and layout rules
+- Git-based versioning
+- regression checks and manual visual QA
+- print and digital-output planning
 
-A custom visual identity was defined around a "writer's notebook" concept, with typography, color, and a distinct visual language for each collection.
-
-The site was built in HTML, CSS, and JavaScript using a scalable folder structure with content, styles, and scripts kept separate.
-
-### 3. Deployment and infrastructure
-
-The site was deployed on **Firebase Hosting**, with the custom domain **elcipres.com.ar** configured through **Cloudflare** for DNS, caching, and performance/security settings.
-
-### 4. Product features
-
-- Responsive navigation
-- A custom-built search engine across 650+ literary pieces
-- Contact form integration through **Formsubmit**
-- **Cafecito.app** integration for book-printing support
-- Biography and historical reader-comment sections
-- Cross-browser and mobile testing
+The literary content remains in Spanish to preserve the author's original writing. Project architecture, tooling, and technical documentation are maintained in English for an international development and recruiting audience.
 
 ---
 
-## Editorial automation workflow
+## System architecture
 
-On **September 21–22, 2026**, the project moved from a manually understood layout process into a reproducible **InDesign automation pipeline**, with editorial metadata, pagination rules, front/back matter, and a generated table of contents.
-
-The current workflow is:
+The editorial workflow currently follows this pipeline:
 
 ```text
 Curated Markdown
@@ -58,103 +39,303 @@ InDesign UXP (.idjs)
       ↓
 Automated pagination and layout
       ↓
+Regression checks
+      ↓
 Manual editorial / visual QA
 ```
 
-The current production build handles:
+The current production build generates a near-complete first volume with:
 
-- 90 curated texts across 5 chronological editorial movements
-- explicit literary metadata for `prose`, `verse`, `hybrid`, and `visual` texts
-- automatic section covers and recto-aware starts
-- blank verso pages and hidden/visible folio rules
-- Arabic numbering beginning at the prologue while keeping its folio hidden
-- threaded continuation pages and overset protection
-- verse pagination rules that avoid isolated single lines
-- body dates preserved as metadata but hidden in the printed composition
-- automated multi-page table of contents
-- front matter scaffolding, finalized credits, prologue placeholder, and structured back matter sections
-- finalized **About the Author** and **About this Edition** copy
-- styled author quotations with dedicated quote/bar frames
-- a dedicated end-of-work page before the back matter, including the cypress illustration
-- validation of structured JSON before document generation
-- runtime regression checks for stable counts, required styles, back-matter structure, and text-frame page bounds
+- 90 curated texts
+- 5 chronological editorial movements
+- explicit content types for `prose`, `verse`, `hybrid`, and `visual`
+- recto-aware section starts
+- blank-page control
+- automatic folios and visibility rules
+- threaded continuation frames
+- overset protection
+- widow/orphan rules for selected text types
+- automated table of contents
+- structured front matter and back matter
+- inline emphasis and dedicated quote treatments
+- paragraph-level keep rules
+- runtime regression checks
 
-The source manuscript remains versioned separately from generated data, so editorial decisions are not lost when the layout logic changes.
-
-The current editorial source of truth is `INDD/docs/el-otro-yo-curation-v04.md`. Its structured production counterpart is `INDD/data/el-otro-yo-curation-v04.json`; previous JSON versions are archived under `INDD/data/old/`.
-
-### From manual layout to controlled automation
-
-A key discovery during development was that the goal was not to remove human judgment, but to move it to the right stage.
-
-Early iterations required manually understanding pagination, text flow, page sides, typography, and source inconsistencies. Once those rules became explicit, the script could handle repetitive production tasks while human review became focused on exceptions: literary line breaks, editorial ambiguity, visual rhythm, and final print decisions.
-
-This shifted the workflow from:
+The current editorial source of truth is:
 
 ```text
-manual production → repeated visual decisions
+INDD/docs/el-otro-yo-curation-v04.md
 ```
 
-to:
+The structured production data is:
 
 ```text
-structured source → automated production → targeted human control
+INDD/data/el-otro-yo-curation-v04.json
 ```
 
-That distinction has become one of the main design principles of the project.
+Previous structured versions are preserved under `INDD/data/old/`.
 
 ---
 
-## Versioning and local production workflow
-
-The project is maintained in **GitHub**, with editorial sources, structured data, and InDesign scripts stored separately:
+## Repository structure
 
 ```text
 INDD/
-├─ docs/      editorial Markdown versions
-├─ data/      generated / structured JSON
-└─ scripts/   InDesign UXP automation
+├─ docs/        editorial source versions
+├─ data/        structured production data
+├─ assets/      production assets
+└─ scripts/
+   ├─ el-otro-yo-v04-modular.idjs
+   └─ modules/
+      ├─ config.js
+      ├─ validation.js
+      ├─ styles.js
+      ├─ layout.js
+      ├─ front-matter.js
+      ├─ section-cover.js
+      ├─ body.js
+      ├─ toc.js
+      ├─ back-matter.js
+      ├─ regression.js
+      └─ report.js
 ```
 
-**GitHub Desktop** is used to keep the production machine synchronized with the repository.
-
-The local InDesign Scripts Panel is linked directly to the repository's `INDD/scripts` folder, so new script versions can be pulled from GitHub and executed in InDesign without manually downloading or replacing files.
-
-This made the workflow significantly safer: changes are versioned, reversible, and traceable instead of being copied manually between local files.
+The InDesign Scripts Panel is linked directly to the local repository, so changes can be pulled through GitHub Desktop and executed in InDesign without manually replacing script files.
 
 ---
 
-## Tools and platforms used
+## Technical capabilities implemented
 
-| Tool | What it was used for |
+### InDesign UXP automation
+
+The project uses Adobe InDesign 2025 UXP scripting with CommonJS modules.
+
+Implemented behaviors include:
+
+- document creation and page setup
+- facing-page layout
+- dynamic text-frame creation
+- threaded stories across continuation pages
+- paragraph and character style creation
+- recto-aware section starts
+- master / parent-page control
+- automatic page numbering
+- text-frame autosizing
+- content-aware back-matter construction
+- inline character styling
+- quote frames with independent decorative rules
+- overset detection
+- structural validation before and after composition
+
+### Pagination rules
+
+Pagination is treated as editorial logic rather than only visual formatting.
+
+Examples include:
+
+- short verse blocks remain together
+- longer verse blocks enforce minimum first/last line counts
+- selected paragraphs can be marked as non-breaking editorial units
+- titles and related text can be linked with keep rules
+- continuation pages are created only when required
+- isolated one-line continuations can trigger corrective logic
+- paragraph spacing can be scoped to a section instead of changing a global body style
+
+### Structured editorial metadata
+
+The current content model separates editorial content from layout behavior.
+
+The long-term direction is a layered rules system:
+
+```text
+GLOBAL RULES
+    ↓
+VOLUME RULES
+    ↓
+CONTENT-TYPE RULES
+    ↓
+ITEM-LEVEL EXCEPTIONS
+```
+
+This makes it possible to reuse the same automation engine across future volumes while allowing each book to override only the rules that actually differ.
+
+The guiding principle is:
+
+> Common behavior belongs in reusable rules; exceptional behavior belongs in metadata.
+
+---
+
+## Regression testing and QA
+
+A first runtime regression layer was added late in production after repeated pagination refinements exposed the risk of small fixes affecting already-stable sections.
+
+Current checks include:
+
+- expected volume title
+- expected movement count
+- expected literary-text count
+- expected movement-cover count
+- generated body-entry count
+- required back-matter sections
+- required paragraph styles
+- required character styles
+- text frames that extend beyond page bounds
+
+Regression checks run after document generation so structural failures are surfaced immediately instead of relying entirely on manual inspection.
+
+Visual QA is still required for issues that are inherently compositional, such as:
+
+- awkward white space
+- widows and orphans
+- quote rhythm
+- sparse continuation pages
+- paragraph balance
+- final recto/verso flow
+
+A future improvement is to add pagination-aware QA capable of detecting paragraph splits and other visual composition warnings automatically.
+
+---
+
+## Key engineering lessons
+
+### 1. Correct rules are not enough if targeting is fragile
+
+One pagination bug persisted even though the correct InDesign keep rule had been chosen.
+
+The original implementation identified a paragraph by comparing its full text content. That approach was brittle and failed silently when the runtime representation did not match the expected string exactly.
+
+The fix was to make the rule structurally deterministic and add a post-composition verification.
+
+Lesson:
+
+```text
+correct rule
++ unreliable selector
+= unreliable automation
+```
+
+Stable targeting matters as much as the layout rule itself.
+
+### 2. Editorial intent should be represented explicitly
+
+Instructions such as:
+
+- keep this paragraph together
+- keep this heading with the next paragraph
+- enforce at least two lines before and after a break
+
+are better represented as editorial behavior than as page-specific manual fixes.
+
+This led to a broader design direction where the automation engine interprets structured editorial intent instead of hard-coding corrections for individual pages.
+
+### 3. Global rules and local exceptions need separate layers
+
+Applying every decision globally creates unnecessary coupling.
+
+Applying every decision manually creates an unmaintainable workflow.
+
+The system therefore favors:
+
+- reusable defaults for common content types
+- volume-specific configuration where needed
+- item-level metadata only for true exceptions
+
+### 4. Visual QA and regression testing solve different problems
+
+Automated checks are good at catching structural regressions.
+
+Human review is still necessary for typographic rhythm, density, and visual balance.
+
+The workflow now treats both as complementary rather than interchangeable.
+
+### 5. Print and digital editions should be separate outputs
+
+The print edition uses book-oriented folios, facing-page logic, and asymmetric margins.
+
+A digital PDF edition has different requirements, especially page-number expectations and screen-reading margins.
+
+The project therefore treats print and digital as two outputs from the same source system rather than forcing one layout to serve both.
+
+---
+
+## From manual production to reusable automation
+
+A core discovery during development was that automation should not remove editorial judgment; it should move judgment to the correct layer.
+
+The workflow evolved from:
+
+```text
+manual production
+→ repeated visual decisions
+→ local fixes
+```
+
+toward:
+
+```text
+structured source
+→ explicit editorial rules
+→ automated production
+→ regression checks
+→ targeted human QA
+```
+
+This makes the system more traceable, repeatable, and suitable for larger publishing workflows.
+
+---
+
+## Versioning and production workflow
+
+The project uses Git and GitHub for:
+
+- source control
+- production traceability
+- reversible changes
+- modular script development
+- documented checkpoints
+- separation of editorial source, structured data, and layout logic
+
+GitHub Desktop is used to synchronize the local production environment.
+
+This replaced a manual file-copy workflow and made iterative InDesign scripting significantly safer.
+
+---
+
+## Tools and platforms
+
+| Tool | Use |
 |---|---|
-| Google Blogger / Google Takeout | Original archive source and recovery |
-| HTML / CSS / JavaScript | Website development |
-| Firebase Hosting | Website deployment |
-| Cloudflare | Domain, DNS, caching, and performance |
-| Git / GitHub | Source control and project versioning |
-| GitHub Desktop | Local repository synchronization |
 | Adobe InDesign 2025 | Editorial layout and print production |
-| InDesign UXP / `.idjs` | Layout automation and production scripting |
-| Markdown / JSON | Editorial source structure and machine-readable production data |
-| VS Code | Local code inspection and development |
-| ChatGPT / Claude | AI-assisted research, workflow design, scripting, debugging, and documentation |
-| Formsubmit | Contact form handling |
-| Cafecito.app | Crowdfunding / micro-donation integration |
+| InDesign UXP / `.idjs` | Layout automation |
+| JavaScript | Automation logic |
+| Markdown | Editorial source |
+| JSON | Structured production data |
+| Git / GitHub | Version control and traceability |
+| GitHub Desktop | Local synchronization |
+| VS Code | Code inspection and development |
+| HTML / CSS / JavaScript | Website development |
+| Firebase Hosting | Web deployment |
+| Cloudflare | DNS and domain management |
+| Google Blogger / Takeout | Archive recovery |
+| ChatGPT / Claude | AI-assisted workflow design, scripting, debugging, and documentation |
 
 ---
 
 ## Skills demonstrated
 
-- Information architecture and large-content organization
-- Editorial systems and print-production logic
 - InDesign automation with UXP scripting
-- Structured data transformation (Markdown → JSON → layout)
-- Human-in-the-loop workflow design
-- Git-based version control and production traceability
-- Debugging and iterative validation
-- Website deployment, DNS, and hosting administration
-- AI-assisted workflow design with explicit human review points
+- modular JavaScript architecture
+- editorial systems design
+- pagination and layout logic
+- structured content transformation
+- Markdown → JSON → InDesign workflows
+- metadata-driven layout behavior
+- regression testing
+- debugging and root-cause analysis
+- Git-based production workflows
+- print-production logic
+- human-in-the-loop automation
+- AI-assisted development with explicit human review
 
 ---
 
@@ -162,47 +343,46 @@ This made the workflow significantly safer: changes are versioned, reversible, a
 
 The web archive is published and operational.
 
-The editorial pipeline now generates a near-complete book structure from the curated manuscript. Core body pagination remains stable, and most of the work completed today focused on closing the paratextual system and refining the final book architecture rather than changing the literary body.
+The first automated book volume is now approximately complete from a production-system perspective. The literary body, front matter, back matter, folio logic, TOC, credits, epilogue, cover, QR integration, and core pagination rules are in place.
 
-Today's editorial / production milestone included:
+Work completed on September 24 included:
 
-- standardized the official book title as **El otro yo** throughout the production system
-- finalized the credits page, including role wording, AI-process disclosure, typography, spacing, and a working QR asset
-- finalized and placed the approved **About this Edition** text
-- finalized and placed the **About the Author** text
-- added inline emphasis for author-profile references and a dedicated visual treatment for direct quotations
-- refined the author-profile quote layout into separate text and vertical-bar frames
-- added the cypress illustration to the end-of-work page and reduced it to a 19 mm-wide visual mark
-- continued tightening back-matter spacing and page flow based on visual QA in InDesign
+- integrated the approved epilogue into the automated build
+- added dedicated signature and role styles for back matter
+- updated the production QR/domain reference
+- completed the print cover artwork in a separate cover/imposition workflow
+- restored two-line widow/orphan control in **About the Author**
+- introduced the first runtime regression-test layer
+- diagnosed a failed keep rule as a targeting problem rather than a pagination-rule problem
+- replaced fragile full-text paragraph matching with deterministic structural targeting
+- added post-composition verification for the protected epilogue paragraph
+- added epilogue-specific paragraph spacing without changing the global body style
+- documented a scalable rule hierarchy for future volumes
+- identified print and digital PDF editions as separate outputs from the same content system
 
-The **About the Author** layout is considered ready for this checkpoint, with one small pagination refinement intentionally deferred: one sentence currently begins alone at the top of a continuation page. The quote spacing is now close to the intended visual rhythm and will be fine-tuned only if needed during the final QA pass.
+The most important technical shift today was moving from page-specific corrections toward reusable editorial behavior and validation.
 
-The epilogue has now been received, editorially reviewed, approved, and integrated into the automated book build. The print cover design has also been completed and prepared for press in a separate cover/imposition workflow.
+### Technical backlog
 
-The remaining content work is narrow: the final prologue still needs to be written and placed, and the five movement-opening images still depend on family selection. A first regression-check layer has now been added to the InDesign generation workflow so small late-stage changes can be checked against stable production invariants instead of relying only on visual inspection.
-
-### Backlog
-
-- Write and place the final **Prologue**.
-- Speak with Fernanda and Daniela and select imagery for the five movement openings.
-- Recheck the **About the Author** widow/orphan control after the latest two-line keep rule.
-- Add and expand regression checks as the final book stabilizes.
-- Create a separate **digital PDF edition** with reader-facing pagination that starts at the first PDF page, plus PDF-specific margins/layout adjustments.
-- Add Daniel's acknowledgements after he receives the first physical copy.
-- Finalize movement-cover imagery and its production treatment.
-- Run a final proofread / human-read PDF pass.
-- Verify final recto/verso starts, folios, blanks, overset, quote spacing, and back-matter flow.
-- Prepare print-production files and determine final imposition / blank-page requirements with the chosen printing method.
+- integrate the final prologue into the existing front-matter flow
+- integrate final movement-opening imagery
+- perform a full pagination and page-count audit
+- run final recto/verso, folio, blank-page, overset, and back-matter QA
+- expand regression coverage to include pagination-aware warnings
+- formalize shared global, volume, content-type, and item-level rule layers
+- extract more layout exceptions from hard-coded logic into structured metadata
+- prepare final print-output validation
+- build a separate digital-PDF output profile with reader-facing pagination and PDF-specific margins
 
 ---
 
 ## Project timeline
 
-- **July 12, 2026** — Initial archive extraction, website build, deployment, search, contact, donation integration, and launch troubleshooting.
-- **September 21, 2026** — Editorial automation milestone: Markdown-to-JSON workflow, InDesign UXP generation, pagination logic, source versioning, GitHub Desktop synchronization, and production QA workflow.
-- **September 22, 2026** — Curation v04 and book-structure milestone: explicit literary metadata, body-date policy, verse pagination rules, automated TOC, front/back matter scaffolding, credits, end-of-work transition, epilogue placeholder, and final-stage editorial QA.
-- **September 23, 2026** — Paratext and finishing milestone: official **El otro yo** title casing standardized, credits finalized with QR and updated role language, **About this Edition** and **About the Author** copy completed and placed, author-quote treatment refined, cypress end-of-work image integrated, and remaining backlog shifted to prologue, epilogue delivery, movement imagery, cover design, final QA, and print preparation.
-- **September 24, 2026** — Final-content and regression milestone: approved epilogue integrated, back-matter signatures styled, non-www QR/domain update completed, print cover artwork finished, **About the Author** two-line widow/orphan control restored, and the first runtime regression-check layer added. A separate reader-oriented PDF edition is now tracked as a post-print-production deliverable.
+- **July 12, 2026** — Archive extraction, website build, deployment, search, contact, donation integration, and launch troubleshooting.
+- **September 21, 2026** — Markdown-to-JSON editorial workflow, modular InDesign UXP generation, pagination logic, Git-based production flow, and initial QA architecture.
+- **September 22, 2026** — Explicit literary metadata, body-date policy, verse pagination rules, automated TOC, front/back matter scaffolding, and late-stage editorial QA.
+- **September 23, 2026** — Paratext system completed: title normalization, credits, About the Author, About this Edition, quote treatment, and end-of-work structure.
+- **September 24, 2026** — Regression and robustness milestone: epilogue integration, back-matter refinement, first regression layer, deterministic paragraph targeting, keep-rule debugging, section-specific spacing, and reusable editorial-rule architecture defined for future volumes.
 
 ---
 
