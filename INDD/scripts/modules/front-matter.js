@@ -397,13 +397,158 @@ function createFrontMatter({
     config.mm(prologueArea.right),
   ];
 
+  const prologueParagraphs = [
+    {
+      text:
+        "Lo lindo de las metáforas es que nos permiten reconocer lo ordinario dentro de formas abstractas y hablar de aquello que nos importa sin tener que ir directamente al centro del mensaje. En la escritura, ese rodeo puede volverse dramático, pero también valioso: lleva una vulnerabilidad implícita y nos ofrece una manera práctica de darles voz y palabras a las cosas que queremos compartir.",
+    },
+    {
+      text:
+        "Podemos pensar a un ser humano como un árbol, como un pájaro, como un vuelo o como un proceso, y buscar una forma poética de hablar sobre lo mundano de existir; sobre cómo la rutina pierde color y gana peso cuando no se proyecta en algo más. Vivimos porque somos y estamos, pero la manera en que atravesamos y expresamos la vida mediante distintas formas del arte nos permite conectar con las cosas más sutiles y bellas de la existencia. Tal vez allí encontremos un propósito; o tal vez seamos nosotros quienes lo construimos para no volvernos grises ni perdernos en la homogeneidad.",
+    },
+    {
+      text:
+        "Hay personas que son artistas natas y conectan de una forma profundamente humana e hipersensible con el mundo que las rodea: con la fracción que les pertenece, con la de los demás y con la manera en que todas se encuentran. Sin embargo, por razones de la vida o por decisiones que nos superan, y bajo esa premisa que nos enseñan desde hace siglos —que siempre hay que hacer lo correcto—, algunos sueños quedan relegados. Es posible que el mundo exterior nunca llegue a conocerlos, aunque durante años hayan sido lo que mantuvo vivo nuestro pulso.",
+    },
+    {
+      text:
+        "En el caso de mi papá, solo quienes lo conocemos profundamente sabemos que es un artista, creador, poeta y soñador. Tuvo pocas oportunidades de vivir de aquello que deseó y que durante mucho tiempo intentó convertir en el centro de su vida. Aunque terminó imponiéndose la obligación de hacer lo correcto, se mantuvo honesto y fiel a sí mismo, logró muchas cosas y conservó aquel sueño, dormido pero latente.",
+    },
+    {
+      text:
+        "En esta selección de escritos podemos ver cómo alguien que parece serio y tener las cosas bajo control guarda un mundo íntimo, reservado y profundamente humano. Ese mundo aparece sobre todo de noche, cuando el silencio permite escuchar la verdadera voz y el hastío empuja hacia afuera aquello que prende fuego al corazón.",
+    },
+    {
+      text:
+        "Reunir en este formato tantos años de escritura y de contacto con sus sentimientos es un proyecto que llevo conmigo desde hace mucho tiempo. Hoy estoy muy contenta y agradecida por tener la posibilidad de ayudarlo a cumplir un sueño que nunca expresó en voz alta, quizás porque nunca sintió que tuviera permiso para hacerlo.",
+    },
+    {
+      text:
+        "Deseo que conecten con lo que lean a continuación, que estas páginas los lleven a lugares interesantes e inesperados y que las emociones que afloren les recuerden que nunca sabemos del todo qué sucede dentro de los demás. Incluso cuando parecen derrotados, siguen adelante.",
+    },
+    {
+      text:
+        "Gracias por ser parte de esto, de una forma u otra. Y gracias a mi papá por haber dejado un registro tan valioso de su vida. Aunque crea que nadie prestó atención, hay en estas páginas más metáforas de las que podríamos llegar a nombrar.",
+    },
+    {
+      text:
+        "Walter, por si nadie te lo dijo: sos un gran escritor. Te deseo mucho amor en la vida, en el tránsito y en todo lo que venga, dentro y fuera de este plano tangible.",
+      spaceBeforeMm: 4,
+    },
+    {
+      text:
+        "Infinitas gracias por tu existencia y por ser quien sos. Insoportable, pero muy buena persona. Valoro eso más que cualquier otra cosa.",
+    },
+    {
+      text:
+        "Te admiro y te sigo queriendo.",
+    },
+    {
+      text:
+        "Está bien ser árbol. Está bien ser pájaro. Está bien ser o no ser.",
+    },
+    {
+      text:
+        "Gracias.",
+    },
+    {
+      text:
+        "Laura",
+    },
+  ];
+
   prologueBodyFrame.contents =
-    "[Texto pendiente]";
+    prologueParagraphs
+      .map(
+        (paragraph) =>
+          paragraph.text
+      )
+      .join("\r");
+
+  const prologueStory =
+    prologueBodyFrame.parentStory;
 
   layout.applyStyleToStory(
-    prologueBodyFrame.parentStory,
+    prologueStory,
     styles.bodyStyle
   );
+
+  prologueParagraphs.forEach(
+    (paragraphData, index) => {
+      if (
+        typeof paragraphData
+          .spaceBeforeMm ===
+          "number"
+      ) {
+        prologueStory
+          .paragraphs.item(index)
+          .spaceBefore =
+            config.mm(
+              paragraphData
+                .spaceBeforeMm
+            );
+      }
+    }
+  );
+
+  prologueStory.recompose();
+
+  let currentPrologueFrame =
+    prologueBodyFrame;
+
+  let prologueContinuationCount =
+    0;
+
+  while (
+    currentPrologueFrame.overflows &&
+    prologueContinuationCount < 10
+  ) {
+    const continuationPage =
+      layout.createPageAtEnd();
+
+    const continuationArea =
+      layout.getTextArea(
+        continuationPage
+      );
+
+    const continuationFrame =
+      continuationPage
+        .textFrames.add();
+
+    continuationFrame.geometricBounds = [
+      config.mm(
+        continuationArea.top
+      ),
+      config.mm(
+        continuationArea.left
+      ),
+      config.mm(
+        continuationArea.bottom
+      ),
+      config.mm(
+        continuationArea.right
+      ),
+    ];
+
+    currentPrologueFrame
+      .nextTextFrame =
+        continuationFrame;
+
+    prologueStory.recompose();
+
+    currentPrologueFrame =
+      continuationFrame;
+
+    prologueContinuationCount++;
+  }
+
+  if (
+    currentPrologueFrame.overflows
+  ) {
+    throw new Error(
+      "Prologue exceeded 10 continuation pages."
+    );
+  }
 
   return {
     halfTitlePage,
