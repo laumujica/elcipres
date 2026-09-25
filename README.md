@@ -339,11 +339,11 @@ This replaced a manual file-copy workflow and made iterative InDesign scripting 
 
 ---
 
-## Current status — September 24, 2026
+## Current status — September 25, 2026
 
 The web archive is published and operational.
 
-The first automated book volume is now approximately complete from a production-system perspective. The literary body, front matter, back matter, folio logic, TOC, credits, epilogue, cover, QR integration, and core pagination rules are in place.
+The first automated book volume is now content-complete from a production-system perspective. The literary body, prologue, front matter, back matter, folio logic, TOC, credits, epilogue, cover, QR integration, and core pagination rules are in place.
 
 Work completed on September 24 included:
 
@@ -362,9 +362,15 @@ Work completed on September 24 included:
 
 The most important technical shift today was moving from page-specific corrections toward reusable editorial behavior and validation.
 
+Work completed on September 25 included:
+
+- integrated the final approved prologue into the automated front-matter flow
+- added threaded continuation-page support for prologue overflow
+- represented a section-specific editorial spacing decision as paragraph metadata instead of a page-specific manual adjustment
+- preserved hidden folio behavior on the prologue opening while allowing normal numbered continuation pages
+
 ### Technical backlog
 
-- integrate the final prologue into the existing front-matter flow
 - integrate final movement-opening imagery
 - perform a full pagination and page-count audit
 - run final recto/verso, folio, blank-page, overset, and back-matter QA
@@ -383,6 +389,7 @@ The most important technical shift today was moving from page-specific correctio
 - **September 22, 2026** — Explicit literary metadata, body-date policy, verse pagination rules, automated TOC, front/back matter scaffolding, and late-stage editorial QA.
 - **September 23, 2026** — Paratext system completed: title normalization, credits, About the Author, About this Edition, quote treatment, and end-of-work structure.
 - **September 24, 2026** — Regression and robustness milestone: epilogue integration, back-matter refinement, first regression layer, deterministic paragraph targeting, keep-rule debugging, section-specific spacing, and reusable editorial-rule architecture defined for future volumes.
+- **September 25, 2026** — Content-complete milestone: final prologue integrated with overflow threading and metadata-driven paragraph spacing, leaving the remaining work focused on imagery, full pagination audit, regression expansion, and print-output validation.
 
 ---
 
