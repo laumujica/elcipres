@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="INDD/covers/01_el-otro-yo/preview/el-cipres-repo-hero-v01.png" alt="El Ciprés — Editorial Automation & Digital Archive" width="100%">
+</p>
+
 # El Ciprés — Editorial Automation & Digital Archive
 
 **A preservation, publishing, and InDesign automation project built around a literary archive of 650+ texts.**
@@ -23,6 +27,18 @@ The current system combines:
 - print and digital-output planning
 
 The literary content remains in Spanish to preserve the author's original writing. Project architecture, tooling, and technical documentation are maintained in English for an international development and recruiting audience.
+
+## Featured output
+
+<p align="center">
+  <img src="INDD/covers/01_el-otro-yo/preview/el-otro-yo-cover-mockup-v01.png" alt="El otro yo — print prototype mockup" width="900">
+</p>
+
+**Current print prototype:** *El otro yo* — the first automated book volume produced through this workflow.
+
+- **Author:** Walter Daniel Mujica
+- **Editorial system:** Markdown → JSON → InDesign UXP
+- **Production cover:** [View print cover PDF](INDD/covers/01_el-otro-yo/print/el-otro-yo-cover-print-v01.pdf)
 
 ---
 
@@ -83,7 +99,11 @@ Previous structured versions are preserved under `INDD/data/old/`.
 INDD/
 ├─ docs/        editorial source versions
 ├─ data/        structured production data
-├─ assets/      production assets
+├─ assets/      shared production assets
+├─ covers/
+│  └─ 01_el-otro-yo/
+│     ├─ preview/   README / portfolio visuals
+│     └─ print/     print-ready cover PDF
 └─ scripts/
    ├─ el-otro-yo-v04-modular.idjs
    └─ modules/
