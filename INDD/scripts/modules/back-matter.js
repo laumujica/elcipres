@@ -194,11 +194,24 @@ const BACK_MATTER_SECTIONS = [
     id: "editorial-note",
     title: "Nota editorial",
     contents:
-      "Este libro comenzó mucho antes de ser un libro. Sus textos fueron publicados por Daniel en su blog, uno a uno, a lo largo del tiempo. Allí convivían poemas, relatos, reflexiones y composiciones visuales, acompañados por las marcas propias de aquel espacio digital. Transformar ese archivo en una obra impresa implicó algo más que trasladar palabras de un soporte a otro: fue necesario volver a leerlo como un conjunto.\r" +
-      "Para esta edición se seleccionaron noventa textos, organizados cronológicamente en cinco movimientos. La curaduría buscó construir un recorrido capaz de mostrar distintas zonas de su escritura sin alterar la identidad de cada pieza. Se preservaron su vocabulario, sus imágenes, sus repeticiones, sus giros personales y su manera particular de construir el ritmo. Las intervenciones se limitaron principalmente a corregir errores ortográficos y ortotipográficos, distinguir párrafos y saltos deliberados, y ordenar la estructura necesaria para su composición. No se reescribieron los textos ni se intentó uniformar la voz de Daniel. Cuando una decisión podía modificar su sentido, se prefirió conservar el original.\r" +
-
-      "El paso del blog al papel no buscó borrar el origen de estos textos, sino ofrecerles otro tiempo y otro modo de ser leídos: ya no como publicaciones dispersas en una pantalla, sino como partes de una misma voz que hoy encuentra lugar entre las páginas de un libro.\r" +
+      "Los textos reunidos en El otro yo nacieron como publicaciones independientes, compartidas por Daniel en sus espacios digitales a lo largo de varios años. Cada una tenía allí su propio momento, sus lectores y su contexto. Leerlas para convertirlas en un libro exigió algo más que reunirlas: fue necesario reconocer las relaciones que existían entre ellas y construir un recorrido que les permitiera dialogar sin perder su singularidad.\r" +
+      "Para construir este volumen trabajé con un conjunto original de ciento ochenta textos, del cual seleccioné noventa. La elección buscó representar distintas zonas de su escritura y construir un recorrido que permitiera reconocer sus temas, búsquedas y transformaciones a lo largo del tiempo, sin alterar la identidad de cada pieza.\r" +
+      "Los textos seleccionados fueron dispuestos en orden cronológico y organizados en cinco movimientos. Estos movimientos no funcionan como categorías cerradas, sino como estaciones dentro de una misma trayectoria. I · Inventario de una vida reúne el núcleo más autobiográfico: la infancia, la familia, el trabajo y los recuerdos que formaron su identidad. II · La noche aprende a hablar profundiza en la soledad, el dolor y aquello que emerge cuando el día calla. III · Daniel, un hombre extraño se concentra en la identidad, las contradicciones y la dificultad de reconocerse. IV · Formas breves de seguir reúne composiciones más condensadas y experimentales, atravesadas por pequeñas formas de resistencia. Finalmente, V · Persistir en el círculo retoma el tiempo, la memoria, el cansancio y la necesidad de continuar aun dentro de lo repetido.\r" +
+      "El orden cronológico permite advertir continuidades, desplazamientos y recurrencias sin imponer sobre los textos una clasificación temática rígida. Poemas, relatos, reflexiones y composiciones visuales conviven porque también convivieron en la escritura de Daniel: son formas distintas de una misma búsqueda.\r" +
+      "El principal criterio editorial fue preservar su voz. Se conservaron su vocabulario, sus imágenes, sus repeticiones, sus giros personales y su manera particular de construir el ritmo. Las intervenciones se limitaron a corregir errores evidentes de ortografía y tipografía, distinguir los párrafos cuando era necesario y preparar el material para que todas las piezas convivieran con coherencia dentro del libro. Cuando una corrección podía modificar el tono, la intención o el significado, prevaleció el original. No se reescribieron los textos ni se intentó uniformarlos.\r" +
+      "Editar también significó decidir qué no debía corregirse, qué silencios convenía respetar y cuánto podía ordenarse sin volver ajena una escritura profundamente personal. Las diferencias entre los textos permanecen visibles porque forman parte del recorrido del autor y de las distintas maneras en que buscó decirse a lo largo del tiempo.\r" +
+      "El paso de la pantalla al papel no pretende borrar el origen digital de la obra ni presentar una imagen definitiva de Daniel. Propone otra forma de acercarse a ella: una lectura sostenida, con nuevas pausas y proximidades, en la que publicaciones antes dispersas pueden ser reconocidas como partes de una misma voz. El propósito de esta edición fue permitir que cada texto continuara siendo él mismo y, al mismo tiempo, descubrir qué podían decir todos juntos.\r" +
       "Agustina\rEditora",
+    boldTexts: [
+      "I · Inventario de una vida",
+      "II · La noche aprende a hablar",
+      "III · Daniel, un hombre extraño",
+      "IV · Formas breves de seguir",
+      "V · Persistir en el círculo",
+    ],
+    italicTexts: [
+      "El otro yo",
+    ],
   },
   {
     id: "about-edition",
@@ -1201,6 +1214,28 @@ function createBackMatter({
         bodyFrame.parentStory,
         styles.bodyStyle
       );
+
+      (section.boldTexts || [])
+        .forEach((text) => {
+          applyCharacterStyleToText({
+            story:
+              bodyFrame.parentStory,
+            text,
+            style:
+              styles.backMatterBoldStyle,
+          });
+        });
+
+      (section.italicTexts || [])
+        .forEach((text) => {
+          applyCharacterStyleToText({
+            story:
+              bodyFrame.parentStory,
+            text,
+            style:
+              styles.backMatterItalicStyle,
+          });
+        });
 
       if (
         section.id ===
