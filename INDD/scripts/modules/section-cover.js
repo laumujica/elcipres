@@ -3,6 +3,22 @@ const {
   FitOptions,
 } = require("indesign");
 
+const SECTION_COVER_IMAGES = {
+  "movement-01":
+    "I_Inventario-de-una-vida.png",
+  "movement-02":
+    "II_La-noche-aprende-a-hablar.png",
+  "movement-03":
+    "III_Daniel-un-hombre-extranio.png",
+  "movement-04":
+    "IV_formas-breves-de-seguir.png",
+  "movement-05":
+    "V_persistir-en-el-circulo.png",
+};
+
+const SECTION_COVER_IMAGE_DIR =
+  "C:/GitHub/elcipres/INDD/covers/01_el-otro-yo/img/";
+
 function formatSectionDateRange(
   dateRange
 ) {
@@ -47,7 +63,7 @@ function createSectionCover({
   const area =
     layout.getTextArea(page);
 
-  const imageSize = 30;
+  const imageSize = 32;
   const imageTitleGap = 5;
   const titleDateGap = 8;
 
@@ -140,8 +156,6 @@ function createSectionCover({
     areaCenter -
     imageSize / 2;
 
-  // Placeholder for the movement illustration.
-  // The same frame will later receive the real image.
   const imageFrame =
     page.rectangles.add();
 
@@ -159,14 +173,42 @@ function createSectionCover({
   imageFrame.fillColor =
     document.swatches.item("None");
 
-  imageFrame.strokeColor =
-    document.colors.item("Black");
-
-  imageFrame.strokeTint = 20;
-  imageFrame.strokeWeight = 0.5;
-
   imageFrame.name =
     `Section Cover Image · ${item.id}`;
+
+  const imageFileName =
+    SECTION_COVER_IMAGES[item.id];
+
+  if (!imageFileName) {
+    throw new Error(
+      `No cover image is mapped for ${item.id}.`
+    );
+  }
+
+  const imagePath =
+    SECTION_COVER_IMAGE_DIR +
+    imageFileName;
+
+  try {
+    imageFrame.place(imagePath);
+
+    // Use the same visual envelope for every movement,
+    // but preserve each illustration's native aspect ratio.
+    imageFrame.fit(
+      FitOptions.PROPORTIONALLY
+    );
+
+    imageFrame.fit(
+      FitOptions.CENTER_CONTENT
+    );
+
+    imageFrame.strokeWeight = 0;
+  }
+  catch (error) {
+    throw new Error(
+      `Could not place cover image for ${item.id}: ${imagePath}`
+    );
+  }
 
   const titleTop =
     blockTop +
