@@ -422,7 +422,7 @@ function createBookStyles(
 
   sectionCoverTitleStyle.fillColor =
     document.colors.item(
-      "El otro yo"
+      "Black"
     );
 
   textTitleStyle.fillColor =
