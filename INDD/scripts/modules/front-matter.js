@@ -491,6 +491,20 @@ function createFrontMatter({
     }
   );
 
+  const prologueSignatureIndex =
+    prologueParagraphs.length - 1;
+
+  prologueStory
+    .paragraphs.item(
+      prologueSignatureIndex
+    )
+    .characters
+    .everyItem()
+    .applyCharacterStyle(
+      styles.backMatterBoldStyle,
+      true
+    );
+
   prologueStory.recompose();
 
   let currentPrologueFrame =

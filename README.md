@@ -359,11 +359,11 @@ This replaced a manual file-copy workflow and made iterative InDesign scripting 
 
 ---
 
-## Current status — September 25, 2026
+## Current status — September 28, 2026
 
 The web archive is published and operational.
 
-The first automated book volume is now content-complete from a production-system perspective. The literary body, prologue, front matter, back matter, folio logic, TOC, credits, epilogue, cover, QR integration, and core pagination rules are in place.
+The first automated book volume has reached its first print-proof baseline. The literary body, prologue, front matter, back matter, folio logic, TOC, credits, epilogue, movement-opening illustrations, cover, QR integration, and core pagination rules are in place. The generated InDesign document, interior PDF, and print-cover PDF are ready for the first physical proof and manual visual review.
 
 Work completed on September 24 included:
 
@@ -389,15 +389,25 @@ Work completed on September 25 included:
 - represented a section-specific editorial spacing decision as paragraph metadata instead of a page-specific manual adjustment
 - preserved hidden folio behavior on the prologue opening while allowing normal numbered continuation pages
 
+Work completed on September 28 included:
+
+- replaced the temporary movement-cover treatment with a centered editorial block derived from the end-of-work page
+- integrated five final movement illustrations with explicit movement-to-asset mapping
+- added proportional fitting and centered placement so mixed image aspect ratios share a consistent visual envelope
+- updated the editorial note with the approved explanation of the five movements
+- added two-line widow/orphan control to the editorial note
+- added repository-facing cover previews, a book mockup, and the print-cover PDF
+- established the current generated INDD, interior PDF, and cover PDF as the baseline for the first physical proof
+
 ### Technical backlog
 
-- integrate final movement-opening imagery
-- perform a full pagination and page-count audit
-- run final recto/verso, folio, blank-page, overset, and back-matter QA
+- prepare and produce the first physical print proof
+- perform manual visual QA on paper for typography, margins, folios, image scale, recto/verso flow, and overall page rhythm
+- refine movement-opening image sizing after the physical proof if needed
 - expand regression coverage to include pagination-aware warnings
 - formalize shared global, volume, content-type, and item-level rule layers
 - extract more layout exceptions from hard-coded logic into structured metadata
-- prepare final print-output validation
+- complete final print-output validation after proof review
 - build a separate digital-PDF output profile with reader-facing pagination and PDF-specific margins
 
 ---
@@ -410,6 +420,7 @@ Work completed on September 25 included:
 - **September 23, 2026** — Paratext system completed: title normalization, credits, About the Author, About this Edition, quote treatment, and end-of-work structure.
 - **September 24, 2026** — Regression and robustness milestone: epilogue integration, back-matter refinement, first regression layer, deterministic paragraph targeting, keep-rule debugging, section-specific spacing, and reusable editorial-rule architecture defined for future volumes.
 - **September 25, 2026** — Content-complete milestone: final prologue integrated with overflow threading and metadata-driven paragraph spacing, leaving the remaining work focused on imagery, full pagination audit, regression expansion, and print-output validation.
+- **September 28, 2026** — First print-proof baseline: final movement illustrations integrated with proportional fitting, editorial note finalized, repository presentation expanded with production visuals, and INDD/interior PDF/cover PDF prepared for physical proofing.
 
 ---
 
